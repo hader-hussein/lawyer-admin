@@ -1,23 +1,5 @@
-$(function() {
-  var btnTitle = $(".btn-upload-input-title").html();
-  var btnTitleHtml = $.parseHTML(btnTitle);
-  $(".btn-upload-input input:file").change(function (){
-     console.log("im clicked" + this.files.length);
-     if( this.files && this.files.length >= 1 ) {
-        var file = this.files[0];
-           var reader = new FileReader();
-           // Set preview image into the popover data-content
-           reader.onload = function (e) {
-              $(".btn-upload-input-title").text(file.name);
-           }
-           reader.readAsDataURL(file);
-     }
-     else {
-        $(".btn-upload-input-title").html(btnTitle);
-     }
-       
-   });   
-});
+
+
 $('.accordion-button').on('keydown',function (e) {
  
  
@@ -26,137 +8,185 @@ $('.accordion-button').on('keydown',function (e) {
      
    })
 
+/*
+We want to preview images, so we need to register the Image Preview plugin
+*/
+   //I added event handler for the file upload control to access the files properties.
+//I added event handler for the file upload control to access the files properties.
+document.addEventListener("DOMContentLoaded", init, false);
 
+//To save an array of attachments 
+var AttachmentArray = [];
 
+//counter for attachment array
+var arrCounter = 0;
 
+//to make sure the error message for number of files will be shown only one time.
+var filesCounterAlertStatus = false;
 
+//un ordered list to keep attachments thumbnails
+var ul = document.createElement('ul');
+ul.className = ("thumb-Images");
+ul.id = "imgList";
 
+function init() {
+    //add javascript handlers for the file upload event
+    document.querySelector('#files').addEventListener('change', handleFileSelect, false);
+}
 
+//the handler for file upload event
+function handleFileSelect(e) {
+    //to make sure the user select file/files
+    if (!e.target.files) return;
 
-   ;(function($) {
+    //To obtaine a File reference
+    var files = e.target.files;
 
-      // Browser supports HTML5 multiple file?
-      var multipleSupport = typeof $('<input/>')[0].multiple !== 'undefined',
-          isIE = /msie/i.test( navigator.userAgent );
+    // Loop through the FileList and then to render image files as thumbnails.
+    for (var i = 0, f; f = files[i]; i++) {
 
-      $.fn.customFile = function() {
+        //instantiate a FileReader object to read its contents into memory
+        var fileReader = new FileReader();
 
-        return this.each(function() {
+        // Closure to capture the file information and apply validation.
+        fileReader.onload = (function(readerEvt) {
+            return function(e) {
 
-          var $file = $(this).addClass('custom-file-upload-hidden'), // the original file input
-              $wrap = $('<div class="file-upload-wrapper">'),
-              $input = $('<input type="text" class="file-upload-input" />'),
-              // Button that will be used in non-IE browsers
-              $button = $('<button type="button" class="file-upload-button">Select a File</button>'),
-              // Hack for IE
-              $label = $('<label class="file-upload-button" for="'+ $file[0].id +'">Select a File</label>');
+                //Apply the validation rules for attachments upload
+                ApplyFileValidationRules(readerEvt)
 
-          // Hide by shifting to the left so we
-          // can still trigger events
-          $file.css({
-            position: 'absolute',
-            left: '-9999px'
-          });
+                //Render attachments thumbnails.
+                RenderThumbnail(e, readerEvt);
 
-          $wrap.insertAfter( $file )
-            .append( $file, $input, ( isIE ? $label : $button ) );
+                //Fill the array of attachment
+                FillAttachmentArray(e, readerEvt)
+            };
+        })(f);
 
-          // Prevent focus
-          $file.attr('tabIndex', -1);
-          $button.attr('tabIndex', -1);
+       
+        fileReader.readAsDataURL(f);
+    }
+    document.getElementById('files').addEventListener('change', handleFileSelect, false);
+}
 
-          $button.click(function () {
-            $file.focus().click(); // Open dialog
-          });
+//To remove attachment once user click on x button
+jQuery(function($) {
 
-          $file.change(function() {
+    $('#Filelist').on('click', '.img-wrap .close', function() {
+        var id = $(this).closest('.img-wrap').find('img').data('id');
+        //to remove the deleted item from array
+        var elementPos = AttachmentArray.map(function(x) {
+            return x.FileName;
+        }).indexOf(id);
+        if (elementPos !== -1) {
+            AttachmentArray.splice(elementPos, 1);
+        }
 
-            var files = [], fileArr, filename;
+        //to remove image tag
+        $(this).parent().find('img').not().remove();
 
-            // If multiple is supported then extract
-            // all filenames from the file array
-            if ( multipleSupport ) {
-              fileArr = $file[0].files;
-              for ( var i = 0, len = fileArr.length; i < len; i++ ) {
-                files.push( fileArr[i].name );
-              }
-              filename = files.join(', ');
+        //to remove div tag that contain the image
+        $(this).parent().find('div').not().remove();
 
-            // If not supported then just take the value
-            // and remove the path to just show the filename
-            } else {
-              filename = $file.val().split('\\').pop();
+        //to remove div tag that contain caption name
+        $(this).parent().parent().find('div').not().remove();
+
+        //to remove li tag
+        var lis = document.querySelectorAll('#imgList li');
+        for (var i = 0; li = lis[i]; i++) {
+            if (li.innerHTML == "") {
+                li.parentNode.removeChild(li);
             }
+        }
+        changeTitle();
+    });
+});
 
-            $input.val( filename ) // Set the value
-              .attr('title', filename) // Show filename in title tootlip
-              .focus(); // Regain focus
+//Apply the validation rules for attachments upload
+function ApplyFileValidationRules(readerEvt) {
 
-          });
+    //To check file Size according to upload conditions
+    if (CheckFileSize(readerEvt.size) == false) {
+        alert("The file (" + readerEvt.name + ") does not match the upload conditions, The maximum file size for uploads should not exceed 300 KB");
+        e.preventDefault();
+        return;
+    }
 
-          $input.on({
-            blur: function() { $file.trigger('blur'); },
-            keydown: function( e ) {
-              if ( e.which === 13 ) { // Enter
-                if ( !isIE ) { $file.trigger('click'); }
-              } else if ( e.which === 8 || e.which === 46 ) { // Backspace & Del
-                // On some browsers the value is read-only
-                // with this trick we remove the old input and add
-                // a clean clone with all the original events attached
-                $file.replaceWith( $file = $file.clone( true ) );
-                $file.trigger('change');
-                $input.val('');
-              } else if ( e.which === 9 ){ // TAB
-                return;
-              } else { // All other keys
-                return false;
-              }
-            }
-          });
+    //To check files count according to upload conditions
+    if (CheckFilesCount(AttachmentArray) == false) {
+        if (!filesCounterAlertStatus) {
+            filesCounterAlertStatus = true;
+            alert("You have added more than 10 files. According to upload conditions you can upload 10 files maximum");
+        }
+        e.preventDefault();
+        return;
+    }
+}
 
-        });
+//To check file Size according to upload conditions
+function CheckFileSize(fileSize) {
+    if (fileSize < 500000) {
+        return true;
+    } else {
+        return false;
+    }
+    return true;
+}
 
-      };
+//To check files count according to upload conditions
+function CheckFilesCount(AttachmentArray) {
+    //Since AttachmentArray.length return the next available index in the array, 
+    //I have used the loop to get the real length
+    var len = 0;
+    for (var i = 0; i < AttachmentArray.length; i++) {
+        if (AttachmentArray[i] !== undefined) {
+            len++;
+        }
+    }
+    //To check the length does not exceed 10 files maximum
+    if (len > 9) {
+        return false;
+    } else {
+        return true;
+    }
+}
 
-      // Old browser fallback
-      if ( !multipleSupport ) {
-        $( document ).on('change', 'input.customfile', function() {
+//Render attachments thumbnails.
+function RenderThumbnail(e, readerEvt) {
+    var li = document.createElement('li');
+    ul.appendChild(li);
+    li.innerHTML = ['<div class="img-wrap"> <span class="close">&times;</span>' +
+        '<img class="thumb" src="', e.target.result, '" title="', escape(readerEvt.name), '" data-id="',
+        readerEvt.name, '"/>' + '</div>'
+    ].join('');
 
-          var $this = $(this),
-              // Create a unique ID so we
-              // can attach the label to the input
-              uniqId = 'customfile_'+ (new Date()).getTime(),
-              $wrap = $this.parent(),
+    var div = document.createElement('div');
+    div.className = "FileNameCaptionStyle";
+    li.appendChild(div);
+    div.innerHTML = [readerEvt.name].join('');
+    document.getElementById('Filelist').insertBefore(ul, null);
+    changeTitle();
+}
 
-              // Filter empty input
-              $inputs = $wrap.siblings().find('.file-upload-input')
-                .filter(function(){ return !this.value }),
+//Fill the array of attachment
+function FillAttachmentArray(e, readerEvt) {
+    AttachmentArray[arrCounter] = {
+        AttachmentType: 1,
+        ObjectType: 1,
+        FileName: readerEvt.name,
+        FileDescription: "Attachment",
+        NoteText: "",
+        MimeType: readerEvt.type,
+        Content: e.target.result.split("base64,")[1],
+        FileSizeInBytes: readerEvt.size,
+    };
+    arrCounter = arrCounter + 1;
+}
 
-              $file = $('<input type="file" id="'+ uniqId +'" name="'+ $this.attr('name') +'"/>');
-
-          // 1ms timeout so it runs after all other events
-          // that modify the value have triggered
-          setTimeout(function() {
-            // Add a new input
-            if ( $this.val() ) {
-              // Check for empty fields to prevent
-              // creating new inputs when changing files
-              if ( !$inputs.length ) {
-                $wrap.after( $file );
-                $file.customFile();
-              }
-            // Remove and reorganize inputs
-            } else {
-              $inputs.parent().remove();
-              // Move the input so it's always last on the list
-              $wrap.appendTo( $wrap.parent() );
-              $wrap.find('input').focus();
-            }
-          }, 1);
-
-        });
-      }
-
-}(jQuery));
-
-$('input[type=file]').customFile();
+function changeTitle() {
+    var title = "";
+    $("#imgList>li").each(function() {
+        title += `${$(this).find(".FileNameCaptionStyle").text()}\n`;
+    });
+    $("#files").attr("title", title);
+}

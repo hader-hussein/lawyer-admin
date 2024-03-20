@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="./assets/vendor/fonts/tabler-icons.css" />
     <link rel="stylesheet" href="./assets/vendor/fonts/flag-icons.css" />
 
+    
     <!-- Core CSS -->
     <link rel="stylesheet" href="./assets/vendor/css/rtl/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="./assets/css/demo.css" />
@@ -45,7 +46,10 @@
     <link rel="stylesheet" href="./assets/vendor/libs/select2/select2.css" />
     <link rel="stylesheet" href="./assets/vendor/libs/bootstrap-select/bootstrap-select.css" />
 
-   
+
+    <link rel="stylesheet" href="./assets/vendor/libs/quill/typography.css" />
+    <link rel="stylesheet" href="./assets/vendor/libs/quill/katex.css" />
+    <link rel="stylesheet" href="./assets/vendor/libs/quill/editor.css" />
     <link rel="stylesheet" href="./assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <!-- Helpers -->
@@ -565,20 +569,20 @@
                     </li>
 
                     <!-- Apps -->
-                    <li class="menu-item active">
+                    <li class="menu-item">
                       <a href="javascript:void(0)" class="menu-link menu-toggle">
                         <i class="menu-icon fa fa-balance-scale"></i>
                         <div data-i18n="Issues">القضايا</div>
                       </a>
 
                       <ul class="menu-sub">
-                        <li class="menu-item active">
+                        <li class="menu-item">
                           <a href="javascript:void(0)" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons ti ti-menu-2"></i>
                             <div data-i18n="Issues"> القضايا</div>
                           </a>
                           <ul class="menu-sub">
-                            <li class="menu-item active">
+                            <li class="menu-item ">
                             <a href="Issues.html" class="menu-link">
                               <div data-i18n="add-Issues"> اضافة/القضايا</div>
                             </a>
@@ -629,7 +633,7 @@
                              
                           </ul>
                         </li>
-                        <li class="menu-item">
+                        <li class="menu-item active">
                           <a href="Amending-contract.html" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-arrows-maximize"></i>
                             <div data-i18n="Amending-contract"> تعديل العقد </div>
@@ -1172,210 +1176,32 @@
             <div class="container-xxl flex-grow-1 container-p-y">
               <div class="card comonent-hader-top">
                 <div class="card-body py-2 px-md-4 px-2 card-widget-separator">
-                  <strong class="py-md-3 px-md-3 text-title-hadeer text-tilte-b"><span class="text-muted fw-medium">  القضيه</span>  </strong>
-                  
-                    <div class="accordion from-cllapse" id="accordionExample">
-                      <form class="row component-form pt-4 mx-0">
-                        <div class="accordion-item">
-                          <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                              ادخل بيانات القضيه
-                            </button>
-                          </h2>
-                          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                              <div class="row component-form pt-4 justify-content-md-start justify-content-center align-items-end">
-                                <div class="col-12 col-lg-4 mb-3">
-                                  <label class="form-label" for="basic-number-file"> رقم الملف <span class="start-form">*</span></label>
-                                  <input type="text" class="form-control" id="basic-number-file" placeholder=" رقم الملف">
-                                </div>
-                                <div class="col-12 col-lg-4 mb-3">
-                                  <label class="form-label" for="basic-number-file-lssues"> رقم القضية ( القيد ) <span class="start-form">*</span></label>
-                                  <input type="text" class="form-control" id="basic-number-file-lssues" placeholder=" رقم القضية ( القيد )  ">
-                                </div>
-                               
-                                <div class="col-12 col-lg-4 mb-3">
-                                  <label for="select-client" class="form-label">    الموكل <span class="start-form">*</span></label>
-                                   
-                                      <select id="select-client" class="select2 form-select" data-allow-clear="true">
-                                        <option value="AK">  ahmed</option>
-                                        <option value="HI">mohamed</option>
-                                        <option value="CA">hadeer</option>
-                                        <option value="NV">ms</option>
-                                        <option value="OR">hala</option>
-                                    
-                                      </select>
-
-                                </div>
-                                <div class="col-12 col-lg-4 mb-3">
-                                  <label for="select-client-Describe " class="form-label"> صفه الموكل<span class="start-form">*</span></label>
-                                   
-                                      <select id="select-client-Describe " class="select2 form-select" data-allow-clear="true">
-                                        <option value="AK">  مدعى</option>
-                                        <option value="HI">مدعى علية</option>
-                                      </select>
-                                </div>
-                                <div class="col-12 col-lg-4 mb-3">
-                                  <label class="form-label" for="basic-Discount">الخصم<span class="start-form">*</span></label>
-                                  <input type="text" class="form-control" id="basic-Discount" placeholder="الخصم">
-                                </div>
-                                <div class="col-12 col-lg-4 mb-3">
-                                  <label for="select-client-Describe " class="form-label"> صفه الخصم<span class="start-form">*</span></label>
-                                   
-                                      <select id="select-client-Describe " class="select2 form-select" data-allow-clear="true">
-                                        <option value="Pretended">  مدعى</option>
-                                        <option value="Respondent">مدعى علية</option>
-                                      </select>
-                                </div>
-                                <div class="col-12 col-lg-4 mb-3">
-                                  <label for="select-side" class="form-label"> الجهة <span class="start-form">*</span></label>
-                                   
-                                      <select id="select-side" class="select2 form-select" data-allow-clear="true">
-                                        <option value="AK">  محكمه الاستئناف بالرياض</option>
-                                        <option value="HI"> محكمة التجارية</option>
-                                      </select>
-                                </div>
-                                <div class="col-12 col-lg-4 mb-3">
-                                  <label class="form-label" for="basic-Discount">التاريخ<span class="start-form">*</span></label>
-                                  <input type="date" class="form-control" id="basic-Discount">
-                                </div>
-                                <div class="col-12 col-lg-4 mb-3">
-                                  <label for="select-Designated" class="form-label">  المستشار المكلف  <span class="start-form">*</span></label>
-                                   
-                                      <select id="select-Designated" class="select2 form-select" data-allow-clear="true">
-                                        <option value="AK">  ahmed</option>
-                                        <option value="HI">mohamed</option>
-                                        <option value="CA">hadeer</option>
-                                        <option value="NV">ms</option>
-                                        <option value="OR">hala</option>
-                                    
-                                      </select>
-  
-                                </div>
-                                <div class="col-12 col-lg-4 mb-3">
-                                  <label for="select-Lawyer" class="form-label">  المحامي  المكلف  <span class="start-form">*</span></label>
-                                   
-                                      <select id="select-Lawyer" class="select2 form-select" data-allow-clear="true">
-                                        <option value="AK">  ahmed</option>
-                                        <option value="HI">mohamed</option>
-                                        <option value="CA">hadeer</option>
-                                        <option value="NV">ms</option>
-                                        <option value="OR">hala</option>
-                                    
-                                      </select>
-  
-                                </div>
-                                <div class="col-12 col-lg-4 mb-3">
-                                  <label class="form-label" for="basic-Circle">الدائره القضائيه رقم<span class="start-form">*</span></label>
-                                  <input type="text" class="form-control" id="basic-Circle" placeholder="الدائره القضائيه رقم">
-                                </div>
-                                <div class="col-12 col-lg-4 mb-3">
-                                  <label class="form-label" for="basic-Floor-No">الدور رقم<span class="start-form">*</span></label>
-                                  <input type="text" class="form-control" id="basic-Floor-No" placeholder="الدور رقم">
-                                </div>
-                                <div class="col-12 col-lg-4 mb-3">
-                                  <label for="select-Lawyer-type" class="form-label"> نوع القضيه  <span class="start-form">*</span></label>
-                                   
-                                      <select id="select-Lawyer-type" class="select2 form-select" data-allow-clear="true">
-                                        <option value="AK">  اختيار نوع القضية</option>
-                                        <option value="HI">mohamed</option>
-                                        <option value="CA">hadeer</option>
-                                        <option value="NV">ms</option>
-                                        <option value="OR">hala</option>
-                                    
-                                      </select>
-  
-                                </div>
-                                <div class="col-12 col-lg-4 mb-3">
-                                  <label class="form-label" for="basic-case"> تكلفة الترافع فى القضية<span class="start-form">*</span></label>
-                                  <input type="text" class="form-control" id="basic-case" placeholder=" تكلفة الترافع فى القضية">
-                                </div>
-                                <div class="col-12 col-lg-4 mb-3">
-                                  <label for="select-branch" class="form-label"> اختيار الفرع <span class="start-form">*</span></label>
-                                   
-                                      <select id="select-branch" class="select2 form-select" data-allow-clear="true">
-                                        <option value="AK">  اختيار الفرع</option>
-                                        <option value="HI">mohamed</option>
-                                        <option value="CA">hadeer</option>
-                                        <option value="NV">ms</option>
-                                        <option value="OR">hala</option>
-                                    
-                                      </select>
-  
-                                </div>
-                                <div class="col-12 col-lg-12 mb-3">
-                                  <label class="form-label" for="basic-file-upload">     تحميل المرفقات<span class="start-form">*</span></label>
-                                  <div class="file-upload">
-                                    <span class="btn btn-success fileinput-button">
-                                        <span>Select Attachment</span>
-                                        <input class="form-control" type="file" name="files[]" id="files" multiple  data-max-files="3" data-max-file-size="3MB"/>
-                                    </span>
-                                    <output id="Filelist"></output>
-                                </div>
-                                 
-                                </div>
-                              </div> 
-                               
-                            </div>
+                  <strong class="py-md-3 px-md-3 text-title-hadeer text-tilte-b"><span class="text-muted fw-medium">   تعديل العقد</span>  </strong>
+                  <section class="snow-editor">
+                    <div class="col-12 mt-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <div id="full-editor">
+                            <h6>Quill Rich Text Editor</h6>
+                            <p>
+                              Cupcake ipsum dolor sit amet. Halvah cheesecake chocolate bar gummi bears cupcake. Pie
+                              macaroon bear claw. Soufflé I love candy canes I love cotton candy I love.
+                            </p>
                           </div>
                         </div>
-                        <div class="accordion-item">
-                          <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            جدولة  الدفعات
-                            </button>
-                          </h2>
-                          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                              <div class="form-repeater pt-4">
-                                <div data-repeater-list="group-a">
-                                    <div data-repeater-item class="col-lg-12">
-                                      <div class="row">
-                
-                                      
-                                        <div class="mb-3 col-lg-6 col-xl-4 col-12 mb-0">
-                                          <label class="form-label" for="form-repeater-1-1">  الدفعه 1<span class="start-form">*</span></label>
-                                          <input type="text" id="form-repeater-1-1" class="form-control" />
-                                        </div>
-                                        <div class="mb-3 col-lg-6 col-xl-4 col-12 mb-0">
-                                          <label class="form-label" for="form-repeater-1">  تاريخ السداد<span class="start-form">*</span></label>
-                                          <input type="date" id="form-repeater-1" class="form-control" />
-                                        </div>
-                                        <div class="mb-3 col-lg-12 col-xl-4 col-12 d-flex align-items-center mb-0">
-                                          <button class="btn btn-label-danger mt-4" data-repeater-delete>
-                                            <i class="ti ti-x ti-xs me-1"></i>
-                                            <span class="align-middle">Delete</span>
-                                          </button>
-                                        </div>
-                                      </div>
-                                      <hr />
-          
-                                    </div>
-                                    <div class="mb-3">
-                                      <button class="btn btn-primary" data-repeater-create type="button">
-                                        <i class="ti ti-plus me-1"></i>
-                                        <span class="align-middle">Add New</span>
-                                      </button>
-                                    </div>
-                                </div>
-                                 
-                            
-                                  </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-12 col-lg-8 mt-2">
-                          <button type="submit" class="btn btn-primary  waves-effect waves-light">حفظ</button>
-                          <a href="all-Issues.html" class="btn btn-label-secondary waves-effect mx-md-3 mx-1">مشاهدة الكل</a>
-                         </div>
-                      </form>
+                      </div>
                     </div>
+                    <div class="col-12 col-lg-12 mt-2 text-center">
+                      <button type="submit" class="btn btn-primary  waves-effect waves-light">حفظ</button>
+                     </div>
+                  </section>
+                  
                  
                 </div>
               </div>
              
             </div>
-           
+
             <!-- Footer -->
             <footer class="content-footer footer bg-footer-theme">
               <div class="container-xxl">
@@ -1466,7 +1292,8 @@
     <script src="./assets/vendor/libs/jquery-repeater/jquery-repeater.js"></script>
     <!-- Vendors JS -->
     <script src="./assets/vendor/libs/apex-charts/apexcharts.js"></script>
-    
+    <script src="./assets/vendor/libs/quill/katex.js"></script>
+    <script src="./assets/vendor/libs/quill/quill.js"></script>
 
     
     <!-- Main JS -->
@@ -1483,6 +1310,6 @@
      <script src="./assets/vendor/js/accordion.js"></script>
      <script src="./assets/js/dashboards-crm.js"></script>
      <script src="./assets/js/forms-extras.js"></script>
-
+     <script src="./assets/js/forms-editors.js"></script>
   </body>
 </html>

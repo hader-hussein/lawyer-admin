@@ -1184,7 +1184,7 @@
                           </h2>
                           <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                              <div class="row component-form pt-4 justify-content-md-start justify-content-center align-items-end">
+                              <div class="row component-form pt-4 justify-content-md-start justify-content-center align-items-start">
                                 <div class="col-12 col-lg-4 mb-3">
                                   <label class="form-label" for="basic-name">  الاسم <span class="start-form">*</span></label>
                                   <input type="text" class="form-control" id="basic-name" placeholder="  الاسم">
@@ -1261,20 +1261,14 @@
   
                                 </div>
         
-                                <div class="col-12 col-lg-4 mb-3">
-                                  <label class="form-label" for="basic-file-upload">     تحميل المرفقات<span class="start-form">*</span></label>
-                               
-                                  <div class="custom-file-upload">
-                                    <input type="file" id="file" name="myfiles[]" multiple />
-                                  </div>
-                                </div>
-                                <div class="form-repeater col-12 col-lg-12">
+                                
+                                <div class="form-repeater col-12 col-lg-8">
                                   <div data-repeater-list="group-a">
                                       <div data-repeater-item class="col-lg-12">
                                         <div class="row">
                   
                                         
-                                          <div class="mb-3 col-lg-6 col-xl-4 col-12 mb-0">
+                                          <div class="mb-3 col-lg-6 col-xl-6 col-12 mb-0">
                                             <label class="form-label" for="form-repeater-1-1"> الصفة<span class="start-form">*</span></label>
                                             <input type="text" id="form-repeater-1-1" class="form-control" />
                                           </div>
@@ -1311,35 +1305,28 @@
                         <div class="accordion-item">
                           <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            جدولة  المرفقات
+                              المرفقات
                             </button>
                           </h2>
                           <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                              <div class="table-responsive text-nowrap rounded pt-2">
-                                <table class="table table-bordered table-hover rounded">
-                                  <thead class="table-light">
-                                    <th>رقم الملف</th>
-                                    <th>اسم المرفق</th>
-                                    <th>عرض الملف</th>
-                                    <th>نوع الملف</th>
-                                    <th>حذف</th>
-                                  </thead>
-                                  <tbody>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                  </tbody>
-                                </table>
+                              <div class="col-12  mb-3 pt-4">
+                                <label class="form-label" for="basic-file-upload">     تحميل المرفقات<span class="start-form">*</span></label>
+                                  <div class="file-upload">
+                                    <span class="btn btn-success fileinput-button">
+                                        <span>Select Attachment</span>
+                                        <input class="form-control" type="file" name="files[]" id="files" multiple  data-max-files="3" data-max-file-size="3MB"/>
+                                    </span>
+                                    <output id="Filelist"></output>
                                 </div>
+                              </div>
+                              
                             </div>
                           </div>
                         </div>
                         <div class="col-12 col-lg-8 mt-2">
                           <button type="submit" class="btn btn-primary  waves-effect waves-light">حفظ</button>
-                          <a href="all-Appeal.html" class="btn btn-label-secondary waves-effect mx-md-3 mx-1">مشاهدة الكل</a>
+                          <a href="all-Clients.html" class="btn btn-label-secondary waves-effect mx-md-3 mx-1">مشاهدة الكل</a>
                          </div>
                       </form>
                     </div>
