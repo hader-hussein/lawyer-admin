@@ -1162,13 +1162,13 @@ li.ui-timepicker-selected,
   border-color: #7367f0 !important;
 }
 .fc .fc-button-primary:not(.fc-prev-button):not(.fc-next-button) {
-  background-color: rgba(115, 103, 240, 0.16) !important;
+  background-color: rgb(var(--theme-color))!important;
   border: 0;
-  color: #7367f0;
+  color: #fff;
 }
 .fc .fc-button-primary:not(.fc-prev-button):not(.fc-next-button).fc-button-active, .fc .fc-button-primary:not(.fc-prev-button):not(.fc-next-button):hover {
-  background-color: rgba(115, 103, 240, 0.24) !important;
-  color: #7367f0;
+  background-color: rgb(var(--theme-color)) !important;
+  color: #fff;
 }
 
 .swal2-progress-steps[class] .swal2-progress-step.swal2-active-progress-step,

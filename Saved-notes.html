@@ -14,7 +14,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Admin Template</title>
+    <title>all-Appeal</title>
 
     <meta name="description" content="" />
 
@@ -610,7 +610,7 @@
                              
                           </ul>
                         </li>
-                        <li class="menu-item active">
+                        <li class="menu-item">
                           <a href="javascript:void(0)" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons ti ti-users"></i>
                             <div data-i18n="Clients"> الموكلين </div>
@@ -621,7 +621,7 @@
                               <div data-i18n="add-Clients"> اضافة/الموكلين</div>
                             </a>
                             </li>
-                             <li class="menu-item active">
+                             <li class="menu-item">
                               <a href="all-Clients.html" class="menu-link">
                                 <div data-i18n="view-Clients"> مشاهدة/الموكلين</div>
                               </a>
@@ -689,7 +689,7 @@
                                 </li>
                           </ul>
                         </li>
-                        <li class="menu-item">
+                        <li class="menu-item active">
                           <a href="javascript:void(0)" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons ti ti-arrows-maximize"></i>
                             <div data-i18n="Memoirs"> المذكرات </div>
@@ -700,12 +700,12 @@
                                 <div data-i18n="Recording-notes">   تسجيل المذكرات</div>
                               </a>
                             </li>
-                             <li class="menu-item">
+                             <li class="menu-item ">
                               <a href="Saved-notes.html" class="menu-link">
                                 <div data-i18n="Saved-notes">  المذكرات المحفوظه</div>
                               </a>
                               </li>
-                              <li class="menu-item">
+                              <li class="menu-item active">
                                 <a href="Notes-awaiting-review.html" class="menu-link">
                                   <div data-i18n="Notes-awaiting-review">  مذكرات فى انتظار المراجعه</div>
                                 </a>
@@ -1184,28 +1184,19 @@
             <div class="container-xxl flex-grow-1 container-p-y">
               <div class="card comonent-hader-top">
                 <div class="card-body py-2 px-md-4 px-2 card-widget-separator">
-                  <strong class="py-md-3 px-md-3 text-title-hadeer text-tilte-b"><span class="text-muted fw-medium">  عرض الموكلين</span>  </strong>
+                  <strong class="py-md-3 px-md-3 text-title-hadeer text-tilte-b"><span class="text-muted fw-medium">   عرض بيانات المذكرات</span>  </strong>
                   <div class="table-responsive text-nowrap rounded mt-4">
                     <table class="table table-bordered table-hover rounded">
                       <thead class="table-light">
                         <tr class="fw-bold">
                           <th class="fw-bold">التسلسل</th>
-                          <th class="fw-bold">  الاسم</th>
-                          <th class="fw-bold"> رقم الهويه</th>
-                          <th class="fw-bold"> رقم الجوال </th>
-                          <th class="fw-bold"> البريد الاكترونى</th>
-                          <th class="fw-bold"> العنوان</th>
-                          <th class="fw-bold"> النوع  </th>
-                          <th class="fw-bold"> فرد/شركة </th>
-                          <th class="fw-bold"> المستشار  </th>
-                          <th class="fw-bold"> نسبه المستشار %</th>
-                          <th class="fw-bold"> الفرع </th>
-
-                          <th class="fw-bold"> الصفة</th>
-                         
+                          <th class="fw-bold"> رقم الملف</th>
+                          <th class="fw-bold"> رقم القضية ( القيد )</th>
+                          <th class="fw-bold">عنوان المذكره</th>
+                          <th class="fw-bold"> الإجراء المطلوب</th>
                           <th class="fw-bold">  المرفقات</th>
-                    
-                          <th class="fw-bold">  Action</th>
+                          <th class="fw-bold">   مشاهده</th>
+                        
                         </tr>
                       </thead>
                       <tbody class="table-border-bottom-0">
@@ -1213,31 +1204,20 @@
                           <td>
                            1
                           </td>
-                          <td> احمد محمد</td>
+                          <td> 123456</td>
                     
                           <td>  123456</td>
                           <td></td>
                           <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                        
-                          
                           <td>
                             <a class="bg-warning text-bg-success p-1 d-flex align-items-center justify-content-center me-3 rounded cursor-pointer" data-bs-target="#Payments" data-bs-toggle="modal" title="المرفقات"><i class="fa-solid fa-paperclip fs-4"></i> </a>
 
                           </td>
-                          <td class="d-flex">
-                            <a class="bg-success text-bg-success p-1 d-flex align-items-center justify-content-center me-3 rounded cursor-pointer" data-bs-target="#edittruck" data-bs-toggle="modal" title="تعديل"><i class="ti ti-pencil  fs-4"></i> </a>
+                       
+                          <td>
 
-                            <a class="bg-danger text-bg-danger p-1 d-flex align-items-center justify-content-center me-3 rounded" href="javascript:void(0);" title="حذف  " data-bs-target="#closeRoleModal"  data-bs-toggle="modal"><i class="ti ti-trash  fs-4"></i> </a>
-
-                          
                           </td>
+                         
                         </tr>
                     
                        
@@ -1250,171 +1230,42 @@
               </div>
              
             </div>
-            <!--Attachments-->
-            <div class="modal fade " id="Payments" aria-labelledby="exampleModalToggleLabel" tabindex="-1" aria-modal="true" role="dialog">
-              <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content p-3 p-md-3">
-                  <div class="modal-header px-0">
-                    <h1 class="modal-title fs-3  fw-bold text-tilte-b">   المرفقات</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body px-0">
-                    <div class="table-responsive text-nowrap rounded pt-2">
-                      <table class="table table-bordered table-hover rounded">
-                        <thead class="table-light">
-                          <th>رقم الملف</th>
-                          <th>اسم المرفق</th>
-                          <th>عرض الملف</th>
-                          <th>نوع الملف</th>
-                          <th>حذف</th>
-                        </thead>
-                        <tbody>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td>
-                            <a class="bg-danger text-bg-danger p-1 d-flex align-items-center justify-content-center me-3 rounded" href="javascript:void(0);" title="حذف  " data-bs-target="#closeRoleModal"  data-bs-toggle="modal"><i class="ti ti-trash  fs-4"></i> </a>
-
-                          </td>
-                        </tbody>
-                      </table>
-                      </div>
-                  </div>
-                 
+           <!--Attachments-->
+           <div class="modal fade " id="Payments" aria-labelledby="exampleModalToggleLabel" tabindex="-1" aria-modal="true" role="dialog">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content p-3 p-md-3">
+                <div class="modal-header px-0">
+                  <h1 class="modal-title fs-3  fw-bold text-tilte-b">   المرفقات</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <div class="modal-body px-0">
+                  <div class="table-responsive text-nowrap rounded pt-2">
+                    <table class="table table-bordered table-hover rounded">
+                      <thead class="table-light">
+                        <th>رقم الملف</th>
+                        <th>اسم المرفق</th>
+                        <th>عرض الملف</th>
+                        <th>نوع الملف</th>
+                        <th>حذف</th>
+                      </thead>
+                      <tbody>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                          <a class="bg-danger text-bg-danger p-1 d-flex align-items-center justify-content-center me-3 rounded" href="javascript:void(0);" title="حذف  " data-bs-target="#closeRoleModal"  data-bs-toggle="modal"><i class="ti ti-trash  fs-4"></i> </a>
+
+                        </td>
+                      </tbody>
+                    </table>
+                    </div>
+                </div>
+               
               </div>
             </div>
-              <!-- edit Hardware Modal -->
-              <div class="modal fade " id="edittruck" aria-labelledby="exampleModalToggleLabel" tabindex="-1" aria-modal="true" role="dialog">
-                <div class="modal-dialog modal-lg modal-dialog-centered">
-                  <div class="modal-content p-3 p-md-3">
-                    <div class="modal-header px-0">
-                      <h1 class="modal-title fs-3 fw-bold text-tilte-b">     تعديل الموكل</h1>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body px-0">
-                      <form class="row component-form">
-
-                          <div class="col-12 col-lg-4 mb-3">
-                            <label class="form-label" for="basic-name">  الاسم <span class="start-form">*</span></label>
-                            <input type="text" class="form-control" id="basic-name" placeholder="  الاسم">
-                          </div>
-                          <div class="col-12 col-lg-4 mb-3">
-                            <label class="form-label" for="basic-ID-Number"> رقم الهويه<span class="start-form">*</span></label>
-                            <input type="text" class="form-control" id="basic-ID-Number" placeholder=" رقم الهويه ">
-                          </div>
-                          <div class="col-12 col-lg-4 mb-3">
-                            <label class="form-label" for="basic-Mobile">  رقم الجوال<span class="start-form">*</span></label>
-                            <input type="text" class="form-control" id="basic-Mobile" placeholder=" رقم الجوال ">
-                          </div>
-                          <div class="col-12 col-lg-4 mb-3">
-                            <label class="form-label" for="basic-file-No">  البريد  الاكترونى<span class="start-form">*</span></label>
-                            <input type="email" class="form-control" id="basic-file-No" placeholder="البريد  الاكترونى ">
-                          </div>
-                          <div class="col-12 col-lg-4 mb-3">
-                            <label class="form-label" for="basic-address">  العنوان<span class="start-form">*</span></label>
-                            <input type="text" class="form-control" id="basic-address" placeholder="العنوان">
-                          </div>
-                          <div class="col-12 col-lg-4 mb-3">
-                            <label for="select-Lawyer-type" class="form-label"> النوع   <span class="start-form">*</span></label>
-                             
-                                <select id="select-Lawyer-type" class="select2 form-select" data-allow-clear="true">
-                                  <option value="AK">  اختيار نوع </option>
-                                  <option value="HI">قضايا</option>
-                                  <option value="CA">استشارة</option>
-                                  <option value="NV">الاثنين</option>
-                                  <option value="OR">تاسيس شركات</option>
-                              
-                                </select>
-
-                          </div>
-                          <div class="col-12 col-lg-4 mb-3">
-                            <label for="select-Lawyer-type" class="form-label"> فرد/شركة   <span class="start-form">*</span></label>
-                             
-                                <select id="select-Lawyer-type" class="select2 form-select" data-allow-clear="true">
-                                  <option value="AK">  اختيار نوع </option>
-                                  <option value="HI">فرد</option>
-                                  <option value="CA">شركة</option>
-                              
-                              
-                                </select>
-
-                          </div>
-                          <div class="col-12 col-lg-4 mb-3">
-                            <label for="select-Advisor" class="form-label">  المستشار  <span class="start-form">*</span></label>
-                             
-                                <select id="select-Advisor" class="select2 form-select" data-allow-clear="true">
-                                  <option value="AK">  اختيار المستشار </option>
-                                  <option value="HI">mohamed</option>
-                                  <option value="CA">hadeer</option>
-                                  <option value="NV">ms</option>
-                                  <option value="OR">hala</option>
-                              
-                                </select>
-
-                          </div>
-                          <div class="col-12 col-lg-4 mb-3">
-                            <label class="form-label" for="basic-rate">  نسبه المستشار %<span class="start-form">*</span></label>
-                            <input type="text" class="form-control" id="basic-rate" placeholder="نسبه المستشار %">
-                          </div>
-                          <div class="col-12 col-lg-4 mb-3">
-                            <label for="select-branch" class="form-label"> اختيار الفرع <span class="start-form">*</span></label>
-                             
-                                <select id="select-branch" class="select2 form-select" data-allow-clear="true">
-                                  <option value="AK">  اختيار الفرع</option>
-                                  <option value="HI">mohamed</option>
-                                  <option value="CA">hadeer</option>
-                                  <option value="NV">ms</option>
-                                  <option value="OR">hala</option>
-                              
-                                </select>
-
-                          </div>
-                          <div class=" col-lg-4 col-xl-4 col-12 mb-3">
-                            <label class="form-label" for="form-repeater-1-1"> الصفة<span class="start-form">*</span></label>
-                            <input type="text" id="form-repeater-1-1" class="form-control" />
-                          </div>
-                          
-                          <div class="col-12 col-lg-12 mb-3">
-                            <label class="form-label" for="basic-last-date">    ملاحظات<span class="start-form">*</span></label>
-                            <textarea type="text" class="form-control" id="basic-last-date" rows="2" placeholder=" ملاحظات"></textarea>
-                          </div>
-                       
-                          <div class="col-12 col-lg-12 mt-2">
-                            <button type="submit" class="btn btn-primary  waves-effect waves-light">تعديل</button>
-                           </div>
-                      </form>
-                      
-                    </div>
-                   
-                  </div>
-                </div>
-              </div>
-              <!-- delet Modal -->
-              <div class="modal fade" id="closeRoleModal" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog modal-md modal-dialog-centered modal-add-new-role">
-                  <div class="modal-content p-1 p-md-3">
-                    <button
-                      type="button"
-                      class="btn-close btn-pinned"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"></button>
-                    <div class="modal-body text-center">
-                        <h3 class="role-title mb-2 fs-5">
-                          هل انت متاكد من حذف العنصر؟
-                        </h3>
-                      
-                      <div class="col-11 col-lg-12 mb-3">
-                        <button type="submit" class="btn btn-primary  waves-effect waves-light">نعم</button>
-                        <button  type="submit" class="btn btn-label-secondary waves-effect mx-3"> لا</button>
-                      </div>
-                    
-                  
-                    </div>
-                  </div>
-                </div>
-              </div>
+          </div>
+              
             <!-- Footer -->
             <footer class="content-footer footer bg-footer-theme">
               <div class="container-xxl">

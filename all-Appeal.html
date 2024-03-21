@@ -661,9 +661,21 @@
                           </a>
                           <ul class="menu-sub">
                             <li class="menu-item">
-                              <a href="Session-data.html" class="menu-link">
+                              <a href="javascript:void(0)" class="menu-link menu-toggle">
                                 <div data-i18n="Session data">  بيانات الجلسات</div>
                               </a>
+                              <ul class="menu-sub">
+                                <li class="menu-item">
+                                  <a href="add-session-data.html" class="menu-link">
+                                    <div data-i18n="Session data">  بيانات الجلسات</div>
+                                  </a>
+                                </li>
+                                <li class="menu-item">
+                                  <a href="Session-data.html" class="menu-link">
+                                    <div data-i18n="view Session">  عرض الجلسات</div>
+                                  </a>
+                                </li>
+                              </ul>
                             </li>
                              <li class="menu-item">
                               <a href="Send-session-settings.html" class="menu-link">
@@ -1205,7 +1217,10 @@
                           <td></td>
                           <td></td>
                           <td></td>
-                          <td></td>
+                          <td>
+                            <a class="bg-warning text-bg-success p-1 d-flex align-items-center justify-content-center me-3 rounded cursor-pointer" data-bs-target="#Payments" data-bs-toggle="modal" title="المرفقات"><i class="fa-solid fa-paperclip fs-4"></i> </a>
+
+                          </td>
                           
                           <td class="d-flex">
                             <a class="bg-success text-bg-success p-1 d-flex align-items-center justify-content-center me-3 rounded cursor-pointer" data-bs-target="#edittruck" data-bs-toggle="modal" title="تعديل"><i class="ti ti-pencil  fs-4"></i> </a>
@@ -1226,7 +1241,41 @@
               </div>
              
             </div>
-          
+           <!--Attachments-->
+           <div class="modal fade " id="Payments" aria-labelledby="exampleModalToggleLabel" tabindex="-1" aria-modal="true" role="dialog">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content p-3 p-md-3">
+                <div class="modal-header px-0">
+                  <h1 class="modal-title fs-3  fw-bold text-tilte-b">   المرفقات</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-0">
+                  <div class="table-responsive text-nowrap rounded pt-2">
+                    <table class="table table-bordered table-hover rounded">
+                      <thead class="table-light">
+                        <th>رقم الملف</th>
+                        <th>اسم المرفق</th>
+                        <th>عرض الملف</th>
+                        <th>نوع الملف</th>
+                        <th>حذف</th>
+                      </thead>
+                      <tbody>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                          <a class="bg-danger text-bg-danger p-1 d-flex align-items-center justify-content-center me-3 rounded" href="javascript:void(0);" title="حذف  " data-bs-target="#closeRoleModal"  data-bs-toggle="modal"><i class="ti ti-trash  fs-4"></i> </a>
+
+                        </td>
+                      </tbody>
+                    </table>
+                    </div>
+                </div>
+               
+              </div>
+            </div>
+          </div>
               <!-- edit Hardware Modal -->
               <div class="modal fade " id="edittruck" aria-labelledby="exampleModalToggleLabel" tabindex="-1" aria-modal="true" role="dialog">
                 <div class="modal-dialog modal-lg modal-dialog-centered">
