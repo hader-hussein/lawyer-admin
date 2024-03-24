@@ -1196,15 +1196,66 @@
                           </h2>
                           <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                              <div class="row component-form pt-4 justify-content-md-start justify-content-center align-items-start">
+                              <div class="row component-form pt-4 justify-content-md-start justify-content-center align-items-end">
                                 <div class="col-12 col-lg-4 mb-3">
-                                  <label class="form-label" for="basic-name">  الاسم <span class="start-form">*</span></label>
-                                  <input type="text" class="form-control" id="basic-name" placeholder="  الاسم">
+                                  <label for="select-branch" class="form-label"> اختيار الفرع <span class="start-form">*</span></label>
+                                   
+                                      <select id="select-branch" class="select2 form-select" data-allow-clear="true">
+                                        <option value="AK">  اختيار الفرع</option>
+                                        <option value="HI">mohamed</option>
+                                        <option value="CA">hadeer</option>
+                                        <option value="NV">ms</option>
+                                        <option value="OR">hala</option>
+                                    
+                                      </select>
+  
                                 </div>
+        
                                 <div class="col-12 col-lg-4 mb-3">
-                                  <label class="form-label" for="basic-ID-Number"> رقم الهويه<span class="start-form">*</span></label>
-                                  <input type="text" class="form-control" id="basic-ID-Number" placeholder=" رقم الهويه ">
+                                  <label for="select-Lawyer-type" class="form-label"> فرد/شركة   <span class="start-form">*</span></label>
+                                   
+                                      <select  onchange="optionCheck()" id="select-Lawyer-type" class="select2 form-select" data-allow-clear="true">
+                                        <option value="AK">  اختيار نوع </option>
+                                        <option value="1">فرد</option>
+                                        <option value="2">شركة</option>
+                                    
+                                    
+                                      </select>
+  
                                 </div>
+                               
+                                <div id="help1" class="helpText  col-12">
+                                  <div class="row">
+                                    <div class="col-12 col-lg-4 mb-3">
+                                      <label class="form-label" for="basic-name">  الاسم <span class="start-form">*</span></label>
+                                      <input type="text" class="form-control" id="basic-name" placeholder="  الاسم">
+                                    </div>
+                                    <div class="col-12 col-lg-4 mb-3">
+                                      <label class="form-label" for="basic-ID-Number"> رقم الهويه<span class="start-form">*</span></label>
+                                      <input type="text" class="form-control" id="basic-ID-Number" placeholder=" رقم الهويه ">
+                                    </div>
+                                  </div>
+                                  
+                                </div>
+                                <div id="help2" class="helpText col-12">
+                                    <div class="row align-items-end">
+                                      <div class="col-12 col-lg-4 mb-3">
+                                        <label class="form-label" for="basic-name-company">  اسم الشركه <span class="start-form">*</span></label>
+                                        <input type="text" class="form-control" id="basic-name-company" placeholder="  الاسم">
+                                      </div>
+                                      <div class="col-12 col-lg-4 mb-3">
+                                        <label class="form-label" for="basic-commercial ">السجل التجارى
+                                          <span class="start-form">*</span></label>
+                                        <input type="text" class="form-control" id="basic-commercial" placeholder=" السجل التجارى ">
+                                      </div>
+                                      <div class="col-12 col-lg-4 mb-3">
+                                        <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                          الشخص الممثل
+                                        </button>
+                                      </div>
+                                    </div>
+                                </div>
+                               
                                 <div class="col-12 col-lg-4 mb-3">
                                   <label class="form-label" for="basic-Mobile">  رقم الجوال<span class="start-form">*</span></label>
                                   <input type="text" class="form-control" id="basic-Mobile" placeholder=" رقم الجوال ">
@@ -1218,9 +1269,9 @@
                                   <input type="text" class="form-control" id="basic-address" placeholder="العنوان">
                                 </div>
                                 <div class="col-12 col-lg-4 mb-3">
-                                  <label for="select-Lawyer-type" class="form-label"> النوع   <span class="start-form">*</span></label>
+                                  <label for="select-type" class="form-label"> النوع   <span class="start-form">*</span></label>
                                    
-                                      <select id="select-Lawyer-type" class="select2 form-select" data-allow-clear="true">
+                                      <select id="select-type" class="select2 form-select" data-allow-clear="true">
                                         <option value="AK">  اختيار نوع </option>
                                         <option value="HI">قضايا</option>
                                         <option value="CA">استشارة</option>
@@ -1230,18 +1281,7 @@
                                       </select>
   
                                 </div>
-                                <div class="col-12 col-lg-4 mb-3">
-                                  <label for="select-Lawyer-type" class="form-label"> فرد/شركة   <span class="start-form">*</span></label>
-                                   
-                                      <select id="select-Lawyer-type" class="select2 form-select" data-allow-clear="true">
-                                        <option value="AK">  اختيار نوع </option>
-                                        <option value="HI">فرد</option>
-                                        <option value="CA">شركة</option>
-                                    
-                                    
-                                      </select>
-  
-                                </div>
+                         
                                 <div class="col-12 col-lg-4 mb-3">
                                   <label for="select-Advisor" class="form-label">  المستشار  <span class="start-form">*</span></label>
                                    
@@ -1260,31 +1300,22 @@
                                   <input type="text" class="form-control" id="basic-rate" placeholder="نسبه المستشار %">
                                 </div>
                                 <div class="col-12 col-lg-4 mb-3">
-                                  <label for="select-branch" class="form-label"> اختيار الفرع <span class="start-form">*</span></label>
-                                   
-                                      <select id="select-branch" class="select2 form-select" data-allow-clear="true">
-                                        <option value="AK">  اختيار الفرع</option>
-                                        <option value="HI">mohamed</option>
-                                        <option value="CA">hadeer</option>
-                                        <option value="NV">ms</option>
-                                        <option value="OR">hala</option>
-                                    
-                                      </select>
-  
+                                  <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal-add">
+                                    اضافه مرفقات
+                                  </button>
                                 </div>
-        
                                 
-                                <div class="form-repeater col-12 col-lg-8">
+                                <div class="form-repeater col-12 col-lg-12">
                                   <div data-repeater-list="group-a">
                                       <div data-repeater-item class="col-lg-12">
                                         <div class="row">
                   
                                         
-                                          <div class="mb-3 col-lg-6 col-xl-6 col-12 mb-0">
+                                          <div class="mb-3 col-lg-4  col-12">
                                             <label class="form-label" for="form-repeater-1-1"> الصفة<span class="start-form">*</span></label>
                                             <input type="text" id="form-repeater-1-1" class="form-control" />
                                           </div>
-                                          
+                                         
                                           <div class="mb-3 col-lg-12 col-xl-4 col-12 d-flex align-items-center mb-0">
                                             <button class="btn btn-label-danger mt-4" data-repeater-delete>
                                               <i class="ti ti-x ti-xs me-1"></i>
@@ -1314,28 +1345,8 @@
                             </div>
                           </div>
                         </div>
-                        <div class="accordion-item">
-                          <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                              المرفقات
-                            </button>
-                          </h2>
-                          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                              <div class="col-12  mb-3 pt-4">
-                                <label class="form-label" for="basic-file-upload">     تحميل المرفقات<span class="start-form">*</span></label>
-                                  <div class="file-upload">
-                                    <span class="btn btn-success fileinput-button">
-                                        <span>Select Attachment</span>
-                                        <input class="form-control" type="file" name="files[]" id="files" multiple  data-max-files="3" data-max-file-size="3MB"/>
-                                    </span>
-                                    <output id="Filelist"></output>
-                                </div>
-                              </div>
-                              
-                            </div>
-                          </div>
-                        </div>
+                    
+                        
                         <div class="col-12 col-lg-8 mt-2">
                           <button type="submit" class="btn btn-primary  waves-effect waves-light">حفظ</button>
                           <a href="all-Clients.html" class="btn btn-label-secondary waves-effect mx-md-3 mx-1">مشاهدة الكل</a>
@@ -1347,7 +1358,69 @@
               </div>
              
             </div>
-           
+           <!-- Modal -  الشخص الممثل-->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">الشخص الممثل</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form class="row component-form  mx-0">
+                    <div class="col-12 col-lg-4 mb-3">
+                      <label class="form-label" for="basic-name-person">  اسم الشخص <span class="start-form">*</span></label>
+                      <input type="text" class="form-control" id="basic-name-person" placeholder="  اسم الشخص ">
+                    </div>
+                    <div class="col-12 col-lg-4 mb-3">
+                      <label class="form-label" for="basic-Mobile-Number">  رقم الجوال<span class="start-form">*</span></label>
+                      <input type="text" class="form-control" id="basic-Mobile-Number" placeholder=" رقم الجوال">
+                    </div>
+                    <div class="mb-3 col-12 col-lg-4">
+                      <label class="form-label" for="form-Adjective"> الصفة<span class="start-form">*</span></label>
+                      <input type="text" id="form-Adjective" class="form-control" />
+                    </div>
+                    <div class="col-12 mb-3">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                  
+                    
+                  </form>
+                </div>
+               
+              </div>
+            </div>
+          </div>
+           <!-- Modal -->
+           <div class="modal fade" id="exampleModal-add" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">اضافه مرفقات</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                   <form>
+                    <div class="col-12 col-lg-12 mb-3">
+                      <label class="form-label" for="basic-file-upload">     تحميل المرفقات<span class="start-form">*</span></label>
+                      <div class="file-upload">
+                        <span class="btn btn-success fileinput-button">
+                            <span>Select Attachment</span>
+                            <input class="form-control" type="file" name="files[]" id="files" multiple  data-max-files="3" data-max-file-size="3MB"/>
+                        </span>
+                        <output id="Filelist"></output>
+                    </div>
+                     
+                    </div>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">حفظ</button>
+                   </form>
+                </div>
+                
+              </div>
+            </div>
+          </div>
             <!-- Footer -->
             <footer class="content-footer footer bg-footer-theme">
               <div class="container-xxl">

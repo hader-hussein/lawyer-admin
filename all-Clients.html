@@ -661,21 +661,10 @@
                           </a>
                           <ul class="menu-sub">
                             <li class="menu-item">
-                              <a href="javascript:void(0)" class="menu-link menu-toggle">
+                              <a href="Sessione-data.html" class="menu-link">
                                 <div data-i18n="Session data">  بيانات الجلسات</div>
                               </a>
-                              <ul class="menu-sub">
-                                <li class="menu-item">
-                                  <a href="add-session-data.html" class="menu-link">
-                                    <div data-i18n="Session data">  بيانات الجلسات</div>
-                                  </a>
-                                </li>
-                                <li class="menu-item">
-                                  <a href="Session-data.html" class="menu-link">
-                                    <div data-i18n="view Session">  عرض الجلسات</div>
-                                  </a>
-                                </li>
-                              </ul>
+                             
                             </li>
                              <li class="menu-item">
                               <a href="Send-session-settings.html" class="menu-link">
@@ -1195,14 +1184,12 @@
                           <th class="fw-bold"> رقم الجوال </th>
                           <th class="fw-bold"> البريد الاكترونى</th>
                           <th class="fw-bold"> العنوان</th>
-                          <th class="fw-bold"> النوع  </th>
-                          <th class="fw-bold"> فرد/شركة </th>
+                         
                           <th class="fw-bold"> المستشار  </th>
                           <th class="fw-bold"> نسبه المستشار %</th>
-                          <th class="fw-bold"> الفرع </th>
+                          <th class="fw-bold"> الشخص الممثل</th>
+                          <th class="fw-bold"> ملاحظات </th>
 
-                          <th class="fw-bold"> الصفة</th>
-                         
                           <th class="fw-bold">  المرفقات</th>
                     
                           <th class="fw-bold">  Action</th>
@@ -1223,10 +1210,6 @@
                           <td></td>
                           <td></td>
                           <td></td>
-                          <td></td>
-                          <td></td>
-                        
-                          
                           <td>
                             <a class="bg-warning text-bg-success p-1 d-flex align-items-center justify-content-center me-3 rounded cursor-pointer" data-bs-target="#Payments" data-bs-toggle="modal" title="المرفقات"><i class="fa-solid fa-paperclip fs-4"></i> </a>
 
@@ -1259,7 +1242,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body px-0">
-                    <div class="table-responsive text-nowrap rounded pt-2">
+                     <div class="table-responsive text-nowrap rounded pt-2">
                       <table class="table table-bordered table-hover rounded">
                         <thead class="table-light">
                           <th>رقم الملف</th>
@@ -1280,6 +1263,37 @@
                         </tbody>
                       </table>
                       </div>
+                      <form class="row mx-0">
+                        <div class="col-12 col-lg-6 mb-3">
+                          <label class="form-label" for="basic-file-upload">     تحميل المرفقات<span class="start-form">*</span></label>
+                          <div class="file-upload w-100">
+                            <span class="btn btn-success fileinput-button w-100">
+                                <span>Select Attachment</span>
+                                <input class="form-control" type="file" name="files[]" id="files" multiple  data-max-files="3" data-max-file-size="3MB"/>
+                            </span>
+                            <output id="Filelist"></output>
+                         </div>
+                         
+                        </div>
+                        <div class="col-12 col-lg-6 mb-3">
+                          <label for="select-branch" class="form-label"> الحكم<span class="start-form">*</span></label>
+                           
+                              <select id="select-branch" class="select2 form-select" data-allow-clear="true">
+                                <option value="AK">  اختيار الحكم</option>
+                                <option value="HI">صوره التوكيل 1</option>
+                                <option value="CA">صورة التوكيل 2</option>
+                                <option value="NV">نسخة من العقد</option>
+                           
+                            
+                              </select>
+
+                        </div>
+                        <div>
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-primary">حفظ</button>
+                        </div>
+                       
+                       </form>
                   </div>
                  
                 </div>
@@ -1297,13 +1311,64 @@
                       <form class="row component-form">
 
                           <div class="col-12 col-lg-4 mb-3">
-                            <label class="form-label" for="basic-name">  الاسم <span class="start-form">*</span></label>
-                            <input type="text" class="form-control" id="basic-name" placeholder="  الاسم">
+                            <label for="select-branch" class="form-label"> اختيار الفرع <span class="start-form">*</span></label>
+                             
+                                <select id="select-branch" class="select2 form-select" data-allow-clear="true">
+                                  <option value="AK">  اختيار الفرع</option>
+                                  <option value="HI">mohamed</option>
+                                  <option value="CA">hadeer</option>
+                                  <option value="NV">ms</option>
+                                  <option value="OR">hala</option>
+                              
+                                </select>
+
                           </div>
+  
                           <div class="col-12 col-lg-4 mb-3">
-                            <label class="form-label" for="basic-ID-Number"> رقم الهويه<span class="start-form">*</span></label>
-                            <input type="text" class="form-control" id="basic-ID-Number" placeholder=" رقم الهويه ">
+                            <label for="select-Lawyer-type" class="form-label"> فرد/شركة   <span class="start-form">*</span></label>
+                             
+                                <select  onchange="optionCheck()" id="select-Lawyer-type" class="select2 form-select" data-allow-clear="true">
+                                  <option value="AK">  اختيار نوع </option>
+                                  <option value="1">فرد</option>
+                                  <option value="2">شركة</option>
+                              
+                              
+                                </select>
+
                           </div>
+                         
+                          <div id="help1" class="helpText  col-12">
+                            <div class="row">
+                              <div class="col-12 col-lg-4 mb-3">
+                                <label class="form-label" for="basic-name">  الاسم <span class="start-form">*</span></label>
+                                <input type="text" class="form-control" id="basic-name" placeholder="  الاسم">
+                              </div>
+                              <div class="col-12 col-lg-4 mb-3">
+                                <label class="form-label" for="basic-ID-Number"> رقم الهويه<span class="start-form">*</span></label>
+                                <input type="text" class="form-control" id="basic-ID-Number" placeholder=" رقم الهويه ">
+                              </div>
+                            </div>
+                            
+                          </div>
+                          <div id="help2" class="helpText col-12">
+                              <div class="row align-items-end">
+                                <div class="col-12 col-lg-4 mb-3">
+                                  <label class="form-label" for="basic-name-company">  اسم الشركه <span class="start-form">*</span></label>
+                                  <input type="text" class="form-control" id="basic-name-company" placeholder="  الاسم">
+                                </div>
+                                <div class="col-12 col-lg-4 mb-3">
+                                  <label class="form-label" for="basic-commercial ">السجل التجارى
+                                    <span class="start-form">*</span></label>
+                                  <input type="text" class="form-control" id="basic-commercial" placeholder=" السجل التجارى ">
+                                </div>
+                                <div class="col-12 col-lg-4 mb-3">
+                                  <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    الشخص الممثل
+                                  </button>
+                                </div>
+                              </div>
+                          </div>
+                         
                           <div class="col-12 col-lg-4 mb-3">
                             <label class="form-label" for="basic-Mobile">  رقم الجوال<span class="start-form">*</span></label>
                             <input type="text" class="form-control" id="basic-Mobile" placeholder=" رقم الجوال ">
@@ -1317,9 +1382,9 @@
                             <input type="text" class="form-control" id="basic-address" placeholder="العنوان">
                           </div>
                           <div class="col-12 col-lg-4 mb-3">
-                            <label for="select-Lawyer-type" class="form-label"> النوع   <span class="start-form">*</span></label>
+                            <label for="select-type" class="form-label"> النوع   <span class="start-form">*</span></label>
                              
-                                <select id="select-Lawyer-type" class="select2 form-select" data-allow-clear="true">
+                                <select id="select-type" class="select2 form-select" data-allow-clear="true">
                                   <option value="AK">  اختيار نوع </option>
                                   <option value="HI">قضايا</option>
                                   <option value="CA">استشارة</option>
@@ -1329,18 +1394,7 @@
                                 </select>
 
                           </div>
-                          <div class="col-12 col-lg-4 mb-3">
-                            <label for="select-Lawyer-type" class="form-label"> فرد/شركة   <span class="start-form">*</span></label>
-                             
-                                <select id="select-Lawyer-type" class="select2 form-select" data-allow-clear="true">
-                                  <option value="AK">  اختيار نوع </option>
-                                  <option value="HI">فرد</option>
-                                  <option value="CA">شركة</option>
-                              
-                              
-                                </select>
-
-                          </div>
+                   
                           <div class="col-12 col-lg-4 mb-3">
                             <label for="select-Advisor" class="form-label">  المستشار  <span class="start-form">*</span></label>
                              
@@ -1358,29 +1412,19 @@
                             <label class="form-label" for="basic-rate">  نسبه المستشار %<span class="start-form">*</span></label>
                             <input type="text" class="form-control" id="basic-rate" placeholder="نسبه المستشار %">
                           </div>
-                          <div class="col-12 col-lg-4 mb-3">
-                            <label for="select-branch" class="form-label"> اختيار الفرع <span class="start-form">*</span></label>
-                             
-                                <select id="select-branch" class="select2 form-select" data-allow-clear="true">
-                                  <option value="AK">  اختيار الفرع</option>
-                                  <option value="HI">mohamed</option>
-                                  <option value="CA">hadeer</option>
-                                  <option value="NV">ms</option>
-                                  <option value="OR">hala</option>
-                              
-                                </select>
-
-                          </div>
-                          <div class=" col-lg-4 col-xl-4 col-12 mb-3">
-                            <label class="form-label" for="form-repeater-1-1"> الصفة<span class="start-form">*</span></label>
-                            <input type="text" id="form-repeater-1-1" class="form-control" />
-                          </div>
                           
+                          <div class="col-12 col-lg-4 mb-3">
+                              <label class="form-label" for="form-repeater-1-1"> الصفة<span class="start-form">*</span></label>
+                              <input type="text" id="form-repeater-1-1" class="form-control" />
+                          
+                          
+                          </div>
                           <div class="col-12 col-lg-12 mb-3">
                             <label class="form-label" for="basic-last-date">    ملاحظات<span class="start-form">*</span></label>
                             <textarea type="text" class="form-control" id="basic-last-date" rows="2" placeholder=" ملاحظات"></textarea>
                           </div>
-                       
+                      
+                          
                           <div class="col-12 col-lg-12 mt-2">
                             <button type="submit" class="btn btn-primary  waves-effect waves-light">تعديل</button>
                            </div>

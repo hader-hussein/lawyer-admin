@@ -584,7 +584,7 @@ color: #dbdade !important;
 
 .thumb {
   height: 80px;
-  width: 100px;
+  width: 150px;
   border: 1px solid #000;
 }
 
@@ -592,7 +592,7 @@ ul.thumb-Images li {
    
     display: inline-block;
     vertical-align: top;
-    height:140px;
+    height:170px;
     border: 1px solid rgb(var(--theme-color))!important;
     margin: 10px;
     text-wrap: wrap;
@@ -627,12 +627,19 @@ ul.thumb-Images li {
   opacity: 1;
   /* background-color: red; */
 }
-
+.w-input{
+  display: block;
+  width:150px;
+  height: 40px;
+}
 .FileNameCaptionStyle {
   font-size: 12px;
 }
-
-
-
-
-
+.helpText {
+  visibility: hidden;
+  display: none;
+}
+.helpTextShow {
+  visibility: visible;
+  display: block;
+}​

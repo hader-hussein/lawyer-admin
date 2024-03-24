@@ -661,21 +661,10 @@
                           </a>
                           <ul class="menu-sub">
                             <li class="menu-item">
-                              <a href="javascript:void(0)" class="menu-link menu-toggle">
+                              <a href="Sessione-data.html" class="menu-link">
                                 <div data-i18n="Session data">  بيانات الجلسات</div>
                               </a>
-                              <ul class="menu-sub">
-                                <li class="menu-item">
-                                  <a href="add-session-data.html" class="menu-link">
-                                    <div data-i18n="Session data">  بيانات الجلسات</div>
-                                  </a>
-                                </li>
-                                <li class="menu-item">
-                                  <a href="Session-data.html" class="menu-link">
-                                    <div data-i18n="view Session">  عرض الجلسات</div>
-                                  </a>
-                                </li>
-                              </ul>
+                             
                             </li>
                              <li class="menu-item">
                               <a href="Send-session-settings.html" class="menu-link">
@@ -1190,6 +1179,7 @@
                       <thead class="table-light">
                         <tr class="fw-bold">
                           <th class="fw-bold">التسلسل</th>
+                          <th class="fw-bold">  الفرع</th>
                           <th class="fw-bold"> رقم الملف</th>
                           <th class="fw-bold">رقم القضية</th>
                           <th class="fw-bold"> الموكل </th>
@@ -1204,7 +1194,7 @@
                           <th class="fw-bold"> الدور رقم </th>
                           <th class="fw-bold"> نوع القضيه </th>
                           <th class="fw-bold"> تكلفة الترافع فى القضية</th>
-                          <th class="fw-bold">  الفرع</th>
+                        
                           <th class="fw-bold">  المرفقات</th>
                           <th class="fw-bold">  الدفعات</th>
                           <th class="fw-bold">  Action</th>
@@ -1297,7 +1287,19 @@
                     </div>
                     <div class="modal-body px-0">
                       <form class="row component-form">
+                        <div class="col-12 col-lg-4 mb-3">
+                          <label for="select-branch" class="form-label"> اختيار الفرع <span class="start-form">*</span></label>
+                           
+                              <select id="select-branch" class="select2 form-select" data-allow-clear="true">
+                                <option value="AK">  اختيار الفرع</option>
+                                <option value="HI">mohamed</option>
+                                <option value="CA">hadeer</option>
+                                <option value="NV">ms</option>
+                                <option value="OR">hala</option>
+                            
+                              </select>
 
+                        </div>
                           <div class="col-12 col-lg-4 mb-3">
                             <label class="form-label" for="basic-number-file"> رقم الملف <span class="start-form">*</span></label>
                             <input type="text" class="form-control" id="basic-number-file" placeholder=" رقم الملف">
@@ -1403,29 +1405,7 @@
                             <label class="form-label" for="basic-case"> تكلفة الترافع فى القضية<span class="start-form">*</span></label>
                             <input type="text" class="form-control" id="basic-case" placeholder=" تكلفة الترافع فى القضية">
                           </div>
-                          <div class="col-12 col-lg-4 mb-3">
-                            <label for="select-branch" class="form-label"> اختيار الفرع <span class="start-form">*</span></label>
-                             
-                                <select id="select-branch" class="select2 form-select" data-allow-clear="true">
-                                  <option value="AK">  اختيار الفرع</option>
-                                  <option value="HI">mohamed</option>
-                                  <option value="CA">hadeer</option>
-                                  <option value="NV">ms</option>
-                                  <option value="OR">hala</option>
-                              
-                                </select>
-
-                          </div>
-                          <div class="col-12 col-lg-12 mb-3">
-                            <label class="form-label" for="basic-file-upload">     تحميل المرفقات<span class="start-form">*</span></label>
-                            <div class="file-upload">
-                              <span class="btn btn-success fileinput-button">
-                                  <span>Select Attachment</span>
-                                  <input class="form-control" type="file" name="files[]" id="files" multiple  data-max-files="3" data-max-file-size="3MB"/>
-                              </span>
-                              <output id="Filelist"></output>
-                            </div>
-                          </div>
+                      
                           <div class="col-12 col-lg-12 mt-2">
                             <button type="submit" class="btn btn-primary  waves-effect waves-light">تعديل</button>
                            </div>
@@ -1469,7 +1449,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body px-0">
-                    <div class="table-responsive text-nowrap rounded pt-2">
+                      <div class="table-responsive text-nowrap rounded pt-2">
                       <table class="table table-bordered table-hover rounded">
                         <thead class="table-light">
                           <th>رقم الملف</th>
@@ -1490,6 +1470,25 @@
                         </tbody>
                       </table>
                       </div>
+                      <form class="row mx-0">
+                        <div class="col-12 col-lg-12 mb-3">
+                          <label class="form-label" for="basic-file-upload">     تحميل المرفقات<span class="start-form">*</span></label>
+                          <div class="file-upload w-100">
+                            <span class="btn btn-success fileinput-button w-100">
+                                <span>Select Attachment</span>
+                                <input class="form-control" type="file" name="files[]" id="files" multiple  data-max-files="3" data-max-file-size="3MB"/>
+                            </span>
+                            <output id="Filelist"></output>
+                         </div>
+                         
+                        </div>
+                      
+                        <div>
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-primary">حفظ</button>
+                        </div>
+                       
+                       </form>
                   </div>
                  
                 </div>

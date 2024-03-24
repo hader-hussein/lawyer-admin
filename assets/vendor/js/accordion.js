@@ -156,8 +156,8 @@ function RenderThumbnail(e, readerEvt) {
     var li = document.createElement('li');
     ul.appendChild(li);
     li.innerHTML = ['<div class="img-wrap"> <span class="close">&times;</span>' +
-        '<img class="thumb" src="', e.target.result, '" title="', escape(readerEvt.name), '" data-id="',
-        readerEvt.name, '"/>' + '</div>'
+           '<div><img class="thumb" src="', e.target.result, '" title="', escape(readerEvt.name), '" data-id="',readerEvt.name, '"/></div>'+ '</div>',
+        li.innerHTML=['<div><label>اسم الملف</label><input class="w-input" type="text" name="type" value: score + " Star"/></div>']
     ].join('');
 
     var div = document.createElement('div');
@@ -189,4 +189,30 @@ function changeTitle() {
         title += `${$(this).find(".FileNameCaptionStyle").text()}\n`;
     });
     $("#files").attr("title", title);
+}
+/**** */
+function optionCheck() {
+    var i, len, optionVal, helpDiv,
+        selectOptions = document.getElementById("select-Lawyer-type");
+
+    // loop through the options in case there
+    // are multiple selected values
+    for (i = 0, len = selectOptions.options.length; i < len; i++) {
+
+        // get the selected option value
+        optionVal = selectOptions.options[i].value;
+
+        // find the corresponding help div
+        helpDiv = document.getElementById("help" + optionVal);
+
+        // move on if we didn't find one
+        if (!helpDiv) { continue; }
+
+        // set CSS classes to show/hide help div
+        if (selectOptions.options[i].selected) {
+            helpDiv.className = "helpText helpTextShow";
+        } else {
+            helpDiv.className = "helpText";
+        }
+    }
 }
