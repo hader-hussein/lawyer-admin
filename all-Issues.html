@@ -1473,13 +1473,13 @@
                       <form class="row mx-0">
                         <div class="col-12 col-lg-12 mb-3">
                           <label class="form-label" for="basic-file-upload">     تحميل المرفقات<span class="start-form">*</span></label>
-                          <div class="file-upload w-100">
-                            <span class="btn btn-success fileinput-button w-100">
+                          <div class="file-upload">
+                            <span class="btn btn-success fileinput-button">
                                 <span>Select Attachment</span>
-                                <input class="form-control" type="file" name="files[]" id="files" multiple  data-max-files="3" data-max-file-size="3MB"/>
+                                <input class="form-control files" type="file" name="files[]" id="files" multiple  data-max-files="3"/>
                             </span>
-                            <output id="Filelist"></output>
-                         </div>
+                            <output id="Filelist" class="Filelist"></output>
+                        </div>
                          
                         </div>
                       

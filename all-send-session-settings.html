@@ -14,7 +14,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Appeal</title>
+    <title>all-Appeal</title>
 
     <meta name="description" content="" />
 
@@ -44,7 +44,7 @@
     <link rel="stylesheet" href="./assets/vendor/libs/apex-charts/apex-charts.css" />
     <link rel="stylesheet" href="./assets/vendor/libs/select2/select2.css" />
     <link rel="stylesheet" href="./assets/vendor/libs/bootstrap-select/bootstrap-select.css" />
-    <link rel="stylesheet" href="./assets/vendor/libs/dropzone/dropzone.css" />
+
    
     <link rel="stylesheet" href="./assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
@@ -578,7 +578,7 @@
                             <div data-i18n="Issues"> القضايا</div>
                           </a>
                           <ul class="menu-sub">
-                            <li class="menu-item">
+                            <li class="menu-item ">
                             <a href="Issues.html" class="menu-link">
                               <div data-i18n="add-Issues"> اضافة/القضايا</div>
                             </a>
@@ -660,13 +660,13 @@
                             <div data-i18n="Sessions"> الجلسات  </div>
                           </a>
                           <ul class="menu-sub">
-                            <li class="menu-item active">
+                            <li class="menu-item">
                               <a href="Sessione-data.html" class="menu-link">
                                 <div data-i18n="Session data">  بيانات الجلسات</div>
                               </a>
                              
                             </li>
-                             <li class="menu-item">
+                             <li class="menu-item active">
                               <a href="Send-session-settings.html" class="menu-link">
                                 <div data-i18n="Send-session-settings">    ارسال ضبط الجلسات</div>
                               </a>
@@ -1173,28 +1173,16 @@
             <div class="container-xxl flex-grow-1 container-p-y">
               <div class="card comonent-hader-top">
                 <div class="card-body py-2 px-md-4 px-2 card-widget-separator">
-
-                  <strong class="py-md-3 px-md-3 text-title-hadeer text-tilte-b"><span class="text-muted fw-medium"> بيانات الجلسات</span>  </strong>
-
+                  <strong class="py-md-3 px-md-3 text-title-hadeer text-tilte-b"><span class="text-muted fw-medium">  عرض  ضبط الجلسات</span>  </strong>
                   <div class="table-responsive text-nowrap rounded mt-4">
                     <table class="table table-bordered table-hover rounded">
                       <thead class="table-light">
                         <tr class="fw-bold">
                           <th class="fw-bold">التسلسل</th>
-                          <th class="fw-bold">   الفرع</th>
-                          <th class="fw-bold"> رقم الملف</th>
-                          <th class="fw-bold">رقم القضية</th>
-                          <th class="fw-bold"> الحكم</th>
-                          <th class="fw-bold"> عنوان الجلسة</th>
-                          <th class="fw-bold"> تاريخ الجلسة</th>
-                          <th class="fw-bold">وقت الجلسه</th>
-                          <th class="fw-bold"> الدور رقم</th>
-                          <th class="fw-bold">  المكتب رقم</th>
-                        
-                          <th class="fw-bold">  تاريخ انتهاء المهمه</th>
-                          <th class="fw-bold">عمل مذكره</th>
-                          <th class="fw-bold">ضبط الجلسه </th>
-                          <th class="fw-bold">ملاحظات </th>
+                          <th class="fw-bold">  البريد الاكترونى</th>
+                          <th class="fw-bold"> الجلسه </th>
+                
+                          <th class="fw-bold"> ضبط الجلسه / محتوي الرساله  </th>
                           <th class="fw-bold">  المرفقات</th>
                         
                           <th class="fw-bold">  Action</th>
@@ -1205,24 +1193,16 @@
                           <td>
                            1
                           </td>
-                          <td> 123456</td>
+                          <td>ahmed@yahoo.com </td>
                     
-                          <td>  123456</td>
+                          <td>  </td>
                           <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
+                         
                           <td>
                             <a class="bg-warning text-bg-success p-1 d-flex align-items-center justify-content-center me-3 rounded cursor-pointer" data-bs-target="#Payments" data-bs-toggle="modal" title="المرفقات"><i class="fa-solid fa-paperclip fs-4"></i> </a>
 
                           </td>
+                          
                           <td class="d-flex">
                             <a class="bg-success text-bg-success p-1 d-flex align-items-center justify-content-center me-3 rounded cursor-pointer" data-bs-target="#edittruck" data-bs-toggle="modal" title="تعديل"><i class="ti ti-pencil  fs-4"></i> </a>
 
@@ -1236,199 +1216,146 @@
                       </tbody>
                     </table>
                   </div>
-                 
+                  
                  
                 </div>
               </div>
              
             </div>
-             <!--Attachments-->
-             <div class="modal fade " id="Payments" aria-labelledby="exampleModalToggleLabel" tabindex="-1" aria-modal="true" role="dialog">
-              <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content p-3 p-md-3">
-                  <div class="modal-header px-0">
-                    <h1 class="modal-title fs-3  fw-bold text-tilte-b">   المرفقات</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body px-0">
-                    <div class="table-responsive text-nowrap rounded pt-2">
-                      <table class="table table-bordered table-hover rounded">
-                        <thead class="table-light">
-                          <th>رقم الملف</th>
-                          <th>اسم المرفق</th>
-                          <th>عرض الملف</th>
-                          <th>نوع الملف</th>
-                          <th>حذف</th>
-                        </thead>
-                        <tbody>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td>
-                            <a class="bg-danger text-bg-danger p-1 d-flex align-items-center justify-content-center me-3 rounded" href="javascript:void(0);" title="حذف  " data-bs-target="#closeRoleModal"  data-bs-toggle="modal"><i class="ti ti-trash  fs-4"></i> </a>
-
-                          </td>
-                        </tbody>
-                      </table>
-                      </div>
-                      <form class="row mx-0">
-                        <div class="col-12 col-lg-12 mb-3">
-                          <label class="form-label" for="basic-file-upload">     تحميل المرفقات<span class="start-form">*</span></label>
-                          <div class="file-upload">
-                            <span class="btn btn-success fileinput-button">
-                                <span>Select Attachment</span>
-                                <input class="form-control files" type="file" name="files[]" id="files" multiple  data-max-files="3"/>
-                            </span>
-                            <output id="Filelist" class="Filelist"></output>
-                        </div>
-                         
-                        </div>
-                      
-                        <div>
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          <button type="submit" class="btn btn-primary">حفظ</button>
-                        </div>
-                       
-                       </form>
-                  </div>
-                 
+           <!--Attachments-->
+           <div class="modal fade " id="Payments" aria-labelledby="exampleModalToggleLabel" tabindex="-1" aria-modal="true" role="dialog">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content p-3 p-md-3">
+                <div class="modal-header px-0">
+                  <h1 class="modal-title fs-3  fw-bold text-tilte-b">   المرفقات</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-              </div>
-            </div>
-             <!-- edit Hardware Modal -->
-             <div class="modal fade " id="edittruck" aria-labelledby="exampleModalToggleLabel" tabindex="-1" aria-modal="true" role="dialog">
-              <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content p-3 p-md-3">
-                  <div class="modal-header px-0">
-                    <h1 class="modal-title fs-3 fw-bold text-tilte-b">     تعديل الجلسة</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body px-0">
-                    <form class="row component-form">
-                      <div class="col-12 col-lg-4 mb-3">
-                        <label for="select-branch-t" class="form-label"> اختيار الفرع <span class="start-form">*</span></label>
+                <div class="modal-body px-0">
+                  <div class="table-responsive text-nowrap rounded pt-2">
+                    <table class="table table-bordered table-hover rounded">
+                      <thead class="table-light">
+                        <th>رقم الملف</th>
+                        <th>اسم المرفق</th>
+                        <th>عرض الملف</th>
+                        <th>نوع الملف</th>
+                        <th>حذف</th>
+                      </thead>
+                      <tbody>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                          <a class="bg-danger text-bg-danger p-1 d-flex align-items-center justify-content-center me-3 rounded" href="javascript:void(0);" title="حذف  " data-bs-target="#closeRoleModal"  data-bs-toggle="modal"><i class="ti ti-trash  fs-4"></i> </a>
+
+                        </td>
+                      </tbody>
+                    </table>
+                    </div>
+                    <form class="row mx-0">
+                      <div class="col-12 col-lg-6 mb-3">
+                        <label class="form-label" for="basic-file-upload">     تحميل المرفقات<span class="start-form">*</span></label>
+                        <div class="file-upload w-100">
+                          <span class="btn btn-success fileinput-button w-100">
+                              <span>Select Attachment</span>
+                              <input class="form-control files" type="file" name="files[]" id="files" multiple  data-max-files="3"/>
+                          </span>
+                          <output id="Filelist" class="Filelist"></output>
+                      </div>
+                       
+                      </div>
+                      <div class="col-12 col-lg-6 mb-3">
+                        <label for="select-branch" class="form-label"> الحكم<span class="start-form">*</span></label>
                          
-                            <select id="select-branch-t" class="select2 form-select" data-allow-clear="true">
-                              <option value="AK">  اختيار الفرع</option>
-                              <option value="HI">mohamed</option>
-                              <option value="CA">hadeer</option>
-                              <option value="NV">ms</option>
-                              <option value="OR">hala</option>
+                            <select id="select-branch" class="select2 form-select" data-allow-clear="true">
+                              <option value="AK">  اختيار الحكم</option>
+                              <option value="HI">صوره التوكيل 1</option>
+                              <option value="CA">صورة التوكيل 2</option>
+                              <option value="NV">نسخة من العقد</option>
+                         
                           
                             </select>
 
                       </div>
-                        <div class="col-12 col-lg-4 mb-3">
-                          <label class="form-label" for="basic-name">  رقم الملف <span class="start-form">*</span></label>
-                          <input type="text" class="form-control" id="basic-name" placeholder="   رقم الملف ">
+                      <div>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">حفظ</button>
+                      </div>
+                     
+                     </form> 
+                </div>
+               
+              </div>
+            </div>
+          </div>
+              <!-- edit Hardware Modal -->
+              <div class="modal fade " id="edittruck" aria-labelledby="exampleModalToggleLabel" tabindex="-1" aria-modal="true" role="dialog">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                  <div class="modal-content p-3 p-md-3">
+                    <div class="modal-header px-0">
+                      <h1 class="modal-title fs-3 fw-bold text-tilte-b">     تعديل الجلسات</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body px-0">
+                      <form class="row component-form align-items-end">
+                        <div class="col-12 col-lg-6 mb-3">
+                          <label class="form-label" for="basic-file-No">  البريد  الاكترونى<span class="start-form">*</span></label>
+                          <input type="email" class="form-control" id="basic-file-No" placeholder="البريد  الاكترونى ">
                         </div>
-                        <div class="col-12 col-lg-4 mb-3">
-                          <label class="form-label" for="basic-ID-Number"> رقم القضية<span class="start-form">*</span></label>
-                          <input type="text" class="form-control" id="basic-ID-Number" placeholder=" رقم القضية ">
-                        </div>
-                        <div class="col-12 col-lg-4 mb-3">
-                          <label for="select-Lawyer-type" class="form-label"> الحكم   <span class="start-form">*</span></label>
+                       
+                        <div class="col-12 col-lg-6 mb-3">
+                          <label for="select-Lawyer-type" class="form-label"> اختر الجلسه    <span class="start-form">*</span></label>
                            
                               <select id="select-Lawyer-type" class="select2 form-select" data-allow-clear="true">
-                                <option value="AK">  بدون حكم</option>
-                                <option value="HI">حكم ابتدائى</option>
-                                <option value="CA">الاستئناف</option>
-                                <option value="NV">الالتماس لى اعادة النظر</option>
-                                <option value="OR"> نقض</option>
+                                <option value="AK">  اختيار نوع </option>
+                                <option value="HI">قضايا</option>
+                                <option value="CA">استشارة</option>
+                                <option value="NV">الاثنين</option>
+                                <option value="OR">تاسيس شركات</option>
                             
                               </select>
 
                         </div>
-                        <div class="col-12 col-lg-4 mb-3">
-                          <label class="form-label" for="basic-Mobile">   عنوان الجلسة<span class="start-form">*</span></label>
-                          <input type="text" class="form-control" id="basic-Mobile" placeholder=" عنوان الجلسة">
-                        </div>
-                        <div class="col-12 col-lg-4 mb-3">
-                          <label class="form-label" for="basic-file-No">    تاريخ الجلسة<span class="start-form">*</span></label>
-                          <input type="date" class="form-control" id="basic-file-No" >
-                        </div>
-                        <div class="col-12 col-lg-4 mb-3">
-                          <label class="form-label" for="basic-address">  وقت الجلسه <span class="start-form">*</span></label>
-                          <input type="time" class="form-control" id="basic-address">
-                        </div>
-     
-                        <div class="col-12 col-lg-4 mb-3">
-                          <label class="form-label" for="basic-rate">  الدور رقم<span class="start-form">*</span></label>
-                          <input type="text" class="form-control" id="basic-rate" placeholder="الدور رقم">
-                        </div>
-                        <div class="col-12 col-lg-4 mb-3">
-                          <label class="form-label" for="basic-number">   المكتب رقم<span class="start-form">*</span></label>
-                          <input type="text" class="form-control" id="basic-number" placeholder=" المكتب رقم">
-                        </div>
-                      
-                        <div class="col-12 col-lg-4 mb-3">
-                          <label class="form-label" for="basic-date-No">   تاريخ انتهاء المهمه<span class="start-form">*</span></label>
-                          <input type="date" class="form-control" id="basic-date-No" >
-                        </div>
-                        <div class="col-12 col-lg-4">
-                          <label class="form-label" for="basic-date-No">  عمل مذكره   <span class="start-form">*</span></label>
-                          <div class="d-flex">
-                            <div class="form-check mx-2">
-                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                              <label class="form-check-label" for="flexRadioDefault1">
-                               نعم
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                              <label class="form-check-label" for="flexRadioDefault2">
-                                لا
-                              </label>
-                            </div>
-                          </div>
-                          
-                        </div>
                         <div class="col-12 col-lg-12 mb-3">
-                          <label class="form-label" for="basic-last-session">    ضبط الجلسه<span class="start-form">*</span></label>
-                          <textarea type="text" class="form-control" id="basic-last-session" rows="2" placeholder=" ضبط الجلسه "></textarea>
+                          <label class="form-label" for="basic-last-date"> ضبط الجلسه / محتوي الرساله<span class="start-form">*</span></label>
+                          <textarea type="text" class="form-control" id="basic-last-date" rows="2" placeholder=" محتوي الرساله"></textarea>
                         </div>
+                          <div class="col-12 col-lg-12 mt-2">
+                            <button type="submit" class="btn btn-primary  waves-effect waves-light">تعديل</button>
+                           </div>
+                      </form>
                       
-                        <div class="col-12 col-lg-12 mb-3">
-                          <label class="form-label" for="basic-last-date">    ملاحظات<span class="start-form">*</span></label>
-                          <textarea type="text" class="form-control" id="basic-last-date" rows="2" placeholder=" ملاحظات"></textarea>
-                        </div>
-                      
-                      
-                        <div class="col-12 col-lg-12 mt-2">
-                          <button type="submit" class="btn btn-primary  waves-effect waves-light">تعديل</button>
-                         </div>
-                    </form>
-                    
-                  </div>
-                 
-                </div>
-              </div>
-            </div>
-            <!-- delet Modal -->
-            <div class="modal fade" id="closeRoleModal" tabindex="-1" aria-hidden="true">
-              <div class="modal-dialog modal-md modal-dialog-centered modal-add-new-role">
-                <div class="modal-content p-1 p-md-3">
-                  <button
-                    type="button"
-                    class="btn-close btn-pinned"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"></button>
-                  <div class="modal-body text-center">
-                      <h3 class="role-title mb-2 fs-5">
-                        هل انت متاكد من حذف العنصر؟
-                      </h3>
-                    
-                    <div class="col-11 col-lg-12 mb-3">
-                      <button type="submit" class="btn btn-primary  waves-effect waves-light">نعم</button>
-                      <button  type="submit" class="btn btn-label-secondary waves-effect mx-3"> لا</button>
                     </div>
-                  
-                
+                   
                   </div>
                 </div>
               </div>
-            </div>
+              <!-- delet Modal -->
+              <div class="modal fade" id="closeRoleModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-md modal-dialog-centered modal-add-new-role">
+                  <div class="modal-content p-1 p-md-3">
+                    <button
+                      type="button"
+                      class="btn-close btn-pinned"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"></button>
+                    <div class="modal-body text-center">
+                        <h3 class="role-title mb-2 fs-5">
+                          هل انت متاكد من حذف العنصر؟
+                        </h3>
+                      
+                      <div class="col-11 col-lg-12 mb-3">
+                        <button type="submit" class="btn btn-primary  waves-effect waves-light">نعم</button>
+                        <button  type="submit" class="btn btn-label-secondary waves-effect mx-3"> لا</button>
+                      </div>
+                    
+                  
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal -->
+          
             <!-- Footer -->
             <footer class="content-footer footer bg-footer-theme">
               <div class="container-xxl">
@@ -1519,8 +1446,7 @@
     <script src="./assets/vendor/libs/jquery-repeater/jquery-repeater.js"></script>
     <!-- Vendors JS -->
     <script src="./assets/vendor/libs/apex-charts/apexcharts.js"></script>
-    <script src="./assets/vendor/libs/dropzone/dropzone.js"></script>
-
+    
 
     
     <!-- Main JS -->
@@ -1537,7 +1463,6 @@
      <script src="./assets/vendor/js/accordion.js"></script>
      <script src="./assets/js/dashboards-crm.js"></script>
      <script src="./assets/js/forms-extras.js"></script>
-     <script src="./assets/js/forms-file-upload.js"></script>
 
   </body>
 </html>

@@ -1189,6 +1189,19 @@
                             <div class="accordion-body">
                               <div class="row component-form pt-4 justify-content-md-start justify-content-center align-items-start">
                                 <div class="col-12 col-lg-4 mb-3">
+                                  <label for="select-branch-t" class="form-label"> اختيار الفرع <span class="start-form">*</span></label>
+                                   
+                                      <select id="select-branch-t" class="select2 form-select" data-allow-clear="true">
+                                        <option value="AK">  اختيار الفرع</option>
+                                        <option value="HI">mohamed</option>
+                                        <option value="CA">hadeer</option>
+                                        <option value="NV">ms</option>
+                                        <option value="OR">hala</option>
+                                    
+                                      </select>
+  
+                                </div>
+                                <div class="col-12 col-lg-4 mb-3">
                                   <label class="form-label" for="basic-name">  رقم الملف <span class="start-form">*</span></label>
                                   <input type="text" class="form-control" id="basic-name" placeholder="   رقم الملف ">
                                 </div>
@@ -1230,19 +1243,7 @@
                                   <label class="form-label" for="basic-number">   المكتب رقم<span class="start-form">*</span></label>
                                   <input type="text" class="form-control" id="basic-number" placeholder=" المكتب رقم">
                                 </div>
-                                <div class="col-12 col-lg-4 mb-3">
-                                  <label for="select-branch-t" class="form-label"> اختيار الفرع <span class="start-form">*</span></label>
-                                   
-                                      <select id="select-branch-t" class="select2 form-select" data-allow-clear="true">
-                                        <option value="AK">  اختيار الفرع</option>
-                                        <option value="HI">mohamed</option>
-                                        <option value="CA">hadeer</option>
-                                        <option value="NV">ms</option>
-                                        <option value="OR">hala</option>
-                                    
-                                      </select>
-  
-                                </div>
+                             
                                 <div class="col-12 col-lg-4 mb-3">
                                   <label class="form-label" for="basic-date-No">   تاريخ انتهاء المهمه<span class="start-form">*</span></label>
                                   <input type="date" class="form-control" id="basic-date-No" >
@@ -1286,32 +1287,27 @@
                             </button>
                           </h2>
                           <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                              <div class="col-12  mb-3 pt-4">
+                            <div class="accordion-body row mx-0">
+                              <div class="col-12 col-lg-6   mb-3 pt-4">
                                 <label class="form-label" for="basic-file-upload">     تحميل المرفقات<span class="start-form">*</span></label>
                                   <div class="file-upload">
                                     <span class="btn btn-success fileinput-button">
                                         <span>Select Attachment</span>
-                                        <input class="form-control" type="file" name="files[]" id="files" multiple  data-max-files="3" data-max-file-size="3MB"/>
+                                        <input class="form-control files" type="file" name="files[]" id="files" multiple  data-max-files="3"/>
                                     </span>
-                                    <output id="Filelist"></output>
+                                    <output id="Filelist" class="Filelist"></output>
                                 </div>
                               </div>
-                              <div class="col-12  mb-3 pt-4">
+                              <div class="col-12 col-lg-6  mb-3 pt-4">
                                 <label class="form-label" for="basic-file-upload">    ضبط الجلسه<span class="start-form">*</span></label>
-
-                                <div action="/upload" class="dropzone needsclick" id="dropzone-multi">
-                                  <div class="dz-message needsclick">
-                                    Drop files here or click to upload
-                                    <span class="note needsclick"
-                                      >(This is just a demo dropzone. Selected files are
-                                      <span class="fw-medium">not</span> actually uploaded.)</span
-                                    >
-                                  </div>
-                                  <div class="fallback">
-                                    <input name="file" type="file" />
-                                  </div>
-                                </div>
+                                <div class="file-upload">
+                                  <span class="btn btn-success fileinput-button">
+                                      <span>Select Attachment</span>
+                                      <input class="form-control files" type="file" name="filese[]" id="filese" multiple  data-max-files="3"/>
+                                  </span>
+                                  <output id="Filelist" class="Filelist"></output>
+                              </div>
+                               
                               </div>
                             </div>
                           </div>

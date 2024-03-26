@@ -535,6 +535,13 @@ color: #dbdade !important;
 }
 
 /***/
+.imgList{
+  list-style: none;
+}
+.imgList li{
+  display: inline-block;
+  margin: 10px;
+}
 .file-upload .btn {
   display: inline-block;
   padding: 6px 12px;

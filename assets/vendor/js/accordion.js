@@ -3,15 +3,15 @@
 $('.accordion-button').on('keydown',function (e) {
  
  
-     $('.accordion-collapse').collapse("toggle")
+    $('.accordion-collapse').collapse("toggle")
+   
     
-     
-   })
+  })
 
 /*
 We want to preview images, so we need to register the Image Preview plugin
 */
-   //I added event handler for the file upload control to access the files properties.
+  //I added event handler for the file upload control to access the files properties.
 //I added event handler for the file upload control to access the files properties.
 document.addEventListener("DOMContentLoaded", init, false);
 
@@ -27,192 +27,209 @@ var filesCounterAlertStatus = false;
 //un ordered list to keep attachments thumbnails
 var ul = document.createElement('ul');
 ul.className = ("thumb-Images");
-ul.id = "imgList";
+ul.className= "imgList";
 
 function init() {
-    //add javascript handlers for the file upload event
-    document.querySelector('#files').addEventListener('change', handleFileSelect, false);
+   //add javascript handlers for the file upload event
+   document.querySelector('.files').addEventListener('change', handleFileSelect, false);
 }
 
 //the handler for file upload event
 function handleFileSelect(e) {
-    //to make sure the user select file/files
-    if (!e.target.files) return;
+   //to make sure the user select file/files
+   if (!e.target.files) return;
 
-    //To obtaine a File reference
-    var files = e.target.files;
+   //To obtaine a File reference
+   var files = e.target.files;
 
-    // Loop through the FileList and then to render image files as thumbnails.
-    for (var i = 0, f; f = files[i]; i++) {
+   // Loop through the FileList and then to render image files as thumbnails.
+   for (var i = 0, f; f = files[i]; i++) {
 
-        //instantiate a FileReader object to read its contents into memory
-        var fileReader = new FileReader();
+       //instantiate a FileReader object to read its contents into memory
+       var fileReader = new FileReader();
 
-        // Closure to capture the file information and apply validation.
-        fileReader.onload = (function(readerEvt) {
-            return function(e) {
+       // Closure to capture the file information and apply validation.
+       fileReader.onload = (function(readerEvt) {
+           return function(e) {
 
-                //Apply the validation rules for attachments upload
-                ApplyFileValidationRules(readerEvt)
+               //Apply the validation rules for attachments upload
+               ApplyFileValidationRules(readerEvt)
 
-                //Render attachments thumbnails.
-                RenderThumbnail(e, readerEvt);
+               //Render attachments thumbnails.
+               RenderThumbnail(e, readerEvt);
 
-                //Fill the array of attachment
-                FillAttachmentArray(e, readerEvt)
-            };
-        })(f);
+               //Fill the array of attachment
+               FillAttachmentArray(e, readerEvt)
+           };
+       })(f);
 
-       
-        fileReader.readAsDataURL(f);
-    }
-    document.getElementById('files').addEventListener('change', handleFileSelect, false);
+      
+       fileReader.readAsDataURL(f);
+   }
+   document.getElementsByClassName('files')[0].addEventListener('change', handleFileSelect, false);
 }
 
 //To remove attachment once user click on x button
 jQuery(function($) {
 
-    $('#Filelist').on('click', '.img-wrap .close', function() {
-        var id = $(this).closest('.img-wrap').find('img').data('id');
-        //to remove the deleted item from array
-        var elementPos = AttachmentArray.map(function(x) {
-            return x.FileName;
-        }).indexOf(id);
-        if (elementPos !== -1) {
-            AttachmentArray.splice(elementPos, 1);
-        }
+   $('.Filelist').on('click', '.img-wrap .close', function() {
+       var id = $(this).closest('.img-wrap').find('img').data('id');
+       //to remove the deleted item from array
+       var elementPos = AttachmentArray.map(function(x) {
+           return x.FileName;
+       }).indexOf(id);
+       if (elementPos !== -1) {
+           AttachmentArray.splice(elementPos, 1);
+       }
 
-        //to remove image tag
-        $(this).parent().find('img').not().remove();
+       //to remove image tag
+       $(this).parent().find('img').not().remove();
 
-        //to remove div tag that contain the image
-        $(this).parent().find('div').not().remove();
+       //to remove div tag that contain the image
+       $(this).parent().find('div').not().remove();
 
-        //to remove div tag that contain caption name
-        $(this).parent().parent().find('div').not().remove();
+       //to remove div tag that contain caption name
+       $(this).parent().parent().find('div').not().remove();
 
-        //to remove li tag
-        var lis = document.querySelectorAll('#imgList li');
-        for (var i = 0; li = lis[i]; i++) {
-            if (li.innerHTML == "") {
-                li.parentNode.removeChild(li);
-            }
-        }
-        changeTitle();
-    });
+       //to remove li tag
+       var lis = document.querySelectorAll('.imgList li');
+       for (var i = 0; li = lis[i]; i++) {
+           if (li.innerHTML == "") {
+               li.parentNode.removeChild(li);
+           }
+       }
+       changeTitle();
+   });
 });
 
 //Apply the validation rules for attachments upload
 function ApplyFileValidationRules(readerEvt) {
 
-    //To check file Size according to upload conditions
-    if (CheckFileSize(readerEvt.size) == false) {
-        alert("The file (" + readerEvt.name + ") does not match the upload conditions, The maximum file size for uploads should not exceed 300 KB");
-        e.preventDefault();
-        return;
-    }
+   //To check file Size according to upload conditions
+   if (CheckFileSize(readerEvt.size) == false) {
+       alert("The file (" + readerEvt.name + ") does not match the upload conditions, The maximum file size for uploads should not exceed 300 KB");
+       e.preventDefault();
+       return;
+   }
 
-    //To check files count according to upload conditions
-    if (CheckFilesCount(AttachmentArray) == false) {
-        if (!filesCounterAlertStatus) {
-            filesCounterAlertStatus = true;
-            alert("You have added more than 10 files. According to upload conditions you can upload 10 files maximum");
-        }
-        e.preventDefault();
-        return;
-    }
+   //To check files count according to upload conditions
+   if (CheckFilesCount(AttachmentArray) == false) {
+       if (!filesCounterAlertStatus) {
+           filesCounterAlertStatus = true;
+           alert("You have added more than 10 files. According to upload conditions you can upload 10 files maximum");
+       }
+       e.preventDefault();
+       return;
+   }
 }
 
 //To check file Size according to upload conditions
 function CheckFileSize(fileSize) {
-    if (fileSize < 500000) {
-        return true;
-    } else {
-        return false;
-    }
-    return true;
+   if (fileSize < 500000) {
+       return true;
+   } else {
+       return false;
+   }
+   return true;
 }
 
 //To check files count according to upload conditions
 function CheckFilesCount(AttachmentArray) {
-    //Since AttachmentArray.length return the next available index in the array, 
-    //I have used the loop to get the real length
-    var len = 0;
-    for (var i = 0; i < AttachmentArray.length; i++) {
-        if (AttachmentArray[i] !== undefined) {
-            len++;
-        }
-    }
-    //To check the length does not exceed 10 files maximum
-    if (len > 9) {
-        return false;
-    } else {
-        return true;
-    }
+   //Since AttachmentArray.length return the next available index in the array, 
+   //I have used the loop to get the real length
+   var len = 0;
+   for (var i = 0; i < AttachmentArray.length; i++) {
+       if (AttachmentArray[i] !== undefined) {
+           len++;
+       }
+   }
+   //To check the length does not exceed 10 files maximum
+   if (len > 9) {
+       return false;
+   } else {
+       return true;
+   }
 }
 
 //Render attachments thumbnails.
 function RenderThumbnail(e, readerEvt) {
-    var li = document.createElement('li');
-    ul.appendChild(li);
-    li.innerHTML = ['<div class="img-wrap"> <span class="close">&times;</span>' +
-           '<div><img class="thumb" src="', e.target.result, '" title="', escape(readerEvt.name), '" data-id="',readerEvt.name, '"/></div>'+ '</div>',
-        li.innerHTML=['<div><label>اسم الملف</label><input class="w-input" type="text" name="type" value: score + " Star"/></div>']
-    ].join('');
+   var li = document.createElement('li');
+   ul.appendChild(li);
+   li.innerHTML = ['<div class="img-wrap"> <span class="close">&times;</span>' +
+          '<div><img class="thumb" src="', e.target.result, '" title="', escape(readerEvt.name), '" data-id="',readerEvt.name, '"/></div>'+ '</div>',
+       li.innerHTML=['<div><label>اسم الملف</label><input class="w-input" type="text" name="type" value: score + " Star"/></div>']
+   ].join('');
 
-    var div = document.createElement('div');
-    div.className = "FileNameCaptionStyle";
-    li.appendChild(div);
-    div.innerHTML = [readerEvt.name].join('');
-    document.getElementById('Filelist').insertBefore(ul, null);
-    changeTitle();
+   var div = document.createElement('div');
+   div.className = "FileNameCaptionStyle";
+   li.appendChild(div);
+   div.innerHTML = [readerEvt.name].join('');
+   document.getElementsByClassName('Filelist')[0].insertBefore(ul, null);
+   changeTitle();
 }
 
 //Fill the array of attachment
 function FillAttachmentArray(e, readerEvt) {
-    AttachmentArray[arrCounter] = {
-        AttachmentType: 1,
-        ObjectType: 1,
-        FileName: readerEvt.name,
-        FileDescription: "Attachment",
-        NoteText: "",
-        MimeType: readerEvt.type,
-        Content: e.target.result.split("base64,")[1],
-        FileSizeInBytes: readerEvt.size,
-    };
-    arrCounter = arrCounter + 1;
+   AttachmentArray[arrCounter] = {
+       AttachmentType: 1,
+       ObjectType: 1,
+       FileName: readerEvt.name,
+       FileDescription: "Attachment",
+       NoteText: "",
+       MimeType: readerEvt.type,
+       Content: e.target.result.split("base64,")[1],
+       FileSizeInBytes: readerEvt.size,
+   };
+   arrCounter = arrCounter + 1;
 }
 
 function changeTitle() {
-    var title = "";
-    $("#imgList>li").each(function() {
-        title += `${$(this).find(".FileNameCaptionStyle").text()}\n`;
-    });
-    $("#files").attr("title", title);
+   var title = "";
+   $(".imgList>li").each(function() {
+       title += `${$(this).find(".FileNameCaptionStyle").text()}\n`;
+   });
+   $(".files").attr("title", title);
 }
 /**** */
 function optionCheck() {
-    var i, len, optionVal, helpDiv,
-        selectOptions = document.getElementById("select-Lawyer-type");
+   var i, len, optionVal, helpDiv,
+       selectOptions = document.getElementById("select-Lawyer-type");
 
-    // loop through the options in case there
-    // are multiple selected values
-    for (i = 0, len = selectOptions.options.length; i < len; i++) {
+   // loop through the options in case there
+   // are multiple selected values
+   for (i = 0, len = selectOptions.options.length; i < len; i++) {
 
-        // get the selected option value
-        optionVal = selectOptions.options[i].value;
+       // get the selected option value
+       optionVal = selectOptions.options[i].value;
 
-        // find the corresponding help div
-        helpDiv = document.getElementById("help" + optionVal);
+       // find the corresponding help div
+       helpDiv = document.getElementsByClassName("help" + optionVal);
 
-        // move on if we didn't find one
-        if (!helpDiv) { continue; }
+       // move on if we didn't find one
+       if (!helpDiv) { continue; }
 
-        // set CSS classes to show/hide help div
-        if (selectOptions.options[i].selected) {
-            helpDiv.className = "helpText helpTextShow";
-        } else {
-            helpDiv.className = "helpText";
-        }
-    }
+       // set CSS classes to show/hide help div
+       if (selectOptions.options[i].selected) {
+           helpDiv.className = "helpText helpTextShow";
+       } else {
+           helpDiv.className = "helpText";
+       }
+   }
 }
+/************************ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
