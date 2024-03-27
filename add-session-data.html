@@ -642,10 +642,15 @@
                           </a>
                           <ul class="menu-sub">
                             <li class="menu-item">
-                            <a href="Implementation-issues.html" class="menu-link">
-                              <div data-i18n="Implementation-issues"> قضايا التنفيذ</div>
+                            <a href="Implementation-issues-add.html" class="menu-link">
+                              <div data-i18n="Implementation-issues"> اضافة قضايا التنفيذ</div>
                             </a>
                             </li>
+                            <li class="menu-item">
+                              <a href="all-Implementation-issues.html" class="menu-link">
+                                <div data-i18n="view Implementation-issues"> عرض قضايا التنفيذ</div>
+                              </a>
+                              </li>
                              <li class="menu-item">
                               <a href="Agenda-implementation-issues.html" class="menu-link">
                                 <div data-i18n="Agenda-implementation-issues"> أجندة مواعيد قضايا التنفيذ</div>
@@ -661,15 +666,39 @@
                           </a>
                           <ul class="menu-sub">
                             <li class="menu-item active">
-                              <a href="Sessione-data.html" class="menu-link">
+                              <a href="javascript:void(0)" class="menu-link menu-toggle">
                                 <div data-i18n="Session data">  بيانات الجلسات</div>
                               </a>
-                             
+                              <ul class="menu-sub">
+                                <li class="menu-item active">
+                                  <a href="add-session-data.html" class="menu-link">
+                                    <div data-i18n="add Session data">     اضافة الجلسات</div>
+                                  </a>
+                                </li>
+                                <li class="menu-item">
+                                  <a href="Session-data.html" class="menu-link">
+                                    <div data-i18n="view Session-data">     عرض الجلسات</div>
+                                  </a>
+                                </li>
+                              </ul>
                             </li>
                              <li class="menu-item">
-                              <a href="Send-session-settings.html" class="menu-link">
-                                <div data-i18n="Send-session-settings">    ارسال ضبط الجلسات</div>
-                              </a>
+                                <a href="javascript:void(0)" class="menu-link menu-toggle">
+                                  <div data-i18n="Send-session-settings">    ارسال ضبط الجلسات</div>
+                                </a>
+                                <ul class="menu-sub">
+                                    <li class="menu-item">
+                                      <a href="add-session-settings.html" class="menu-link">
+                                        <div data-i18n="add-session-settings">     اضافة بيانات</div>
+                                      </a>
+                                    </li>
+                                    <li class="menu-item">
+                                      <a href="all-send-session-settings.html" class="menu-link">
+                                        <div data-i18n="all-send-session-settings">     عرض بيانات</div>
+                                      </a>
+                                    </li>
+                                 
+                                </ul>
                               </li>
                               <li class="menu-item">
                                 <a href="Agenda-session-dates.html" class="menu-link">
@@ -1187,7 +1216,7 @@
                          
                           <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                              <div class="row component-form pt-4 justify-content-md-start justify-content-center align-items-start">
+                              <div class="row component-form pt-4 justify-content-md-start justify-content-center align-items-end">
                                 <div class="col-12 col-lg-4 mb-3">
                                   <label for="select-branch-t" class="form-label"> اختيار الفرع <span class="start-form">*</span></label>
                                    
@@ -1264,7 +1293,12 @@
                                       </label>
                                     </div>
                                   </div>
-                                  
+                                 
+                                </div>
+                                <div class="col-12 col-lg-4 mb-3">
+                                  <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    اضافه مرفقات
+                                  </button>
                                 </div>
                                 <div class="col-12 col-lg-12 mb-3">
                                   <label class="form-label" for="basic-last-session">    ضبط الجلسه<span class="start-form">*</span></label>
@@ -1280,38 +1314,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="accordion-item">
-                          <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                              المرفقات
-                            </button>
-                          </h2>
-                          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body row mx-0">
-                              <div class="col-12 col-lg-6   mb-3 pt-4">
-                                <label class="form-label" for="basic-file-upload">     تحميل المرفقات<span class="start-form">*</span></label>
-                                  <div class="file-upload">
-                                    <span class="btn btn-success fileinput-button">
-                                        <span>Select Attachment</span>
-                                        <input class="form-control files" type="file" name="files[]" id="files" multiple  data-max-files="3"/>
-                                    </span>
-                                    <output id="Filelist" class="Filelist"></output>
-                                </div>
-                              </div>
-                              <div class="col-12 col-lg-6  mb-3 pt-4">
-                                <label class="form-label" for="basic-file-upload">    ضبط الجلسه<span class="start-form">*</span></label>
-                                <div class="file-upload">
-                                  <span class="btn btn-success fileinput-button">
-                                      <span>Select Attachment</span>
-                                      <input class="form-control files" type="file" name="filese[]" id="filese" multiple  data-max-files="3"/>
-                                  </span>
-                                  <output id="Filelist" class="Filelist"></output>
-                              </div>
-                               
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                        
                         <div class="col-12 col-lg-8 mt-2">
                           <button type="submit" class="btn btn-primary  waves-effect waves-light">حفظ</button>
                           <a href="Session-data.html" class="btn btn-label-secondary waves-effect mx-md-3 mx-1">مشاهدة الكل</a>
@@ -1323,7 +1326,55 @@
               </div>
              
             </div>
-           
+           <!-- Modal -->
+           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-3 fw-bold text-tilte-b" id="exampleModalLabel">اضافه مرفقات</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                      <form class="form-repeater pt-2">
+                          <div data-repeater-list="group-a">
+                              <div data-repeater-item class="col-lg-12">
+                                <div class="row mx-0">
+                                  <div class="mb-3 col-12 col-lg-5">
+                                      <label class="form-label" for="inputFile01">اضافه ملف <span class="start-form">*</span></label>
+                                      <input type="file" class="form-control" id="inputFile01">
+                                   
+                                  </div>
+                                  <div class="mb-3 col-lg-5 col-12">
+                                    <label class="form-label" for="form-repeater-name">   الاسم<span class="start-form">*</span></label>
+                                    <input type="text" id="form-repeater-name" class="form-control" placeholder="اسم الملف" />
+                                  </div>
+                                  <div class="mb-3 col-lg-2  col-12 d-flex align-items-center mb-0">
+                                    <button class="btn btn-label-danger mt-4" data-repeater-delete>
+                                      <i class="ti ti-x ti-xs me-1"></i>
+                                      <span class="align-middle">Delete</span>
+                                    </button>
+                                  </div>
+                                </div>
+                                <hr />
+
+                              </div>
+                              <div class="mb-3">
+                                <button class="btn btn-primary" data-repeater-create type="button">
+                                  <i class="ti ti-plus me-1"></i>
+                                  <span class="align-middle">Add New</span>
+                                </button>
+                              </div>
+                          </div>
+                          <button type="submit" class="btn btn-primary">حفظ</button>
+                          <button type="button" class="btn btn-label-secondary waves-effect" data-bs-dismiss="modal">غلق</button>
+
+                      </form>
+                
+                </div>
+                
+              </div>
+            </div>
+          </div>
             <!-- Footer -->
             <footer class="content-footer footer bg-footer-theme">
               <div class="container-xxl">
