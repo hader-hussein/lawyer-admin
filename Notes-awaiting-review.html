@@ -1214,7 +1214,7 @@
                           <th class="fw-bold"> الإجراء المطلوب</th>
                           <th class="fw-bold">  المرفقات</th>
                           <th class="fw-bold">   مشاهده</th>
-                        
+                          <th class="fw-bold">   ACTION</th>
                         </tr>
                       </thead>
                       <tbody class="table-border-bottom-0">
@@ -1228,12 +1228,20 @@
                           <td></td>
                           <td></td>
                           <td>
-                            <a class="bg-warning text-bg-success p-1 d-flex align-items-center justify-content-center me-3 rounded cursor-pointer" data-bs-target="#Payments" data-bs-toggle="modal" title="المرفقات"><i class="fa-solid fa-paperclip fs-4"></i> </a>
+                            <a class="bg-warning text-bg-success p-1 d-flex align-items-center justify-content-center me-3 rounded cursor-pointer" data-bs-target="#saved-notes" data-bs-toggle="modal" title="المرفقات"><i class="fa-solid fa-paperclip fs-4"></i> </a>
 
                           </td>
                        
                           <td>
 
+                          </td>
+                        
+                          <td class="d-flex">
+                            <a class="bg-success text-bg-success p-1 d-flex align-items-center justify-content-center me-3 rounded cursor-pointer" data-bs-target="#edit-modeil-saved" data-bs-toggle="modal" title="تعديل"><i class="ti ti-pencil  fs-4"></i> </a>
+
+                            <a class="bg-danger text-bg-danger p-1 d-flex align-items-center justify-content-center me-3 rounded" href="javascript:void(0);" title="حذف  " data-bs-target="#closeRoleModal" data-bs-toggle="modal"><i class="ti ti-trash  fs-4"></i> </a>
+
+                          
                           </td>
                          
                         </tr>
@@ -1249,7 +1257,7 @@
              
             </div>
            <!--Attachments-->
-           <div class="modal fade " id="Payments" aria-labelledby="exampleModalToggleLabel" tabindex="-1" aria-modal="true" role="dialog">
+           <div class="modal fade " id="saved-notes" aria-labelledby="exampleModalToggleLabel" tabindex="-1" aria-modal="true" role="dialog">
             <div class="modal-dialog modal-lg modal-dialog-centered">
               <div class="modal-content p-3 p-md-3">
                 <div class="modal-header px-0">
@@ -1283,7 +1291,88 @@
               </div>
             </div>
           </div>
-              
+            <!-- edit Hardware Modal -->
+            <div class="modal fade " id="edit-modeil-saved" aria-labelledby="exampleModalToggleLabel" tabindex="-1" aria-modal="true" role="dialog">
+              <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content p-3 p-md-3">
+                  <div class="modal-header px-0">
+                    <h1 class="modal-title fs-3 fw-bold text-tilte-b">     تعديل بيانات المذكرات</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body px-0">
+                    <form class="row component-form">
+                       <div class="col-12 col-lg-4 mb-3">
+                                    <label for="select-branch" class="form-label"> اختيار الفرع <span class="start-form">*</span></label>
+                                     
+                                        <select id="select-branch" class="select2 form-select" data-allow-clear="true">
+                                          <option value="AK">  اختيار الفرع</option>
+                                          <option value="HI">mohamed</option>
+                                          <option value="CA">hadeer</option>
+                                          <option value="NV">ms</option>
+                                          <option value="OR">hala</option>
+                                      
+                                        </select>
+    
+                        </div>
+                      
+                        <div class="col-12 col-lg-4 mb-3">
+                          <label class="form-label" for="basic-name">  رقم الملف <span class="start-form">*</span></label>
+                          <input type="text" class="form-control" id="basic-name" placeholder="   رقم الملف ">
+                        </div>
+                        <div class="col-12 col-lg-4 mb-3">
+                          <label class="form-label" for="basic-ID-Number"> رقم القضية<span class="start-form">*</span></label>
+                          <input type="text" class="form-control" id="basic-ID-Number" placeholder=" رقم القضية ">
+                        </div>
+  
+                        <div class="col-12 col-lg-4 mb-3">
+                          <label class="form-label" for="basic-file-No"> تاريخ انتهاء المهمه    <span class="start-form">*</span></label>
+                          <input type="date" class="form-control" id="basic-file-No">
+                        </div>
+                      
+                        <div class="col-12 col-lg-8 mb-3">
+                          <label class="form-label" for="basic-title">  عنوان المذكره  <span class="start-form">*</span></label>
+                          <textarea type="text" class="form-control" id="basic-title" rows="1" placeholder="  عنوان المذكره "></textarea>
+                        </div>
+  
+                        <div class="col-12 col-lg-12 mb-3">
+                          <label class="form-label" for="basic-last-date">    الإجراء المطلوب<span class="start-form">*</span></label>
+                          <textarea type="text" class="form-control" id="basic-last-date" rows="2" placeholder=" الإجراء المطلوب"></textarea>
+                        </div>
+                      
+                        <div class="col-12 col-lg-12 mt-2">
+                          <button type="submit" class="btn btn-primary  waves-effect waves-light">تعديل</button>
+                         </div>
+                    </form>
+                    
+                  </div>
+                 
+                </div>
+              </div>
+            </div>   
+             <!-- delet Modal -->
+             <div class="modal fade" id="closeRoleModal" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog modal-md modal-dialog-centered modal-add-new-role">
+                <div class="modal-content p-1 p-md-3">
+                  <button
+                    type="button"
+                    class="btn-close btn-pinned"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+                  <div class="modal-body text-center">
+                      <h3 class="role-title mb-2 fs-5">
+                        هل انت متاكد من حذف العنصر؟
+                      </h3>
+                    
+                    <div class="col-11 col-lg-12 mb-3">
+                      <button type="submit" class="btn btn-primary  waves-effect waves-light">نعم</button>
+                      <button  type="submit" class="btn btn-label-secondary waves-effect mx-3"> لا</button>
+                    </div>
+                  
+                
+                  </div>
+                </div>
+              </div>
+            </div>   
             <!-- Footer -->
             <footer class="content-footer footer bg-footer-theme">
               <div class="container-xxl">
