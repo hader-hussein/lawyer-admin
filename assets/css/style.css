@@ -559,3 +559,6 @@ color: #dbdade !important;
   visibility: visible;
   display: block;
 }​
+.bs-stepper .step.active .bs-stepper-circle {
+  background-color: rgb(var(--theme-color))!important;
+}
