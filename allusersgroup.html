@@ -1,0 +1,1826 @@
+<!DOCTYPE html>
+
+<html
+  lang="en"
+  class="light-style layout-menu-fixed layout-compact"
+  dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="./assets/"
+  data-template="horizontal-menu-template">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>Roles - Apps</title>
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicon/logo.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&ampdisplay=swap"
+      rel="stylesheet" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="./assets/vendor/fonts/fontawesome.css" />
+    <link rel="stylesheet" href="./assets/vendor/fonts/tabler-icons.css" />
+    <link rel="stylesheet" href="./assets/vendor/fonts/flag-icons.css" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="./assets/vendor/css/rtl/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="./assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="./assets/css/demo.css" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="./assets/vendor/libs/node-waves/node-waves.css" />
+    <link rel="stylesheet" href="./assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="./assets/vendor/libs/typeahead-js/typeahead.css" />
+    <link rel="stylesheet" href="./assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css" />
+    <link rel="stylesheet" href="./assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css" />
+    <link rel="stylesheet" href="./assets/vendor/libs/@form-validation/umd/styles/index.min.css" />
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- Helpers -->
+    <script src="./assets/vendor/js/helpers.js"></script>
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
+    <script src="./assets/vendor/js/template-customizer.js"></script>
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="./assets/js/config.js"></script>
+  </head>
+
+  <body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-navbar-full layout-horizontal layout-without-menu">
+      <div class="layout-container">
+        <!-- Navbar -->
+
+        <nav class="layout-navbar navbar navbar-expand-xl align-items-center bg-navbar-theme" id="layout-navbar">
+          <div class="container-xxl">
+            <div class="navbar-brand app-brand demo d-none d-xl-flex  py-0 me-4">
+              <a href="index.html" class="app-brand-link gap-2">
+                <span class="app-brand-logo demo">
+                  <img src="./assets/img/favicon/logo.png"width="150" height="50"  alt="logo-brand">
+            
+                </span>
+              </a>
+
+              <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-xl-none">
+                <i class="ti ti-x ti-sm align-middle"></i>
+              </a>
+              
+            </div>
+
+            <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+              <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                <i class="ti ti-menu-2 ti-sm"></i>
+              </a>
+            </div>
+            
+           
+            <div class="navbar-nav-right d-flex align-items-center flex-wrap" id="navbar-collapse">
+              <ul class="navbar-nav flex-row align-items-center ms-auto">
+                <!----->
+              
+            <!---->
+                <!-- Language -->
+                <li class="nav-item dropdown-language dropdown me-2 me-xl-0">
+                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                    <i class="ti ti-language rounded-circle ti-md"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a class="dropdown-item" href="javascript:void(0);" data-language="en">
+                        <span class="align-middle">English</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="javascript:void(0);" data-language="ar">
+                        <span class="align-middle">Arabic</span>
+                      </a>
+                    </li>
+                  
+                   
+                  </ul>
+                </li>
+                <!--/ Language -->
+
+                <!-- Search -->
+                <li class="nav-item navbar-search-wrapper me-2 me-xl-0">
+                  <a class="nav-link search-toggler" href="javascript:void(0);">
+                    <i class="ti ti-search ti-md"></i>
+                  </a>
+                </li>
+                <!-- /Search -->
+
+                <!-- Style Switcher -->
+                <li class="nav-item dropdown-style-switcher dropdown me-2 me-xl-0">
+                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                    <i class="ti ti-md"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-styles">
+                    <li>
+                      <a class="dropdown-item" href="javascript:void(0);" data-theme="light">
+                        <span class="align-middle"><i class="ti ti-sun me-2"></i>Light</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="javascript:void(0);" data-theme="dark">
+                        <span class="align-middle"><i class="ti ti-moon me-2"></i>Dark</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="javascript:void(0);" data-theme="system">
+                        <span class="align-middle"><i class="ti ti-device-desktop me-2"></i>System</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- / Style Switcher-->
+
+                <!-- Quick links  -->
+                <li class="nav-item dropdown-shortcuts navbar-dropdown dropdown me-2 me-xl-0">
+                  <a
+                    class="nav-link dropdown-toggle hide-arrow"
+                    href="javascript:void(0);"
+                    data-bs-toggle="dropdown"
+                    data-bs-auto-close="outside"
+                    aria-expanded="false">
+                    <i class="ti ti-layout-grid-add ti-md"></i>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-end py-0">
+                    <div class="dropdown-menu-header border-bottom">
+                      <div class="dropdown-header d-flex align-items-center py-3">
+                        <h5 class="text-body mb-0 me-auto">Shortcuts</h5>
+                        <a
+                          href="javascript:void(0)"
+                          class="dropdown-shortcuts-add text-body"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Add shortcuts"
+                          ><i class="ti ti-sm ti-apps"></i
+                        ></a>
+                      </div>
+                    </div>
+                    <div class="dropdown-shortcuts-list scrollable-container">
+                      <div class="row row-bordered overflow-visible g-0">
+                        <div class="dropdown-shortcuts-item col">
+                          <span class="dropdown-shortcuts-icon rounded-circle mb-2">
+                            <i class="ti ti-calendar fs-4"></i>
+                          </span>
+                          <a href="app-calendar.html" class="stretched-link">Calendar</a>
+                          <small class="text-muted mb-0">Appointments</small>
+                        </div>
+                        <div class="dropdown-shortcuts-item col">
+                          <span class="dropdown-shortcuts-icon rounded-circle mb-2">
+                            <i class="ti ti-file-invoice fs-4"></i>
+                          </span>
+                          <a href="app-invoice-list.html" class="stretched-link">Invoice App</a>
+                          <small class="text-muted mb-0">Manage Accounts</small>
+                        </div>
+                      </div>
+                      <div class="row row-bordered overflow-visible g-0">
+                        <div class="dropdown-shortcuts-item col">
+                          <span class="dropdown-shortcuts-icon rounded-circle mb-2">
+                            <i class="ti ti-users fs-4"></i>
+                          </span>
+                          <a href="app-user-list.html" class="stretched-link">User App</a>
+                          <small class="text-muted mb-0">Manage Users</small>
+                        </div>
+                        <div class="dropdown-shortcuts-item col">
+                          <span class="dropdown-shortcuts-icon rounded-circle mb-2">
+                            <i class="ti ti-lock fs-4"></i>
+                          </span>
+                          <a href="app-access-roles.html" class="stretched-link">Role Management</a>
+                          <small class="text-muted mb-0">Permission</small>
+                        </div>
+                      </div>
+                      <div class="row row-bordered overflow-visible g-0">
+                        <div class="dropdown-shortcuts-item col">
+                          <span class="dropdown-shortcuts-icon rounded-circle mb-2">
+                            <i class="ti ti-chart-bar fs-4"></i>
+                          </span>
+                          <a href="index.html" class="stretched-link">Dashboard</a>
+                          <small class="text-muted mb-0">User Profile</small>
+                        </div>
+                        <div class="dropdown-shortcuts-item col">
+                          <span class="dropdown-shortcuts-icon rounded-circle mb-2">
+                            <i class="ti ti-settings fs-4"></i>
+                          </span>
+                          <a href="pages-account-settings-account.html" class="stretched-link">Setting</a>
+                          <small class="text-muted mb-0">Account Settings</small>
+                        </div>
+                      </div>
+                      <div class="row row-bordered overflow-visible g-0">
+                        <div class="dropdown-shortcuts-item col">
+                          <span class="dropdown-shortcuts-icon rounded-circle mb-2">
+                            <i class="ti ti-help fs-4"></i>
+                          </span>
+                          <a href="pages-faq.html" class="stretched-link">FAQs</a>
+                          <small class="text-muted mb-0">FAQs & Articles</small>
+                        </div>
+                        <div class="dropdown-shortcuts-item col">
+                          <span class="dropdown-shortcuts-icon rounded-circle mb-2">
+                            <i class="ti ti-square fs-4"></i>
+                          </span>
+                          <a href="modal-examples.html" class="stretched-link">Modals</a>
+                          <small class="text-muted mb-0">Useful Popups</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <!-- Quick links -->
+
+                <!-- Notification -->
+                <li class="nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-1">
+                  <a
+                    class="nav-link dropdown-toggle hide-arrow"
+                    href="javascript:void(0);"
+                    data-bs-toggle="dropdown"
+                    data-bs-auto-close="outside"
+                    aria-expanded="false">
+                    <i class="ti ti-bell ti-md"></i>
+                    <span class="badge bg-danger rounded-pill badge-notifications text-bg-danger">5</span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end py-0">
+                    <li class="dropdown-menu-header border-bottom">
+                      <div class="dropdown-header d-flex align-items-center py-3">
+                        <h5 class="text-body mb-0 me-auto">Notification</h5>
+                        <a
+                          href="javascript:void(0)"
+                          class="dropdown-notifications-all text-body"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Mark all as read"
+                          ><i class="ti ti-mail-opened fs-4"></i
+                        ></a>
+                      </div>
+                    </li>
+                    <li class="dropdown-notifications-list scrollable-container">
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item list-group-item-action dropdown-notifications-item">
+                          <div class="d-flex">
+                            <div class="flex-shrink-0 me-3">
+                              <div class="avatar">
+                                <img src="./assets/img/avatars/1.png" alt class="h-auto rounded-circle" />
+                              </div>
+                            </div>
+                            <div class="flex-grow-1">
+                              <h6 class="mb-1">Congratulation Lettie 🎉</h6>
+                              <p class="mb-0">Won the monthly best seller gold badge</p>
+                              <small class="text-muted">1h ago</small>
+                            </div>
+                            <div class="flex-shrink-0 dropdown-notifications-actions">
+                              <a href="javascript:void(0)" class="dropdown-notifications-read"
+                                ><span class="badge badge-dot"></span
+                              ></a>
+                              <a href="javascript:void(0)" class="dropdown-notifications-archive"
+                                ><span class="ti ti-x"></span
+                              ></a>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="list-group-item list-group-item-action dropdown-notifications-item">
+                          <div class="d-flex">
+                            <div class="flex-shrink-0 me-3">
+                              <div class="avatar">
+                                <span class="avatar-initial rounded-circle bg-label-danger">CF</span>
+                              </div>
+                            </div>
+                            <div class="flex-grow-1">
+                              <h6 class="mb-1">Charles Franklin</h6>
+                              <p class="mb-0">Accepted your connection</p>
+                              <small class="text-muted">12hr ago</small>
+                            </div>
+                            <div class="flex-shrink-0 dropdown-notifications-actions">
+                              <a href="javascript:void(0)" class="dropdown-notifications-read"
+                                ><span class="badge badge-dot"></span
+                              ></a>
+                              <a href="javascript:void(0)" class="dropdown-notifications-archive"
+                                ><span class="ti ti-x"></span
+                              ></a>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                          <div class="d-flex">
+                            <div class="flex-shrink-0 me-3">
+                              <div class="avatar">
+                                <img src="./assets/img/avatars/2.png" alt class="h-auto rounded-circle" />
+                              </div>
+                            </div>
+                            <div class="flex-grow-1">
+                              <h6 class="mb-1">New Message ✉️</h6>
+                              <p class="mb-0">You have new message from Natalie</p>
+                              <small class="text-muted">1h ago</small>
+                            </div>
+                            <div class="flex-shrink-0 dropdown-notifications-actions">
+                              <a href="javascript:void(0)" class="dropdown-notifications-read"
+                                ><span class="badge badge-dot"></span
+                              ></a>
+                              <a href="javascript:void(0)" class="dropdown-notifications-archive"
+                                ><span class="ti ti-x"></span
+                              ></a>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="list-group-item list-group-item-action dropdown-notifications-item">
+                          <div class="d-flex">
+                            <div class="flex-shrink-0 me-3">
+                              <div class="avatar">
+                                <span class="avatar-initial rounded-circle bg-label-success"
+                                  ><i class="ti ti-shopping-cart"></i
+                                ></span>
+                              </div>
+                            </div>
+                            <div class="flex-grow-1">
+                              <h6 class="mb-1">Whoo! You have new order 🛒</h6>
+                              <p class="mb-0">ACME Inc. made new order $1,154</p>
+                              <small class="text-muted">1 day ago</small>
+                            </div>
+                            <div class="flex-shrink-0 dropdown-notifications-actions">
+                              <a href="javascript:void(0)" class="dropdown-notifications-read"
+                                ><span class="badge badge-dot"></span
+                              ></a>
+                              <a href="javascript:void(0)" class="dropdown-notifications-archive"
+                                ><span class="ti ti-x"></span
+                              ></a>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                          <div class="d-flex">
+                            <div class="flex-shrink-0 me-3">
+                              <div class="avatar">
+                                <img src="./assets/img/avatars/9.png" alt class="h-auto rounded-circle" />
+                              </div>
+                            </div>
+                            <div class="flex-grow-1">
+                              <h6 class="mb-1">Application has been approved 🚀</h6>
+                              <p class="mb-0">Your ABC project application has been approved.</p>
+                              <small class="text-muted">2 days ago</small>
+                            </div>
+                            <div class="flex-shrink-0 dropdown-notifications-actions">
+                              <a href="javascript:void(0)" class="dropdown-notifications-read"
+                                ><span class="badge badge-dot"></span
+                              ></a>
+                              <a href="javascript:void(0)" class="dropdown-notifications-archive"
+                                ><span class="ti ti-x"></span
+                              ></a>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                          <div class="d-flex">
+                            <div class="flex-shrink-0 me-3">
+                              <div class="avatar">
+                                <span class="avatar-initial rounded-circle bg-label-success"
+                                  ><i class="ti ti-chart-pie"></i
+                                ></span>
+                              </div>
+                            </div>
+                            <div class="flex-grow-1">
+                              <h6 class="mb-1">Monthly report is generated</h6>
+                              <p class="mb-0">July monthly financial report is generated</p>
+                              <small class="text-muted">3 days ago</small>
+                            </div>
+                            <div class="flex-shrink-0 dropdown-notifications-actions">
+                              <a href="javascript:void(0)" class="dropdown-notifications-read"
+                                ><span class="badge badge-dot"></span
+                              ></a>
+                              <a href="javascript:void(0)" class="dropdown-notifications-archive"
+                                ><span class="ti ti-x"></span
+                              ></a>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                          <div class="d-flex">
+                            <div class="flex-shrink-0 me-3">
+                              <div class="avatar">
+                                <img src="./assets/img/avatars/5.png" alt class="h-auto rounded-circle" />
+                              </div>
+                            </div>
+                            <div class="flex-grow-1">
+                              <h6 class="mb-1">Send connection request</h6>
+                              <p class="mb-0">Peter sent you connection request</p>
+                              <small class="text-muted">4 days ago</small>
+                            </div>
+                            <div class="flex-shrink-0 dropdown-notifications-actions">
+                              <a href="javascript:void(0)" class="dropdown-notifications-read"
+                                ><span class="badge badge-dot"></span
+                              ></a>
+                              <a href="javascript:void(0)" class="dropdown-notifications-archive"
+                                ><span class="ti ti-x"></span
+                              ></a>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="list-group-item list-group-item-action dropdown-notifications-item">
+                          <div class="d-flex">
+                            <div class="flex-shrink-0 me-3">
+                              <div class="avatar">
+                                <img src="./assets/img/avatars/6.png" alt class="h-auto rounded-circle" />
+                              </div>
+                            </div>
+                            <div class="flex-grow-1">
+                              <h6 class="mb-1">New message from Jane</h6>
+                              <p class="mb-0">Your have new message from Jane</p>
+                              <small class="text-muted">5 days ago</small>
+                            </div>
+                            <div class="flex-shrink-0 dropdown-notifications-actions">
+                              <a href="javascript:void(0)" class="dropdown-notifications-read"
+                                ><span class="badge badge-dot"></span
+                              ></a>
+                              <a href="javascript:void(0)" class="dropdown-notifications-archive"
+                                ><span class="ti ti-x"></span
+                              ></a>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                          <div class="d-flex">
+                            <div class="flex-shrink-0 me-3">
+                              <div class="avatar">
+                                <span class="avatar-initial rounded-circle bg-label-warning"
+                                  ><i class="ti ti-alert-triangle"></i
+                                ></span>
+                              </div>
+                            </div>
+                            <div class="flex-grow-1">
+                              <h6 class="mb-1">CPU is running high</h6>
+                              <p class="mb-0">CPU Utilization Percent is currently at 88.63%,</p>
+                              <small class="text-muted">5 days ago</small>
+                            </div>
+                            <div class="flex-shrink-0 dropdown-notifications-actions">
+                              <a href="javascript:void(0)" class="dropdown-notifications-read"
+                                ><span class="badge badge-dot"></span
+                              ></a>
+                              <a href="javascript:void(0)" class="dropdown-notifications-archive"
+                                ><span class="ti ti-x"></span
+                              ></a>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="dropdown-menu-footer border-top">
+                      <a
+                        href="javascript:void(0);"
+                        class="dropdown-item d-flex justify-content-center text-primary p-2 h-px-40 mb-1 align-items-center">
+                        View all notifications
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!--/ Notification -->
+
+                <!-- User -->
+                <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                    <div class="avatar avatar-online">
+                      <img src="./assets/img/avatars/1.png" alt class="h-auto rounded-circle" />
+                    </div>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a class="dropdown-item" href="pages-account-settings-account.html">
+                        <div class="d-flex">
+                          <div class="flex-shrink-0 me-3">
+                            <div class="avatar avatar-online">
+                              <img src="./assets/img/avatars/1.png" alt class="h-auto rounded-circle" />
+                            </div>
+                          </div>
+                          <div class="flex-grow-1">
+                            <span class="fw-medium d-block">John Doe</span>
+                            <small class="text-muted">Admin</small>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider"></div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="pages-profile-user.html">
+                        <i class="ti ti-user-check me-2 ti-sm"></i>
+                        <span class="align-middle">My Profile</span>
+                      </a>
+                    </li>
+                 
+                    <li>
+                      <a class="dropdown-item" href="Personal-tasks.html">
+                        <i class="ti ti-settings me-2 ti-sm"></i>
+                        <span class="align-middle" data-i18n="tasks">المهام الشخصية</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="auth-login-cover.html" target="_blank">
+                        <i class="ti ti-logout me-2 ti-sm"></i>
+                        <span class="align-middle">Log Out</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!--/ User -->
+              </ul>
+            </div>
+
+            <!-- Search Small Screens -->
+            <div class="navbar-search-wrapper search-input-wrapper container-xxl d-none">
+              <input
+                type="text"
+                class="form-control search-input border-0"
+                placeholder="Search..."
+                aria-label="Search..." />
+              <i class="ti ti-x ti-sm search-toggler cursor-pointer"></i>
+            </div>
+            
+          </div>
+        </nav>
+        <!-- / Navbar -->
+
+        <!-- Layout container -->
+        <div class="layout-page">
+          <!-- Content wrapper -->
+          <div class="content-wrapper">
+           <!-- Menu -->
+           <aside id="layout-menu" class="layout-menu-horizontal menu-horizontal menu bg-menu-theme flex-grow-0">
+            <div class="container-xxl d-flex h-100">
+              <ul class="menu-inner">
+                <!-- Dashboards -->
+                <li class="menu-item">
+                  <a href="index.html" class="menu-link ">
+                    <i class="menu-icon tf-icons ti ti-smart-home"></i>
+                    <div data-i18n="Dashboards">Dashboards</div>
+                  </a>
+                
+                </li>
+
+                <!-- Apps -->
+                <li class="menu-item ">
+                  <a href="javascript:void(0)" class="menu-link menu-toggle">
+                    <i class="menu-icon fa fa-balance-scale"></i>
+                    <div data-i18n="Issues">القضايا</div>
+                  </a>
+
+                  <ul class="menu-sub">
+                    <li class="menu-item ">
+                      <a href="Issues.html" class="menu-link">
+                        <i class="menu-icon tf-icons ti ti-menu-2"></i>
+                        <div data-i18n="Issues"> القضايا</div>
+                      </a>
+                     
+                    </li>
+                    <li class="menu-item">
+                      <a href="Appeal.html" class="menu-link">
+                        <i class="menu-icon tf-icons ti ti-layout-distribute-vertical"></i>
+                        <div data-i18n="Appeal">  الاستئناف</div>
+                      </a>
+                     
+                    </li>
+                    <li class="menu-item">
+                      <a href="Clients.html" class="menu-link">
+                        <i class="menu-icon tf-icons ti ti-users"></i>
+                        <div data-i18n="Clients"> الموكلين </div>
+                      </a>
+                     
+                    </li>
+                    <li class="menu-item">
+                      <a href="Amending-contract.html" class="menu-link">
+                        <i class="menu-icon tf-icons ti ti-arrows-maximize"></i>
+                        <div data-i18n="Amending-contract"> تعديل العقد </div>
+                      </a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="javascript:void(0)" class="menu-link menu-toggle">
+                        <i class="menu-icon tf-icons ti ti-square"></i>
+                        <div data-i18n="Implementation-issues">قضايا التنفيذ</div>
+                      </a>
+                      <ul class="menu-sub">
+                        <li class="menu-item">
+                        <a href="Implementation-issues-add.html" class="menu-link">
+                          <div data-i18n="Implementation-issues"> اضافة قضايا التنفيذ</div>
+                        </a>
+                        </li>
+                        
+                         <li class="menu-item">
+                          <a href="Agenda-implementation-issues.html" class="menu-link">
+                            <div data-i18n="Agenda-implementation-issues"> أجندة مواعيد قضايا التنفيذ</div>
+                          </a>
+                          </li>
+                         
+                      </ul>
+                    </li>
+                    <li class="menu-item">
+                      <a href="javascript:void(0)" class="menu-link  menu-toggle">
+                        <i class="menu-icon tf-icons ti ti-square"></i>
+                        <div data-i18n="Sessions"> الجلسات  </div>
+                      </a>
+                      <ul class="menu-sub">
+                        <li class="menu-item ">
+                          <a href="Session-data.html" class="menu-link">
+                            <div data-i18n="Session data">  بيانات الجلسات</div>
+                          </a>
+                        
+                        </li>
+                         <li class="menu-item">
+                            <a href="all-send-session-settings.html" class="menu-link">
+                              <div data-i18n="Send-session-settings">    ارسال ضبط الجلسات</div>
+                            </a>
+                             
+                          </li>
+                          <li class="menu-item">
+                            <a href="Agenda-session-dates.html" class="menu-link">
+                              <div data-i18n="Agenda-session-dates">    اجندة مواعيد الجلسات</div>
+                            </a>
+                            </li>
+                      </ul>
+                    </li>
+                    <li class="menu-item">
+                      <a href="javascript:void(0)" class="menu-link menu-toggle">
+                        <i class="menu-icon tf-icons ti ti-arrows-maximize"></i>
+                        <div data-i18n="Memoirs"> المذكرات </div>
+                      </a>
+                      <ul class="menu-sub">
+                        <li class="menu-item">
+                          <a href="Recording-notes.html" class="menu-link">
+                            <div data-i18n="Recording-notes">   تسجيل المذكرات</div>
+                          </a>
+                        </li>
+                       
+                          <li class="menu-item">
+                            <a href="Notes-awaiting-review.html" class="menu-link">
+                              <div data-i18n="Notes-awaiting-review">  مذكرات فى انتظار المراجعه</div>
+                            </a>
+                          </li>
+                          <li class="menu-item">
+                            <a href="Rejected-notes.html" class="menu-link">
+                              <div data-i18n="Rejected-notes">   مذكرات مرفوضه  </div>
+                            </a>
+                          </li>
+                      </ul>
+                    </li>
+                   
+                  </ul>
+                </li>
+                <!--Comprehensive-->
+                <li class="menu-item">
+                  <a class="menu-link" href="Comprehensive.html">
+                    <i class="menu-icon fa fa-balance-scale"></i>
+
+                    <div data-i18n="Comprehensive-case-system">نظام القضايا الشامل </div>
+                   </a>
+                 
+                </li>
+                <!-- office work -->
+                <li class="menu-item">
+                  <a href="javascript:void(0)" class="menu-link menu-toggle">
+                   
+                    <i class="menu-icon  fa-solid fa-gears"></i>
+                    <div data-i18n="office work">الاعمال المكتبية
+                    </div>
+                  </a>
+                  <ul class="menu-sub">
+                    <li class="menu-item">
+                      <a href="javascript:void(0)" class="menu-link menu-toggle">
+                        <i class="menu-icon tf-icons ti ti-toggle-left"></i>
+                        
+                        <div data-i18n="office work">  الاعمال المكتبية    </div>
+                      </a>
+                      <ul class="menu-sub">
+                          <li class="menu-item">
+                            <a href="Consulting.html" class="menu-link">
+                            
+                              <div data-i18n="Consulting">   الاستشارات   </div>
+                            </a>
+                          </li>
+                          <li class="menu-item">
+                            <a href="Establishment-companies.html" class="menu-link">
+                            
+                              <div data-i18n="Establishment-companies">  تاسيس الشركات</div>
+                            </a>
+                          </li>
+                          <li class="menu-item">
+                            <a href="Missions.html" class="menu-link">
+                            
+                              <div data-i18n="Missions">   المهمات</div>
+                            </a>
+                          </li>
+                      </ul>
+                    </li>
+                    <li class="menu-item">
+                      <a href="javascript:void(0)" class="menu-link menu-toggle">
+                        <i class="menu-icon tf-icons ti ti-settings"></i>
+                        <div data-i18n="Secretary"> السكرتاريه</div>
+                      </a>
+                      <ul class="menu-sub">
+                                
+                        <li class="menu-item ">
+                          <a href="Secretary.html" class="menu-link">
+                            <div data-i18n="Secretary">  السكرتاريه</div>
+                          </a>
+                          
+                        </li>
+                        <li class="menu-item">
+                          <a href="Secretarial-appointment-schedule.html" class="menu-link">
+                            <div data-i18n="Secretarial-appointment-schedule">  اجندة مواعيد السكرتارية     </div>
+                          </a>
+                          
+                        </li>
+                        <li class="menu-item">
+                          <a href="Correspondence.html" class="menu-link">
+                            <div data-i18n="Correspondence"> المراسلات    </div>
+                          </a>
+                          
+                        </li>
+                    </ul>
+                    </li>
+                    <li class="menu-item">
+                      <a href="javascript:void(0)" class="menu-link menu-toggle">
+                        <i class="menu-icon tf-icons ti ti-settings"></i>
+                        <div data-i18n="daily business"> الاعمال اليوميه </div>
+                      </a>
+                      <ul class="menu-sub">
+                        <li class="menu-item">
+                          <a href="daily-business.html" class="menu-link">
+                            <div data-i18n="daily business"> الاعمال اليوميه </div>
+                          </a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="Daily-business-agenda.html" class="menu-link">
+                            <div data-i18n="Daily business agenda"> اجنده الأعمال اليومية </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="menu-item">
+                      <a href="Circulars-clients.html" class="menu-link">
+                        <i class="menu-icon tf-icons ti ti-settings"></i>
+                        <div data-i18n="Generalizations"> التعميمات </div>
+                      </a>
+                  
+                    </li>
+                  
+                    
+                    <li class="menu-item">
+                      <a href="javascript:void(0)" class="menu-link menu-toggle">
+                        <i class="menu-icon tf-icons ti ti-file"></i>
+                        <div data-i18n="archives"> الارشيف</div>
+                      </a>
+                      <ul class="menu-sub">
+                        <li class="menu-item">
+                          <a href="archives.html" class="menu-link">
+                            <div data-i18n="archives"> الارشيف</div>
+                          </a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="archives-file.html" class="menu-link">
+                            <div data-i18n="archives-file"> ارشيف المستندات</div>
+                          </a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="receiving-files.html" class="menu-link">
+                            <div data-i18n="receiving files"> استلام وتسلم الملفات</div>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  
+                  </ul>
+                </li>
+               <!--money-->
+               <li class="menu-item">
+                <a href="javascript:void(0)" class="menu-link menu-toggle">
+                  <i class="menu-icon fa-regular fa-money-bill-1"></i>
+                  <div data-i18n="money">الماليه   </div>
+                </a>
+                <ul class="menu-sub">
+                  <li class="menu-item ">
+                    <a href="javascript:void(0)" class="menu-link menu-toggle">
+                      <i class="menu-icon fa-regular fa-money-bill-1"></i>
+                      <div data-i18n="money"> الماليه   </div>
+                    </a>
+                    <ul class="menu-sub">
+                      <li class="menu-item">
+                        <a href="Catch-Receipt.html" class="menu-link">
+                          <div data-i18n="Catch Receipt"> سند قبض   </div>
+                        </a>
+                      
+                      </li>
+                      <li class="menu-item">
+                        <a href="Payment-expenses.html" class="menu-link">
+                          <div data-i18n="Payment/expenses"> سند دفع / مصروفات  </div>
+                        </a>
+                      
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu-item ">
+                    <a href="javascript:void(0)" class="menu-link menu-toggle">
+                      <i class="menu-icon fa-regular fa-money-bill-1"></i>
+                      <div data-i18n="Bank accounts"> حسابات البنوك</div>
+                    </a>
+                    <ul class="menu-sub">
+                      <li class="menu-item">
+                        <a href="addbanktransaction.html" class="menu-link">
+                          <div data-i18n="addbanktransaction"> إيداع بنكي  </div>
+                        </a>
+                      
+                      </li>
+                      <li class="menu-item">
+                        <a href="allbanktransaction.html" class="menu-link">
+                          <div data-i18n="allbanktransaction">عرض كل الإيداعات  </div>
+                        </a>
+                      
+                      </li>
+                      <li class="menu-item">
+                        <a href="bankaccbalance.html" class="menu-link">
+                          <div data-i18n="bankaccbalance"> عرض حسابات البنوك  </div>
+                        </a>
+                      
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+               </li>
+                <!-- Reports -->
+                <li class="menu-item">
+                  <a href="javascript:void(0)" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons ti ti-file-description"></i>
+                    <div data-i18n="Reports">التقارير </div>
+                  </a>
+                  <div class="menu-sub w-menu-sub">
+                    <ul class="menu-grid">
+                      <li class="menu-item">
+                        <a href="Report-reports.html " target="_blank" class="menu-link">
+                          <i class="menu-icon tf-icons ti ti-file-description"></i>
+                          <div data-i18n="Report reports "> تقرير المصروفات</div>
+                        </a>
+                      </li>
+                      <li class="menu-item">
+                        <a
+                          href="Arrest-bond-report.html"
+                          target="_blank"
+                          class="menu-link">
+                          <i class="menu-icon tf-icons ti ti-file-description"></i>
+                          <div data-i18n="Arrest bond report"> تقرير سندات القبض</div>
+                        </a>
+                      </li>
+                      <li class="menu-item">
+                        <a
+                          href="Case-receipt-report.html"
+                          target="_blank"
+                          class="menu-link">
+                          <i class="menu-icon tf-icons ti ti-file-description"></i>
+                          <div data-i18n="Case receipt report "> تقرير سند قبض قضايا</div>
+                        </a>
+                      </li>
+                      <li class="menu-item">
+                        <a
+                          href="Report issues.html"
+                          target="_blank"
+                          class="menu-link">
+                          <i class="menu-icon tf-icons ti ti-file-description"></i>
+                          <div data-i18n="Report issues">   تقرير القضايا</div>
+                        </a>
+                      </li>
+                      <li class="menu-item">
+                        <a
+                          href="Clients'-report.html"
+                          target="_blank"
+                          class="menu-link">
+                          <i class="menu-icon tf-icons ti ti-file-description"></i>
+                          <div data-i18n="Clients' report">   تقرير الموكلين</div>
+                        </a>
+                      </li>
+                      <li class="menu-item">
+                        <a
+                          href="Appeal-report.html"
+                          target="_blank"
+                          class="menu-link">
+                          <i class="menu-icon tf-icons ti ti-file-description"></i>
+                          <div data-i18n="Appeal-report">   تقرير  الاستئناف</div>
+                        </a>
+                      </li>
+                      <li class="menu-item">
+                        <a
+                          href="Case-follow-up-report.html"
+                          target="_blank"
+                          class="menu-link">
+                          <i class="menu-icon tf-icons ti ti-file-description"></i>
+                          <div data-i18n="Case follow-up report">   تقرير متابعه القضايا</div>
+                        </a>
+                      </li>
+
+
+                      <li class="menu-item">
+                        <a
+                          href="Sessions-report.html"
+                          target="_blank"
+                          class="menu-link">
+                          <i class="menu-icon tf-icons ti ti-file-description"></i>
+                          <div data-i18n="Sessions report">  تقرير الجلسات</div>
+                        </a>
+                      </li>
+                      <li class="menu-item">
+                        <a
+                          href="Business-report.html"
+                          target="_blank"
+                          class="menu-link">
+                          <i class="menu-icon tf-icons ti ti-file-description"></i>
+                          <div data-i18n="Business-report">   تقرير الاعمال</div>
+                        </a>
+                      </li>
+                      <li class="menu-item">
+                        <a
+                          href="Implementation-issues-report.html"
+                          target="_blank"
+                          class="menu-link">
+                          <i class="menu-icon tf-icons ti ti-file-description"></i>
+                          <div data-i18n="Implementation issues report">   تقرير قضايا التنفيذ</div>
+                        </a>
+                      </li>
+                      <li class="menu-item">
+                        <a
+                          href="Receiving-receiving-files.html"
+                          target="_blank"
+                          class="menu-link">
+                          <i class="menu-icon tf-icons ti ti-file-description"></i>
+                          <div data-i18n="Receiving-receiving-files">  استلام وتسلم الملفات</div>
+                        </a>
+                      </li>
+                      <li class="menu-item">
+                        <a
+                          href="Detailed-receipt-report.html"
+                          target="_blank"
+                          class="menu-link">
+                          <i class="menu-icon tf-icons ti ti-file-description"></i>
+                          <div data-i18n="Detailed-receipt-report"> تقرير سندات القبض تفصيلي</div>
+                        </a>
+                      </li>
+                      <li class="menu-item">
+                        <a
+                          href="Detailed expense report.html"
+                          target="_blank"
+                          class="menu-link">
+                          <i class="menu-icon tf-icons ti ti-file-description"></i>
+                          <div data-i18n="Detailed expense report"> تقرير المصروفات تفصيلي</div>
+                        </a>
+                      </li>
+                      <li class="menu-item">
+                        <a
+                          href="User movements.html"
+                          target="_blank"
+                          class="menu-link">
+                          <i class="menu-icon tf-icons ti ti-file-description"></i>
+                          <div data-i18n="User movements"> حركات المستخدمين</div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  
+                </li>
+                <!-- General Settings-->
+                <li class="menu-item active">
+                  <a href="javascript:void(0)" class="menu-link menu-toggle">
+                    <i class="menu-icon  fa-solid fa-gears"></i>
+                    <div data-i18n="General Settings">  الإعدادات العامه </div>
+                  </a>
+                  <ul class="menu-sub">
+                    
+                      <li class="menu-item">
+                      <a href="employees-set.html" class="menu-link">
+                        <i class="menu-icon tf-icons ti ti-users"></i>
+                        <div data-i18n="employees">الموظفين </div>
+                      </a>
+                    
+                      </li>
+                      <li class="menu-item active">
+                        <a href="allusersgroup.html" class="menu-link">
+                          <i class="menu-icon tf-icons ti ti-users"></i>
+                          <div data-i18n="User groups "> مجموعات المستخدمين
+                          </div>
+                        </a>
+                       
+                      </li>
+                      <li class="menu-item">
+                        <a href="javascript:void(0)" class="menu-link menu-toggle">
+                          <i class="menu-icon tf-icons ti ti-list"></i>
+                          <div data-i18n="Definitions "> التعريفات
+                          </div>
+                        </a>
+                        <div class=" menu-sub w-menu-sub">
+                          <ul  class="menu-grid">
+                            <li class="menu-item">
+                              <a href="General-Settings.html" class="menu-link">
+                                <i class="menu-icon tf-icons ti ti-settings"></i>
+                                <div data-i18n="General Settings"> الإعدادات العامه</div>
+                              </a>
+                              </li>
+                              <li class="menu-item">
+                                <a href="Definition-safes-banks.html" class="menu-link">
+                                  <i class="menu-icon tf-icons ti ti-settings"></i>
+                                  <div data-i18n="Definition-safes-banks"> تعريف الخزائن و البنوك</div>
+                                </a>
+                                </li>
+                                <li class="menu-item">
+                                  <a href="Definition-payment-methods.html" class="menu-link">
+                                    <i class="menu-icon tf-icons ti ti-settings"></i>
+                                    <div data-i18n="Definition-payment-methods"> تعريف انواع طرق الدفع</div>
+                                  </a>
+                                  </li>
+                                  <li class="menu-item">
+                                    <a href="relationtypes.html" class="menu-link">
+                                      <i class="menu-icon tf-icons ti ti-settings"></i>
+                                      <div data-i18n="relationtypes"> تعريف انواع الموكلين والخصوم</div>
+                                    </a>
+                                    </li>
+                                    <li class="menu-item">
+                                      <a href="Definition-execution-bonds.html" class="menu-link">
+                                        <i class="menu-icon tf-icons ti ti-settings"></i>
+                                        <div data-i18n="Definition-execution-bonds"> تعريف سندات محاكم تنفيذ</div>
+                                      </a>
+                                      </li>
+                                      <li class="menu-item">
+                                        <a href="Definition-courts.html" class="menu-link">
+                                          <i class="menu-icon tf-icons ti ti-settings"></i>
+                                          <div data-i18n="Definition-courts"> تعريف حالات محاكم تنفيذ</div>
+                                        </a>
+                                        </li>
+                                        <li class="menu-item">
+                                          <a href="issuestypes.html" class="menu-link">
+                                            <i class="menu-icon tf-icons ti ti-settings"></i>
+                                            <div data-i18n="issuestypes">تعريف  انواع القضايا</div>
+                                          </a>
+                                          </li>
+                                          <li class="menu-item">
+                                            <a href="Judicial-courts.html" class="menu-link">
+                                              <i class="menu-icon tf-icons ti ti-settings"></i>
+                                              <div data-i18n="Judicial courts"> تعريف المحاكم القضائيه</div>
+                                            </a>
+                                            </li>
+                                            <li class="menu-item">
+                                              <a href="Judicial-departments.html" class="menu-link">
+                                                <i class="menu-icon tf-icons ti ti-settings"></i>
+                                                <div data-i18n="Judicial departments"> تعريف الدوائر القضائيه</div>
+                                              </a>
+                                              </li>
+                                              <li class="menu-item">
+                                                <a href="Types-services.html" class="menu-link">
+                                                  <i class="menu-icon tf-icons ti ti-settings"></i>
+                                                  <div data-i18n="Types of services ">تعريف انواع الخدمات</div>
+                                                </a>
+                                                </li>
+                                                <li class="menu-item">
+                                                  <a href="Types-expenses.html" class="menu-link">
+                                                    <i class="menu-icon tf-icons ti ti-settings"></i>
+                                                    <div data-i18n="Types of expenses">  تعريف أنواع المصاريف  </div>
+                                                  </a>
+                                                </li>
+                          </ul>
+                        </div>
+                        
+                      </li>
+                  </ul>
+                </li>
+
+              </ul>
+            </div>
+          </aside>
+        <!-- / Menu -->
+
+            <!-- Content -->
+
+            <div class="container-xxl flex-grow-1 container-p-y">
+              <h4 class="mb-4">Roles List</h4>
+
+              <p class="mb-4">
+                A role provided access to predefined menus and features so that depending on <br />
+                assigned role an administrator can have access to what user needs.
+              </p>
+              <!-- Role cards -->
+              <div class="row g-4">
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between">
+                        <h6 class="fw-normal mb-2">Total 4 users</h6>
+                        <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            title="Vinnie Mostowy"
+                            class="avatar avatar-sm pull-up">
+                            <img class="rounded-circle" src="./assets/img/avatars/5.png" alt="Avatar" />
+                          </li>
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            title="Allen Rieske"
+                            class="avatar avatar-sm pull-up">
+                            <img class="rounded-circle" src="./assets/img/avatars/12.png" alt="Avatar" />
+                          </li>
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            title="Julee Rossignol"
+                            class="avatar avatar-sm pull-up">
+                            <img class="rounded-circle" src="./assets/img/avatars/6.png" alt="Avatar" />
+                          </li>
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            title="Kaith D'souza"
+                            class="avatar avatar-sm pull-up">
+                            <img class="rounded-circle" src="./assets/img/avatars/3.png" alt="Avatar" />
+                          </li>
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            title="John Doe"
+                            class="avatar avatar-sm pull-up">
+                            <img class="rounded-circle" src="./assets/img/avatars/1.png" alt="Avatar" />
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-end mt-1">
+                        <div class="role-heading">
+                          <h4 class="mb-1">Administrator</h4>
+                          <a
+                            href="javascript:;"
+                            data-bs-toggle="modal"
+                            data-bs-target="#addRoleModal"
+                            class="role-edit-modal"
+                            ><span>Edit Role</span></a
+                          >
+                        </div>
+                        <a href="javascript:void(0);" class="text-muted"><i class="ti ti-copy ti-md"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between">
+                        <h6 class="fw-normal mb-2">Total 7 users</h6>
+                        <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            title="Jimmy Ressula"
+                            class="avatar avatar-sm pull-up">
+                            <img class="rounded-circle" src="./assets/img/avatars/4.png" alt="Avatar" />
+                          </li>
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            title="John Doe"
+                            class="avatar avatar-sm pull-up">
+                            <img class="rounded-circle" src="./assets/img/avatars/1.png" alt="Avatar" />
+                          </li>
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            title="Kristi Lawker"
+                            class="avatar avatar-sm pull-up">
+                            <img class="rounded-circle" src="./assets/img/avatars/2.png" alt="Avatar" />
+                          </li>
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            title="Kaith D'souza"
+                            class="avatar avatar-sm pull-up">
+                            <img class="rounded-circle" src="./assets/img/avatars/3.png" alt="Avatar" />
+                          </li>
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            title="Danny Paul"
+                            class="avatar avatar-sm pull-up">
+                            <img class="rounded-circle" src="./assets/img/avatars/7.png" alt="Avatar" />
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-end mt-1">
+                        <div class="role-heading">
+                          <h4 class="mb-1">Manager</h4>
+                          <a
+                            href="javascript:;"
+                            data-bs-toggle="modal"
+                            data-bs-target="#addRoleModal"
+                            class="role-edit-modal"
+                            ><span>Edit Role</span></a
+                          >
+                        </div>
+                        <a href="javascript:void(0);" class="text-muted"><i class="ti ti-copy ti-md"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between">
+                        <h6 class="fw-normal mb-2">Total 5 users</h6>
+                        <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            title="Andrew Tye"
+                            class="avatar avatar-sm pull-up">
+                            <img class="rounded-circle" src="./assets/img/avatars/6.png" alt="Avatar" />
+                          </li>
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            title="Rishi Swaat"
+                            class="avatar avatar-sm pull-up">
+                            <img class="rounded-circle" src="./assets/img/avatars/9.png" alt="Avatar" />
+                          </li>
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            title="Rossie Kim"
+                            class="avatar avatar-sm pull-up">
+                            <img class="rounded-circle" src="./assets/img/avatars/12.png" alt="Avatar" />
+                          </li>
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            title="Kim Merchent"
+                            class="avatar avatar-sm pull-up">
+                            <img class="rounded-circle" src="./assets/img/avatars/10.png" alt="Avatar" />
+                          </li>
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            title="Sam D'souza"
+                            class="avatar avatar-sm pull-up">
+                            <img class="rounded-circle" src="./assets/img/avatars/13.png" alt="Avatar" />
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-end mt-1">
+                        <div class="role-heading">
+                          <h4 class="mb-1">Users</h4>
+                          <a
+                            href="javascript:;"
+                            data-bs-toggle="modal"
+                            data-bs-target="#addRoleModal"
+                            class="role-edit-modal"
+                            ><span>Edit Role</span></a
+                          >
+                        </div>
+                        <a href="javascript:void(0);" class="text-muted"><i class="ti ti-copy ti-md"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between">
+                        <h6 class="fw-normal mb-2">Total 3 users</h6>
+                        <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            title="Kim Karlos"
+                            class="avatar avatar-sm pull-up">
+                            <img class="rounded-circle" src="./assets/img/avatars/3.png" alt="Avatar" />
+                          </li>
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            title="Katy Turner"
+                            class="avatar avatar-sm pull-up">
+                            <img class="rounded-circle" src="./assets/img/avatars/9.png" alt="Avatar" />
+                          </li>
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            title="Peter Adward"
+                            class="avatar avatar-sm pull-up">
+                            <img class="rounded-circle" src="./assets/img/avatars/4.png" alt="Avatar" />
+                          </li>
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            title="Kaith D'souza"
+                            class="avatar avatar-sm pull-up">
+                            <img class="rounded-circle" src="./assets/img/avatars/10.png" alt="Avatar" />
+                          </li>
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            title="John Parker"
+                            class="avatar avatar-sm pull-up">
+                            <img class="rounded-circle" src="./assets/img/avatars/11.png" alt="Avatar" />
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-end mt-1">
+                        <div class="role-heading">
+                          <h4 class="mb-1">Support</h4>
+                          <a
+                            href="javascript:;"
+                            data-bs-toggle="modal"
+                            data-bs-target="#addRoleModal"
+                            class="role-edit-modal"
+                            ><span>Edit Role</span></a
+                          >
+                        </div>
+                        <a href="javascript:void(0);" class="text-muted"><i class="ti ti-copy ti-md"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between">
+                        <h6 class="fw-normal mb-2">Total 2 users</h6>
+                        <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            title="Kim Merchent"
+                            class="avatar avatar-sm pull-up">
+                            <img class="rounded-circle" src="./assets/img/avatars/10.png" alt="Avatar" />
+                          </li>
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            title="Sam D'souza"
+                            class="avatar avatar-sm pull-up">
+                            <img class="rounded-circle" src="./assets/img/avatars/13.png" alt="Avatar" />
+                          </li>
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            title="Nurvi Karlos"
+                            class="avatar avatar-sm pull-up">
+                            <img class="rounded-circle" src="./assets/img/avatars/5.png" alt="Avatar" />
+                          </li>
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            title="Andrew Tye"
+                            class="avatar avatar-sm pull-up">
+                            <img class="rounded-circle" src="./assets/img/avatars/8.png" alt="Avatar" />
+                          </li>
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            title="Rossie Kim"
+                            class="avatar avatar-sm pull-up">
+                            <img class="rounded-circle" src="./assets/img/avatars/9.png" alt="Avatar" />
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-end mt-1">
+                        <div class="role-heading">
+                          <h4 class="mb-1">Restricted User</h4>
+                          <a
+                            href="javascript:;"
+                            data-bs-toggle="modal"
+                            data-bs-target="#addRoleModal"
+                            class="role-edit-modal"
+                            ><span>Edit Role</span></a
+                          >
+                        </div>
+                        <a href="javascript:void(0);" class="text-muted"><i class="ti ti-copy ti-md"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                  <div class="card h-100">
+                    <div class="row h-100">
+                      <div class="col-sm-5">
+                        <div class="d-flex align-items-end h-100 justify-content-center mt-sm-0 mt-3">
+                          <img
+                            src="./assets/img/illustrations/add-new-roles.png"
+                            class="img-fluid mt-sm-4 mt-md-0"
+                            alt="add-new-roles"
+                            width="83" />
+                        </div>
+                      </div>
+                      <div class="col-sm-7">
+                        <div class="card-body text-sm-end text-center ps-sm-0">
+                          <button
+                            data-bs-target="#addRoleModal"
+                            data-bs-toggle="modal"
+                            class="btn btn-primary mb-2 text-nowrap add-new-role">
+                            Add New Role
+                          </button>
+                          <p class="mb-0 mt-1">Add role, if it does not exist</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <!-- Role Table -->
+                  <div class="card">
+                    <div class="card-datatable table-responsive">
+                      <table class="datatables-users table border-top">
+                        <thead>
+                          <tr>
+                            <th></th>
+                            <th>User</th>
+                            <th>Role</th>
+                            <th>Plan</th>
+                            <th>Billing</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                          </tr>
+                        </thead>
+                      </table>
+                    </div>
+                  </div>
+                  <!--/ Role Table -->
+                </div>
+              </div>
+              <!--/ Role cards -->
+
+              <!-- Add Role Modal -->
+              <!-- Add Role Modal -->
+              <div class="modal fade" id="addRoleModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered modal-add-new-role">
+                  <div class="modal-content p-3 p-md-5">
+                    <button
+                      type="button"
+                      class="btn-close btn-pinned"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"></button>
+                    <div class="modal-body">
+                      <div class="text-center mb-4">
+                        <h3 class="role-title mb-2">Add New Role</h3>
+                        <p class="text-muted">Set role permissions</p>
+                      </div>
+                      <!-- Add role form -->
+                      <form id="addRoleForm" class="row g-3" onsubmit="return false">
+                        <div class="col-12 mb-4">
+                          <label class="form-label" for="modalRoleName">Role Name</label>
+                          <input
+                            type="text"
+                            id="modalRoleName"
+                            name="modalRoleName"
+                            class="form-control"
+                            placeholder="Enter a role name"
+                            tabindex="-1" />
+                        </div>
+                        <div class="col-12">
+                          <h5>Role Permissions</h5>
+                          <!-- Permission table -->
+                          <div class="table-responsive">
+                            <table class="table table-flush-spacing">
+                              <tbody>
+                                <tr>
+                                  <td class="text-nowrap fw-medium">
+                                    Administrator Access
+                                    <i
+                                      class="ti ti-info-circle"
+                                      data-bs-toggle="tooltip"
+                                      data-bs-placement="top"
+                                      title="Allows a full access to the system"></i>
+                                  </td>
+                                  <td>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" id="selectAll" />
+                                      <label class="form-check-label" for="selectAll"> Select All </label>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="text-nowrap fw-medium">User Management</td>
+                                  <td>
+                                    <div class="d-flex">
+                                      <div class="form-check me-3 me-lg-5">
+                                        <input class="form-check-input" type="checkbox" id="userManagementRead" />
+                                        <label class="form-check-label" for="userManagementRead"> Read </label>
+                                      </div>
+                                      <div class="form-check me-3 me-lg-5">
+                                        <input class="form-check-input" type="checkbox" id="userManagementWrite" />
+                                        <label class="form-check-label" for="userManagementWrite"> Write </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="userManagementCreate" />
+                                        <label class="form-check-label" for="userManagementCreate"> Create </label>
+                                      </div>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="text-nowrap fw-medium">Content Management</td>
+                                  <td>
+                                    <div class="d-flex">
+                                      <div class="form-check me-3 me-lg-5">
+                                        <input class="form-check-input" type="checkbox" id="contentManagementRead" />
+                                        <label class="form-check-label" for="contentManagementRead"> Read </label>
+                                      </div>
+                                      <div class="form-check me-3 me-lg-5">
+                                        <input class="form-check-input" type="checkbox" id="contentManagementWrite" />
+                                        <label class="form-check-label" for="contentManagementWrite"> Write </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="contentManagementCreate" />
+                                        <label class="form-check-label" for="contentManagementCreate"> Create </label>
+                                      </div>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="text-nowrap fw-medium">Disputes Management</td>
+                                  <td>
+                                    <div class="d-flex">
+                                      <div class="form-check me-3 me-lg-5">
+                                        <input class="form-check-input" type="checkbox" id="dispManagementRead" />
+                                        <label class="form-check-label" for="dispManagementRead"> Read </label>
+                                      </div>
+                                      <div class="form-check me-3 me-lg-5">
+                                        <input class="form-check-input" type="checkbox" id="dispManagementWrite" />
+                                        <label class="form-check-label" for="dispManagementWrite"> Write </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="dispManagementCreate" />
+                                        <label class="form-check-label" for="dispManagementCreate"> Create </label>
+                                      </div>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="text-nowrap fw-medium">Database Management</td>
+                                  <td>
+                                    <div class="d-flex">
+                                      <div class="form-check me-3 me-lg-5">
+                                        <input class="form-check-input" type="checkbox" id="dbManagementRead" />
+                                        <label class="form-check-label" for="dbManagementRead"> Read </label>
+                                      </div>
+                                      <div class="form-check me-3 me-lg-5">
+                                        <input class="form-check-input" type="checkbox" id="dbManagementWrite" />
+                                        <label class="form-check-label" for="dbManagementWrite"> Write </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="dbManagementCreate" />
+                                        <label class="form-check-label" for="dbManagementCreate"> Create </label>
+                                      </div>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="text-nowrap fw-medium">Financial Management</td>
+                                  <td>
+                                    <div class="d-flex">
+                                      <div class="form-check me-3 me-lg-5">
+                                        <input class="form-check-input" type="checkbox" id="finManagementRead" />
+                                        <label class="form-check-label" for="finManagementRead"> Read </label>
+                                      </div>
+                                      <div class="form-check me-3 me-lg-5">
+                                        <input class="form-check-input" type="checkbox" id="finManagementWrite" />
+                                        <label class="form-check-label" for="finManagementWrite"> Write </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="finManagementCreate" />
+                                        <label class="form-check-label" for="finManagementCreate"> Create </label>
+                                      </div>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="text-nowrap fw-medium">Reporting</td>
+                                  <td>
+                                    <div class="d-flex">
+                                      <div class="form-check me-3 me-lg-5">
+                                        <input class="form-check-input" type="checkbox" id="reportingRead" />
+                                        <label class="form-check-label" for="reportingRead"> Read </label>
+                                      </div>
+                                      <div class="form-check me-3 me-lg-5">
+                                        <input class="form-check-input" type="checkbox" id="reportingWrite" />
+                                        <label class="form-check-label" for="reportingWrite"> Write </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="reportingCreate" />
+                                        <label class="form-check-label" for="reportingCreate"> Create </label>
+                                      </div>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="text-nowrap fw-medium">API Control</td>
+                                  <td>
+                                    <div class="d-flex">
+                                      <div class="form-check me-3 me-lg-5">
+                                        <input class="form-check-input" type="checkbox" id="apiRead" />
+                                        <label class="form-check-label" for="apiRead"> Read </label>
+                                      </div>
+                                      <div class="form-check me-3 me-lg-5">
+                                        <input class="form-check-input" type="checkbox" id="apiWrite" />
+                                        <label class="form-check-label" for="apiWrite"> Write </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="apiCreate" />
+                                        <label class="form-check-label" for="apiCreate"> Create </label>
+                                      </div>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="text-nowrap fw-medium">Repository Management</td>
+                                  <td>
+                                    <div class="d-flex">
+                                      <div class="form-check me-3 me-lg-5">
+                                        <input class="form-check-input" type="checkbox" id="repoRead" />
+                                        <label class="form-check-label" for="repoRead"> Read </label>
+                                      </div>
+                                      <div class="form-check me-3 me-lg-5">
+                                        <input class="form-check-input" type="checkbox" id="repoWrite" />
+                                        <label class="form-check-label" for="repoWrite"> Write </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="repoCreate" />
+                                        <label class="form-check-label" for="repoCreate"> Create </label>
+                                      </div>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="text-nowrap fw-medium">Payroll</td>
+                                  <td>
+                                    <div class="d-flex">
+                                      <div class="form-check me-3 me-lg-5">
+                                        <input class="form-check-input" type="checkbox" id="payrollRead" />
+                                        <label class="form-check-label" for="payrollRead"> Read </label>
+                                      </div>
+                                      <div class="form-check me-3 me-lg-5">
+                                        <input class="form-check-input" type="checkbox" id="payrollWrite" />
+                                        <label class="form-check-label" for="payrollWrite"> Write </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="payrollCreate" />
+                                        <label class="form-check-label" for="payrollCreate"> Create </label>
+                                      </div>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <!-- Permission table -->
+                        </div>
+                        <div class="col-12 text-center mt-4">
+                          <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
+                          <button
+                            type="reset"
+                            class="btn btn-label-secondary"
+                            data-bs-dismiss="modal"
+                            aria-label="Close">
+                            Cancel
+                          </button>
+                        </div>
+                      </form>
+                      <!--/ Add role form -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--/ Add Role Modal -->
+
+              <!-- / Add Role Modal -->
+            </div>
+            <!--/ Content -->
+
+            <!-- Footer -->
+            <footer class="content-footer footer bg-footer-theme">
+              <div class="container-xxl">
+                <div
+                  class="footer-container d-flex align-items-center justify-content-center py-2 flex-md-row flex-column">
+                  <div>
+                    ©
+                    <script>
+                      document.write(new Date().getFullYear());
+                    </script>
+                    , made with ❤️ by Raito <a href="#" target="_blank" class="fw-medium">Raito</a>
+                  </div>
+            
+                </div>
+              </div>
+            </footer>
+            <!-- / Footer -->
+
+            <div class="content-backdrop fade"></div>
+          </div>
+          <!--/ Content wrapper -->
+        </div>
+
+        <!--/ Layout container -->
+      </div>
+    </div>
+<!--color-->
+  
+<div class="compoent-color position-fixed">
+  <div class="back">
+       <div class="dropdown">
+
+            <button class="btn  btn-btn d-flex mx-0 justify-content-between dropbtn" type="button" onclick="myFunction()" id="myDIV" >
+                 
+                 <span class="span-i">
+                      <img src="./assets/img/icons/color-wheel.png" alt="platte">
+
+                 </span>
+            </button>
+           
+       </div>
+       <div  id="myDropdown" class="dropdown-content dropdown-menu">
+        <div class="d-flex align-items-center flex-wrap">
+
+            <div id="theme-picker-section" class="example-section"@change="updateTheme">      
+          
+              <input type="radio" name="theme" value="blue" checked="true">
+              <input type="radio" name="theme" value="grey">
+              <input type="radio" name="theme" value="green">
+              <input type="radio" name="theme" value="Brown">
+              <input type="radio" name="theme" value="orange">
+              <input type="radio" name="theme" value="red">
+            
+            </div>
+        </div>
+       </div>
+  </div>
+  
+</div>
+    <!-- Overlay -->
+    <div class="layout-overlay layout-menu-toggle"></div>
+
+    <!-- Drag Target Area To SlideIn Menu On Small Screens -->
+    <div class="drag-target"></div>
+
+    <!--/ Layout wrapper -->
+
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+
+    <script src="./assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="./assets/vendor/libs/popper/popper.js"></script>
+    <script src="./assets/vendor/js/bootstrap.js"></script>
+    <script src="./assets/vendor/libs/node-waves/node-waves.js"></script>
+    <script src="./assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="./assets/vendor/libs/hammer/hammer.js"></script>
+    <script src="./assets/vendor/libs/i18n/i18n.js"></script>
+    <script src="./assets/vendor/libs/typeahead-js/typeahead.js"></script>
+    <script src="./assets/vendor/js/menu.js"></script>
+
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+    <script src="./assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
+
+    <script src="./assets/vendor/libs/@form-validation/umd/bundle/popular.min.js"></script>
+    <script src="./assets/vendor/libs/@form-validation/umd/plugin-bootstrap5/index.min.js"></script>
+    <script src="./assets/vendor/libs/@form-validation/umd/plugin-auto-focus/index.min.js"></script>
+
+    <!-- Main JS -->
+    <script src="./assets/js/main.js"></script>
+
+    <!-- Page JS -->
+    <script src="./assets/js/app-access-roles.js"></script>
+    <script src="./assets/vendor/js/chart.js"></script>
+    <script src="./assets/js/modal-add-role.js"></script>
+  </body>
+</html>
