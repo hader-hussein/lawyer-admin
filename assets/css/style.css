@@ -512,10 +512,14 @@ color: #dbdade !important;
 }
 .menu-grid{
   display: grid !important;
-  grid-template-columns: 1fr 1fr;
   width: max-content !important;
   padding-left: 0px;
   padding-inline-start: 0px;
+}
+@media (min-width:950px) {
+  .menu-grid{
+    grid-template-columns: 1fr 1fr;
+}
 }
 [dir=rtl] .menu-grid .menu-link {
   padding-right: 0.775rem !important;

@@ -1025,13 +1025,13 @@
                             </a>
                             <div class=" menu-sub w-menu-sub">
                               <ul  class="menu-grid">
-                                <li class="menu-item active">
+                                <li class="menu-item ">
                                   <a href="General-Settings.html" class="menu-link">
                                     <i class="menu-icon tf-icons ti ti-settings"></i>
                                     <div data-i18n="General Settings"> الإعدادات العامه</div>
                                   </a>
                                   </li>
-                                  <li class="menu-item">
+                                  <li class="menu-item active">
                                     <a href="Definition-safes-banks.html" class="menu-link">
                                       <i class="menu-icon tf-icons ti ti-settings"></i>
                                       <div data-i18n="Definition-safes-banks"> تعريف الخزائن و البنوك</div>
@@ -1107,214 +1107,75 @@
             <div class="container-xxl flex-grow-1 container-p-y">
               <div class="card comonent-hader-top">
                 <div class="card-body py-2 px-md-2 px-2  card-widget-separator">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <strong class="py-md-3 px-md-3 text-title-hadeer text-tilte-b"><span class="text-muted fw-medium">    لإعدادات العامه للنظام </span>  </strong>
-  
-                  </div>
+                    <strong class="py-md-3 px-md-3 text-title-hadeer text-tilte-b"><span class="text-muted fw-medium">      عرض حسابات الخزائن والبنوك </span>  </strong>
+                    <div class="row justify-content-center mx-0 py-2 px-md-3 px-2">
+                      <!--item-->
+                      <div class="col-xl-6 col-lg-6 col-md-6 mb-md-0 mb-2">
+                        <div class="card h-100">
+                          <div class="row h-100">
+                            <div class="col-sm-5 col-12">
+                              <div class="d-flex align-items-center h-100 justify-content-center mt-sm-0">
+                                <img src="./assets/img/illustrations/add.png" class="img-fluid mt-sm-4 mt-md-0"
+                                  alt="add-new-roles" width="83" />
+                              </div>
+                            </div>
+                            <div class="col-sm-7 col-12">
+                              <div class="card-body text-sm-end text-center ps-sm-0">
+                                <button  data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                  class="btn btn-primary mb-2 text-nowrap add-new-role waves-effect waves-light">
+                                  اضافة      
+                                </button>
+                                <p class="mb-0 mt-1">
+                                  Add Definition-safes-banks data , if it does not exist
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!--item-->
+                    </div>
+               
                   
                 </div>
               </div>
               <div class="card comonent-hader-top p-2 mt-2">
                 <div class="card-body py-2 px-md-2 px-2 card-widget-separator">
-                  
-                  <!---->
-                  <ul class="nav nav-tabs flex-column flex-sm-row mx-3  nav-fill" id="myTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true"> البيانات العامه  </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">إعدادات الجلسات </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                      <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">الاعدادت العامة</button>
-                    </li>
-                
-                  </ul>
-                  <div class="tab-content px-md-2 px-1" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                      <form class="row component-form align-items-end">
-                  
-                       
-                        <div class="col-12 col-lg-4 mb-3">
-                          <label class="form-label" for="basic-name"> اسم المكتب <span class="start-form">*</span></label>
-                          <input type="text" class="form-control" id="basic-name" placeholder="  اسم المكتب">
-                        </div>
-                        <div class="col-12 col-lg-4 mb-3">
-                          <label class="form-label" for="basic-adderss">  العنوان<span class="start-form">*</span></label>
-                          <input type="text" class="form-control" id="basic-adderss" placeholder="  العنوان ">
-                        </div>
-                     
-                        <div class="col-12 col-lg-4 mb-3">
-                          <label class="form-label" for="basic-Mobile"> رقم الجوال<span class="start-form">*</span></label>
-                          <input type="text" class="form-control" id="basic-Mobile" placeholder=" رقم الجوال ">
-                        </div>
-                      
-                      <div class="col-12 col-lg-4 mb-3">
-                        <label class="form-label" for="basic-Mobile-2"> رقم الجوال<span class="start-form">*</span></label>
-                        <input type="text" class="form-control" id="basic-Mobile-2" placeholder=" رقم الجوال ">
-                      </div>
-                      <div class="col-12 col-lg-4 mb-3">
-                        <label class="form-label" for="basic-fixse"> رقم الفاكس<span class="start-form">*</span></label>
-                        <input type="text" class="form-control" id="basic-fixse" placeholder=" رقم الجوال ">
-                      </div>
-                      <div class="col-12 col-lg-4 mb-3">
-                        <label class="form-label" for="basic-file-No"> البريد الاكترونى<span class="start-form">*</span></label>
-                        <input type="email" class="form-control" id="basic-file-No" placeholder="البريد  الاكترونى ">
-                      </div>
-                      <div class="col-12 col-lg-4 mb-3">
-                        <label class="form-label" for="basic-file-No-1"> 2البريد الاكترونى<span class="start-form">*</span></label>
-                        <input type="email" class="form-control" id="basic-file-No-1" placeholder="البريد  الاكترونى ">
-                      </div>
-                        <div class="col-12 col-lg-4 mb-3">
-                          <label class="form-label" for="user-name">   اسم المدير العام <span class="start-form">*</span></label>
-                          <input type="text" class="form-control" id="user-name" placeholder="  اسم المدير العام  ">
-                        </div>
-                        <div class="col-12 col-lg-4 mb-3">
-                          <label class="form-label" for="basic-file-No-1">  البريد الإلكتروني للمدير العام<span class="start-form">*</span></label>
-                          <input type="email" class="form-control" id="basic-file-No-1" placeholder="  البريد الإلكتروني للمدير العام ">
-                        </div>
-                        
-                        
-                       
-                      
-                        <div class="col-12 col-lg-12 mt-2">
-                          <button type="submit" class="btn btn-primary waves-effect waves-light">
-                            حفظ
-                          </button>
-                        </div>
-                      </form>
-                    </div>
-                    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-                      <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                        <strong>هذه الشاشه خاصه بضبط مواعيد الجلسات تمكنك من عمل الأتي فى البيانات الأساسيه المتحكمه فى ضبط أوقات الجلسات وكيفيه التحقق من مواعيد الجلسات
-                        </strong>
-                        <ul>
-                          <li>
-                            ادخل وقت الجلسه بالدقائق مثال ( ساعه = 60 ساعه ونصف = 90 ) او حسب الوقت المستغرق فى الجلسه
-                          </li>
-                          <li>
-                            قم بتحديد وقت بدايه العمل ووقت بدياه اليوم الخاص بحجز مواعيد الجلسات مثال ( يبداء يوم العمل من الساعه 9:00 صباحا)
-                          </li>
-                          <li>
-                            قم بتحديد وقت نهايه العمل ووقت نهايه اليوم الخاص بحجز مواعيد الجلسات مثال ( ينتهي يوم العمل الساعه 15:00 مساءا)
-
-                          </li>
-                        </ul>
-                          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                      </div>
-                      <form class="row component-form align-items-end">
-                  
-                       
-                        <div class="col-12 col-lg-4 mb-3">
-                          <label class="form-label" for="basic-time">  قميه الوقت بالدقائق بين الجلسه والأخري <span class="start-form">*</span></label>
-                          <input type="text" class="form-control" id="basic-time" placeholder="   قميه الوقت بالدقائق بين الجلسه والأخري">
-                        </div>
-                        <div class="col-12 col-lg-4 mb-3">
-                          <label class="form-label" for="basic-time-1">  اكتب وقت بدايه الحجز للجلسات مثال (9:00)<span class="start-form">*</span></label>
-                          <input type="time" class="form-control" id="basic-time-1" >
-                        </div>
-                        <div class="col-12 col-lg-4 mb-3">
-                          <label class="form-label" for="basic-time-2"> اكتب وقت نهايه الحجز للجلسات مثال (15:00)<span class="start-form">*</span></label>
-                          <input type="time" class="form-control" id="basic-time-2" >
-                        </div>
-                        
-                        
-                       
-                      
-                        <div class="col-12 col-lg-12 mt-2">
-                          <button type="submit" class="btn btn-primary waves-effect waves-light">
-                            حفظ
-                          </button>
-                        </div>
-                      </form>
-                    </div>
-                    <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-                      <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                        <strong> 
-                          ملحوظه الحد الأقصي لحجز الجلسات يقصد به عدد الجلسات التي يسمح النظام بحجزها مثال اذا حددنا للنظام الحد الاقصي
-وليكن 5 جلسات يكن غير مسموع لأي مستخدم اخر امكانيه عمل حجز علي النظام 
-                        </strong>
-                       
-                          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                      </div>
-                      <form class="row component-form align-items-end">
-                  
-                       
-                        <div class="col-12 col-lg-4 mb-3">
-                          <label class="form-label" for="basic-times">       الحد الأقصي لحجز الجلسات <span class="start-form">*</span></label>
-                          <input type="text" class="form-control" id="basic-times" placeholder="        الحد الأقصي لحجز الجلسات">
-                        </div>
-                        <div class="col-12 col-lg-4 mb-3">
-                          <label class="form-label" for="basic-time-1">      قيمه الضربيه %<span class="start-form">*</span></label>
-                          <input type="text" class="form-control" id="basic-time-1" >
-                        </div>
-                        <div class="col-12 col-lg-4 mb-3">
-                          <label class="form-label" for="basic-Payments">  عدد الدفعات التي ستم جدولتها فى القضايا<span class="start-form">*</span></label>
-                          <input type="text" class="form-control" id="basic-Payments" >
-                        </div>
-                        <div class="col-12 col-lg-6 mb-3">
-                          <label class="form-label" for="basic-Payments">      التحكم فى حركه حسابات القضايا  <span class="start-form">*</span></label>
-                          <div class="d-flex pt-1 flex-wrap">
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                              <label class="form-check-label" for="flexRadioDefault1">
-                                مدفوع ومتبقي من للإجمالي
-                              </label>
-                            </div>
-                            <div class="form-check mx-2">
-                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                              <label class="form-check-label" for="flexRadioDefault2">
-                                جدوله دفعات القضيه
-                              </label>
-                            </div>
-                          </div>
+                  <div class="table-responsive text-nowrap rounded mt-4">
+                    <table class="table table-bordered table-hover rounded">
+                      <thead class="table-light">
+                        <tr class="fw-bold">
+                          <th class="fw-bold">التسلسل</th>
+                          <th class="fw-bold">اسم الحساب</th>
+                          <th class="fw-bold"> كودالحساب</th>
+                          <th class="fw-bold"> نوع الحساب</th>
                          
-                        </div>
-                        <div class="col-12 col-lg-6">
-                          <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                            <strong> 
-                              من خلال هذا الإختيار تستطيع جدوله الدفعات الماله الخاصه بالقضيه وربطها بتواريخ سداد معينه مثال دفعه رقم 1 دفعه رقم 2 دفعه رقم 3 ...
-                            </strong>
-                           
-                              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                          </div>
-                        </div>
-                        <div class="col-12 col-lg-6 mb-3">
-                          <label class="form-label" for="basic-Payments">      اختر نظام التحقق فى الوقت المتارح لحجز الجلسات حسب طبيعه العمل <span class="start-form">*</span></label>
-                          <div class="d-flex pt-1 flex-wrap">
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault3">
-                              <label class="form-check-label" for="flexRadioDefault3">
-                                نفس المحامي التابع للقضيه
-                              </label>
-                            </div>
-                            <div class="form-check mx-2">
-                              <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault4" checked>
-                              <label class="form-check-label" for="flexRadioDefault4">
-                                جميع المحامين علي النظام
-                              </label>
-                            </div>
-                          </div>
-                         
-                        </div>
-                        <div class="col-12 col-lg-6">
-                          <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                            <strong> 
-                              هذا الخيار يسمح لك فى تسجيل الجلسات التحقق من فرق التوقيت بين الجلسات وبعضها بشكل عام علي جميع المحامين بالمكتب اي لا يمكن حجز اكثر من جلسه لاكثر من محامي فى وقت واحد .........                            </strong>
-                           
-                              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                          </div>
-                        </div>
-                      
-                        <div class="col-12 col-lg-12 mt-2">
-                          <button type="submit" class="btn btn-primary waves-effect waves-light">
-                            حفظ
-                          </button>
-                        </div>
-                      </form>
-                    </div>
+                          <th class="fw-bold">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody class="table-border-bottom-0 text-center">
+                        <tr>
+                          <td>1</td>
+                          <td>123456</td>
+  
+                          <td>123456</td>
+                          <td></td>
+                          <td class="d-flex justify-content-center">
+                            <a class="bg-success text-bg-success p-1 d-flex align-items-center justify-content-center me-3 rounded cursor-pointer"
+                              data-bs-target="#edittruck" data-bs-toggle="modal" title="تعديل"><i
+                                class="ti ti-pencil fs-4"></i>
+                            </a>
+  
+                            <a class="bg-danger text-bg-danger p-1 d-flex align-items-center justify-content-center me-3 rounded"
+                              href="javascript:void(0);" title="حذف  " data-bs-target="#closeRoleModal"
+                              data-bs-toggle="modal"><i class="ti ti-trash fs-4"></i>
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
-                  <!----->
+                
                  
                   
                  
@@ -1323,8 +1184,109 @@
              
             </div>
          
-       
-       
+            <div class="modal fade" id="edittruck" aria-labelledby="exampleModalToggleLabel" tabindex="-1"
+            aria-modal="true" role="dialog">
+            <div class="modal-dialog modal-md modal-dialog-centered">
+              <div class="modal-content p-3 p-md-3">
+                <div class="modal-header px-0">
+                  <h1 class="modal-title fs-3 fw-bold text-tilte-b">
+                    تعديل حسابات الخزائن والبنوك
+                  </h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-0">
+                  <form class="form-repeater mt-4 row justify-content-center">
+  
+                            
+                    <div class="mb-3 col-lg-8 col-xl-10 col-11">
+                      <label class="form-label" for="form-account-name">   اسم الحساب <span class="start-form">*</span></label>
+                      <input type="text" id="form-account-name" class="form-control"placeholder="اسم الحساب">
+                    </div>
+                    <div class="mb-3 col-lg-8 col-xl-10 col-11">
+                      <label class="form-label" for="form-account-number">    رقم الحساب<span class="start-form">*</span></label>
+                      <input type="text" id="form-account-number" class="form-control"placeholder="">
+                    </div>
+                    <div class="mb-3 col-lg-8 col-xl-10 col-11">
+                      <label class="form-label" for="form-account-type">    نوع الحساب<span class="start-form">*</span></label>
+                      <select id="form-account-type" class="select2 form-select" data-allow-clear="true">
+                        <option value="AK">  حساب خزينة</option>
+                        <option value="HI">حساب  بنك</option>
+                      
+                    
+                      </select>
+                    </div>
+                      <div class="col-11 col-lg-10 mb-3">
+                        <button   class="btn btn-primary  waves-effect waves-light">تعديل</button>
+
+                      </div>
+                   
+                   </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- delet Modal -->
+          <div class="modal fade" id="closeRoleModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-md modal-dialog-centered modal-add-new-role">
+              <div class="modal-content p-1 p-md-3">
+                <button type="button" class="btn-close btn-pinned" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-body text-center">
+                  <h3 class="role-title mb-2 fs-5">
+                    هل انت متاكد من حذف العنصر؟
+                  </h3>
+
+                  <div class="col-11 col-lg-12 mb-3">
+                    <button type="submit" class="btn btn-primary waves-effect waves-light">
+                      نعم
+                    </button>
+                    <button type="submit" class="btn btn-label-secondary waves-effect mx-3">
+                      لا
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+       <!-- Modal -->
+       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">ادخل بيانات الحساب</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form class="form-repeater mt-4 row justify-content-center">
+  
+                            
+                <div class="mb-3 col-lg-8 col-xl-10 col-11">
+                  <label class="form-label" for="form-account-name-1">   اسم الحساب <span class="start-form">*</span></label>
+                  <input type="text" id="form-account-name-1" class="form-control"placeholder="اسم الحساب">
+                </div>
+                <div class="mb-3 col-lg-8 col-xl-10 col-11">
+                  <label class="form-label" for="form-account-number-1">    رقم الحساب<span class="start-form">*</span></label>
+                  <input type="text" id="form-account-number-1" class="form-control"placeholder="">
+                </div>
+                <div class="mb-3 col-lg-8 col-xl-10 col-11">
+                  <label class="form-label" for="form-account-type-1">    نوع الحساب<span class="start-form">*</span></label>
+                  <select id="form-account-type-1" class="select2 form-select" data-allow-clear="true">
+                    <option value="AK">  حساب خزينة</option>
+                    <option value="HI">حساب  بنك</option>
+                  
+                
+                  </select>
+                </div>
+                  <div class="col-11 col-lg-10 mb-3">
+                    <button   class="btn btn-primary  waves-effect waves-light">حفظ</button>
+
+                  </div>
+               
+               </form>
+            </div>
+          
+          </div>
+        </div>
+      </div>
       
           
             <!-- Footer -->
