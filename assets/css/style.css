@@ -569,3 +569,10 @@ color: #dbdade !important;
 .hide{
   display: none;
 }
+@media (max-width:550px) {
+ .select2-container--default .select2-selection--single .select2-selection__rendered {
+  
+    font-size: 9px;
+}
+  
+}

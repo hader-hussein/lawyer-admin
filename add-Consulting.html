@@ -838,12 +838,7 @@
                             </a>
                           
                           </li>
-                          <li class="menu-item">
-                            <a href="allbanktransaction.html" class="menu-link">
-                              <div data-i18n="allbanktransaction">عرض كل الإيداعات  </div>
-                            </a>
                           
-                          </li>
                           <li class="menu-item">
                             <a href="bankaccbalance.html" class="menu-link">
                               <div data-i18n="bankaccbalance"> عرض حسابات البنوك  </div>
@@ -1116,7 +1111,7 @@
                   <div class="card-body py-2 px-md-2 px-2 card-widget-separator">
                     
                     <form class="row component-form align-items-end">
-                      <div class="col-12 col-lg-4 mb-3">
+                      <div class="col-12 col-lg-4  col-md-6 mb-3">
                         <label for="select-client" class="form-label">    الموكل <span class="start-form">*</span></label>
                          
                             <select id="select-client" class="select2 form-select" data-allow-clear="true">
@@ -1129,9 +1124,12 @@
                             </select>
   
                       </div>
-                      <div class="col-12 col-lg-4 mb-3">
+                      <div class="col-12 col-lg-4  col-md-6 mb-3">
                         <label for="select-Designated" class="form-label">   نوع العقد  <span class="start-form">*</span></label>
-                        
+                        <div class="input-groupe">
+                          <button data-bs-target="#Lawyer-type" type="button" data-bs-toggle="modal" class="btn btn-primary  text-nowrap add-new-role waves-effect waves-light text-withe">
+                            اضافة  
+                          </button>
                             <select id="select-Designated" class="select2 form-select" data-allow-clear="true">
                               <option value="AK">  عقد معدل</option>
                               <option value="HI">تصفية</option>
@@ -1140,19 +1138,19 @@
                               <option value="OR">عقود واتفاقيات</option>
                           
                             </select>
-  
+                           </div>
                       </div>
                       
-                      <div class="col-12 col-lg-4 mb-3">
+                      <div class="col-12 col-lg-4  col-md-6 mb-3">
                         <label class="form-label" for="basic-Discount"> من تاريخ<span class="start-form">*</span></label>
                         <input type="date" class="form-control" id="basic-Discount">
                       </div>
-                      <div class="col-12 col-lg-4 mb-3">
+                      <div class="col-12 col-lg-4  col-md-6 mb-3">
                         <label class="form-label" for="basic-Discount">  الى تاريخ<span class="start-form">*</span></label>
                         <input type="date" class="form-control" id="basic-Discount">
                       </div>
                       
-                      <div class="col-12 col-lg-4 mb-3">
+                      <div class="col-12 col-lg-4  col-md-6 mb-3">
                         <label for="select-Lawyer" class="form-label">   المستشار المكلف <span class="start-form">*</span></label>
                         
                             <select id="select-Lawyer" class="select2 form-select" data-allow-clear="true">
@@ -1165,15 +1163,15 @@
                             </select>
   
                       </div>
-                      <div class="col-12 col-lg-4 mb-3">
+                      <div class="col-12 col-lg-4  col-md-6 mb-3">
                         <label class="form-label" for="basic-Assignment">  مده الرد على التكليف<span class="start-form">*</span></label>
                         <input type="date" class="form-control" id="basic-Assignment">
                       </div>
-                      <div class="col-12 col-lg-4 mb-3">
+                      <div class="col-12 col-lg-4  col-md-6 mb-3">
                         <label class="form-label" for="basic-Consultation">   مده الرد على الاستشاره<span class="start-form">*</span></label>
                         <input type="date" class="form-control" id="basic-Consultation">
                       </div>
-                      <div class="col-12 col-lg-8 mb-3">
+                      <div class="col-12 col-lg-8 col-md-6 mb-3">
                         <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
                           اضافه مرفقات
                         </button>
@@ -1239,6 +1237,31 @@
                 
                 </div>
                 
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="Lawyer-type" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-md">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel"> بيانات أنواع العقد</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form class="form-repeater row">
+                    <div class="mb-3 col-12">
+                      <label class="form-label" for="form-name-1">     الاسم<span class="start-form">*</span></label>
+                      <input type="text" id="form-name-1" class="form-control"placeholder="     الاسم">
+                    </div>
+                   
+                      <div class="col-11 col-lg-10 mb-3">
+                        <button   class="btn btn-primary  waves-effect waves-light">حفظ</button>
+    
+                      </div>
+                   
+                   </form>
+                </div>
+              
               </div>
             </div>
           </div>

@@ -840,12 +840,7 @@
                             </a>
                           
                           </li>
-                          <li class="menu-item">
-                            <a href="allbanktransaction.html" class="menu-link">
-                              <div data-i18n="allbanktransaction">عرض كل الإيداعات  </div>
-                            </a>
                           
-                          </li>
                           <li class="menu-item">
                             <a href="bankaccbalance.html" class="menu-link">
                               <div data-i18n="bankaccbalance"> عرض حسابات البنوك  </div>
@@ -1128,9 +1123,12 @@
                           <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                               <div class="row component-form pt-4 justify-content-md-start justify-content-center align-items-start">
-                                <div class="col-12 col-lg-4 mb-3">
+                                <div class="col-12 col-lg-4 col-md-6 mb-3">
                                   <label for="select-branch-t" class="form-label"> اختيار الفرع <span class="start-form">*</span></label>
-                                   
+                                  <div class="input-groupe">
+                                    <button data-bs-target="#addtruck" type="button" data-bs-toggle="modal" class="btn btn-primary  text-nowrap add-new-role waves-effect waves-light text-withe">
+                                      اضافة  
+                                    </button>
                                       <select id="select-branch-t" class="select2 form-select" data-allow-clear="true">
                                         <option value="AK">  اختيار الفرع</option>
                                         <option value="HI">mohamed</option>
@@ -1139,23 +1137,23 @@
                                         <option value="OR">hala</option>
                                     
                                       </select>
-  
+                                    </div>
                                 </div>
-                                <div class="col-12 col-lg-4 mb-3">
+                                <div class="col-12 col-lg-4 col-md-6 mb-3">
                                   <label class="form-label" for="basic-name">  رقم الملف <span class="start-form">*</span></label>
                                   <input type="text" class="form-control" id="basic-name" placeholder="   رقم الملف ">
                                 </div>
-                                <div class="col-12 col-lg-4 mb-3">
+                                <div class="col-12 col-lg-4 col-md-6 mb-3">
                                   <label class="form-label" for="basic-ID-Number"> رقم القضية<span class="start-form">*</span></label>
                                   <input type="text" class="form-control" id="basic-ID-Number" placeholder=" رقم القضية ">
                                 </div>
 
-                                <div class="col-12 col-lg-4 mb-3">
+                                <div class="col-12 col-lg-4 col-md-6 mb-3">
                                   <label class="form-label" for="basic-file-No"> تاريخ انتهاء المهمه    <span class="start-form">*</span></label>
                                   <input type="date" class="form-control" id="basic-file-No" >
                                 </div>
                               
-                                <div class="col-12 col-lg-8 mb-3">
+                                <div class="col-12 col-lg-8 col-md-12 mb-3">
                                   <label class="form-label" for="basic-title">  عنوان المذكره  <span class="start-form">*</span></label>
                                   <textarea type="text" class="form-control" id="basic-title" rows="1" placeholder="  عنوان المذكره "></textarea>
                                 </div>
@@ -1243,7 +1241,33 @@
              
             </div>
            <!-- Modal -->
-      
+           <div class="modal fade " id="addtruck" aria-labelledby="exampleModalToggleLabel" tabindex="-1" aria-modal="true" role="dialog">
+            <div class="modal-dialog modal-md modal-dialog-centered">
+              <div class="modal-content p-3 ">
+                <div class="modal-header px-0">
+                  <h1 class="modal-title fs-4 fw-bold text-tilte-b">    
+                     إضافة الفرع
+                  </h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-0">
+                  
+                  <form class="row component-form g-3 mx-0">
+                    <div class="col-md-12 col-lg-12">
+                      <label class="form-label" for="name-requests">  الاسم</label>
+                      <input type="text" id="name-requests" class="form-control" placeholder=" الاسم " />
+                    </div>
+                  
+                    <div class="pt-2">
+                      <button type="submit" class="btn btn-primary  waves-effect waves-light">حفظ</button>
+
+                    </div>
+                  </form>
+              
+              </div>
+            </div>
+          </div>
+          </div>
             <!-- Footer -->
             <footer class="content-footer footer bg-footer-theme">
               <div class="container-xxl">

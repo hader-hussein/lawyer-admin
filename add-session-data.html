@@ -835,12 +835,7 @@
                             </a>
                           
                           </li>
-                          <li class="menu-item">
-                            <a href="allbanktransaction.html" class="menu-link">
-                              <div data-i18n="allbanktransaction">عرض كل الإيداعات  </div>
-                            </a>
-                          
-                          </li>
+                         
                           <li class="menu-item">
                             <a href="bankaccbalance.html" class="menu-link">
                               <div data-i18n="bankaccbalance"> عرض حسابات البنوك  </div>
@@ -1128,10 +1123,10 @@
                                 <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                                   <div class="accordion-body">
                                     <div class="row component-form pt-2 justify-content-md-start justify-content-center align-items-end">
-                                      <div class="col-12 col-lg-4 mb-3">
+                                      <div class="col-12 col-lg-4 col-md-6  mb-3">
                                         <label for="select-branch-t" class="form-label"> اختيار الفرع <span class="start-form">*</span></label>
                                         <div class="input-groupe">
-                                          <button data-bs-target="#addtruck" type="button" data-bs-toggle="modal" class="btn btn-primary mb-2 text-nowrap add-new-role waves-effect waves-light text-withe">
+                                          <button data-bs-target="#addtruck" type="button" data-bs-toggle="modal" class="btn btn-primary  text-nowrap add-new-role waves-effect waves-light text-withe">
                                             اضافة  
                                           </button>
                                             <select id="select-branch-t" class="select2 form-select" data-allow-clear="true">
@@ -1144,17 +1139,20 @@
                                             </select>
                                       </div>
                                       </div>
-                                      <div class="col-12 col-lg-4 mb-3">
+                                      <div class="col-12 col-lg-4 col-md-6  mb-3">
                                         <label class="form-label" for="basic-name">  رقم الملف <span class="start-form">*</span></label>
                                         <input type="text" class="form-control" id="basic-name" placeholder="   رقم الملف ">
                                       </div>
-                                      <div class="col-12 col-lg-4 mb-3">
+                                      <div class="col-12 col-lg-4 col-md-6  mb-3">
                                         <label class="form-label" for="basic-ID-Number"> رقم القضية<span class="start-form">*</span></label>
                                         <input type="text" class="form-control" id="basic-ID-Number" placeholder=" رقم القضية ">
                                       </div>
-                                      <div class="col-12 col-lg-4 mb-3">
+                                      <div class="col-12 col-lg-4 col-md-6 mb-3">
                                         <label for="select-Lawyer-type" class="form-label"> الحكم   <span class="start-form">*</span></label>
-                                        
+                                        <div class="input-groupe">
+                                          <button data-bs-target="#add-Judgment" type="button" data-bs-toggle="modal" class="btn btn-primary  text-nowrap add-new-role waves-effect waves-light text-withe">
+                                            اضافة  
+                                          </button>
                                             <select id="select-Lawyer-type" class="select2 form-select" data-allow-clear="true">
                                               <option value="AK">  بدون حكم</option>
                                               <option value="HI">حكم ابتدائى</option>
@@ -1163,35 +1161,35 @@
                                               <option value="OR"> نقض</option>
                                           
                                             </select>
-        
+                                          </div>
                                       </div>
-                                      <div class="col-12 col-lg-4 mb-3">
+                                      <div class="col-12 col-lg-4 col-md-6  mb-3">
                                         <label class="form-label" for="basic-Mobile">   عنوان الجلسة<span class="start-form">*</span></label>
                                         <input type="text" class="form-control" id="basic-Mobile" placeholder=" عنوان الجلسة">
                                       </div>
-                                      <div class="col-12 col-lg-4 mb-3">
+                                      <div class="col-12 col-lg-4 col-md-6 mb-3">
                                         <label class="form-label" for="basic-file-No">    تاريخ الجلسة<span class="start-form">*</span></label>
                                         <input type="date" class="form-control" id="basic-file-No" >
                                       </div>
-                                      <div class="col-12 col-lg-4 mb-3">
+                                      <div class="col-12 col-lg-4 col-md-6 mb-3">
                                         <label class="form-label" for="basic-address">  وقت الجلسه <span class="start-form">*</span></label>
                                         <input type="time" class="form-control" id="basic-address">
                                       </div>
                   
-                                      <div class="col-12 col-lg-4 mb-3">
+                                      <div class="col-12 col-lg-4 col-md-6  mb-3">
                                         <label class="form-label" for="basic-rate">  الدور رقم<span class="start-form">*</span></label>
                                         <input type="text" class="form-control" id="basic-rate" placeholder="الدور رقم">
                                       </div>
-                                      <div class="col-12 col-lg-4 mb-3">
+                                      <div class="col-12 col-lg-4 col-md-6  mb-3">
                                         <label class="form-label" for="basic-number">   المكتب رقم<span class="start-form">*</span></label>
                                         <input type="text" class="form-control" id="basic-number" placeholder=" المكتب رقم">
                                       </div>
                                   
-                                      <div class="col-12 col-lg-4 mb-3">
+                                      <div class="col-12 col-lg-4 col-md-6  mb-3">
                                         <label class="form-label" for="basic-date-No">   تاريخ انتهاء المهمه<span class="start-form">*</span></label>
                                         <input type="date" class="form-control" id="basic-date-No" >
                                       </div>
-                                      <div class="col-12 col-lg-4">
+                                      <div class="col-12 col-lg-4 col-md-6 ">
                                         <label class="form-label" for="basic-date-No">  عمل مذكره   <span class="start-form">*</span></label>
                                         <div class="d-flex">
                                           <div class="form-check mx-2">
@@ -1209,7 +1207,7 @@
                                         </div>
                                       
                                       </div>
-                                      <div class="col-12 col-lg-4 mb-3">
+                                      <div class="col-12 col-lg-4 col-md-6  mb-3">
                                         <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                           اضافه مرفقات
                                         </button>
@@ -1295,6 +1293,33 @@
                   <div class="modal-header px-0">
                     <h1 class="modal-title fs-4 fw-bold text-tilte-b">    
                        إضافة الفرع
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body px-0">
+                    
+                    <form class="row component-form g-3 mx-0">
+                      <div class="col-md-12 col-lg-12">
+                        <label class="form-label" for="name-requests">  الاسم</label>
+                        <input type="text" id="name-requests" class="form-control" placeholder=" الاسم " />
+                      </div>
+                    
+                      <div class="pt-2">
+                        <button type="submit" class="btn btn-primary  waves-effect waves-light">حفظ</button>
+  
+                      </div>
+                    </form>
+                
+                </div>
+              </div>
+            </div>
+            </div>
+            <div class="modal fade " id="add-Judgment" aria-labelledby="exampleModalToggleLabel" tabindex="-1" aria-modal="true" role="dialog">
+              <div class="modal-dialog modal-md modal-dialog-centered">
+                <div class="modal-content p-3 ">
+                  <div class="modal-header px-0">
+                    <h1 class="modal-title fs-4 fw-bold text-tilte-b">    
+                       إضافة الحكم
                     </h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>

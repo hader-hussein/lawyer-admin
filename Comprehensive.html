@@ -841,12 +841,7 @@
                             </a>
                           
                           </li>
-                          <li class="menu-item">
-                            <a href="allbanktransaction.html" class="menu-link">
-                              <div data-i18n="allbanktransaction">عرض كل الإيداعات  </div>
-                            </a>
-                          
-                          </li>
+                       
                           <li class="menu-item">
                             <a href="bankaccbalance.html" class="menu-link">
                               <div data-i18n="bankaccbalance"> عرض حسابات البنوك  </div>
@@ -1432,7 +1427,7 @@
                           <!-- Recording-notes-->
                             <div id="social-links" class="content">
                          
-                            <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex justify-content-between align-items-center flex-wrap">
                               <h5 class="fs-3 fw-bold">بيانات المذكرات</h5>
                               <a href="add-Recording-notes.html" class="btn btn-primary">اضافه مذاكره</a>
                             </div>
@@ -1535,13 +1530,13 @@
                          
                            <!--  attachments details -->
                            <div id="Escorts-links" class="content">
-                            <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex justify-content-between align-items-center flex-wrap">
                               <h5 class="fs-3 fw-bold mb-0"> ملف القضية</h5>
-                              <div class="col-md-8  ">
+                              <div class="col-md-8">
                                 <label for="select-client-2" class="form-label">  اختر القضيه <span class="start-form">*</span></label>
                                  
                                     <select id="select-client-2" class="select2 form-select" data-allow-clear="true">
-                                      <option value="AK">     يمكنك اختيار اكثر من رقم القضية او ملف معا </option>
+                                      <option value="AK"class="fs-6">     يمكنك اختيار اكثر من رقم القضية او ملف معا </option>
                                       <option value="HI">mohamed</option>
                                       <option value="CA">hadeer</option>
                                       <option value="NV">ms</option>
@@ -1552,24 +1547,38 @@
                               </div>
                             </div>
                             <hr>
+                            <div class="row mx-0">
+                              <div class="col-12 col-lg-4 col-md-6  mb-3">
+                                <label class="form-label" for="basic-Circle">  رقم الملف<span class="start-form">*</span></label>
+                                <input type="text" class="form-control" id="basic-Circle" placeholder="  رقم الملف">
+                              </div>
+                              <div class="col-12 col-lg-4 col-md-6  mb-3">
+                                <label class="form-label" for="basic-Floor-No"> رقم القضية<span class="start-form">*</span></label>
+                                <input type="text" class="form-control" id="basic-Floor-No" placeholder=" رقم القضية">
+                              </div>
+                            </div>
                             <div class="table-responsive text-nowrap rounded pt-2 pb-2">
                               <table class="table table-bordered table-hover rounded">
                                 <thead class="table-light">
                                   <tr><th>رقم الملف</th>
+                                    <th> النوع</th>
+                                    <th> المرفق</th>
                                   <th>اسم المرفق</th>
                                   <th>عرض الملف</th>
                                   <th>نوع الملف</th>
-                                  <th>حذف</th>
-                                </tr></thead>
+                                  <th>اسم المستخدم</th>
+                                  <th> التاريخ</th>
+                                  <th>الوقت </th>
+                                </tr>
+                              </thead>
                                 <tbody>
                                   <tr><td></td>
                                   <td></td>
                                   <td></td>
                                   <td></td>
-                                  <td>
-                                    <a class="bg-danger text-bg-danger p-1 d-flex align-items-center justify-content-center me-3 rounded" href="javascript:void(0);" title="حذف  " data-bs-target="#closeRoleModal" data-bs-toggle="modal"><i class="ti ti-trash fs-4"></i>
-                                    </a>
-                                  </td>
+                                  <td> </td>
+                                  <td></td>
+                                  <td> </td>
                                 </tr></tbody>
                               </table>
                             </div>
