@@ -1033,7 +1033,7 @@
                       <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                           <div
-                            class="row component-form pt-4 justify-content-md-start justify-content-center align-items-end">
+                            class="row component-form pt-4 justify-content-md-start justify-content-center ">
                             <div class="col-12 col-lg-4 col-md-6 mb-3">
                               <label for="select-branch" class="form-label"> اختيار الفرع <span
                                   class="start-form">*</span></label>
@@ -1052,7 +1052,7 @@
                             </div>
                             </div>
 
-                            <div class="col-12 col-lg-4 col-md-6 mb-3">
+                            <div class="col-12 col-lg-2 col-md-6 mb-3">
                               <label for="select-Lawyer-type" class="form-label"> فرد/شركة <span
                                   class="start-form">*</span></label>
 
@@ -1105,23 +1105,13 @@
                               </div>
                             </div>
 
-                            <div class="col-12 col-lg-4 col-md-6 mb-3">
-                              <label class="form-label" for="basic-Mobile"> رقم الجوال<span
-                                  class="start-form">*</span></label>
-                              <input type="text" class="form-control" id="basic-Mobile" placeholder=" رقم الجوال ">
-                            </div>
-                            <div class="col-12 col-lg-4  col-md-6 mb-3">
-                              <label class="form-label" for="basic-file-No"> البريد الاكترونى<span
-                                  class="start-form">*</span></label>
-                              <input type="email" class="form-control" id="basic-file-No"
-                                placeholder="البريد  الاكترونى ">
-                            </div>
+                           
                             <div class="col-12 col-lg-4 col-md-6 mb-3">
                               <label class="form-label" for="basic-address"> العنوان<span
                                   class="start-form">*</span></label>
                               <input type="text" class="form-control" id="basic-address" placeholder="العنوان">
                             </div>
-                            <div class="col-12 col-lg-4 col-md-6 mb-3">
+                            <div class="col-12 col-lg-2 col-md-6 mb-3">
                               <label for="select-type" class="form-label"> النوع <span
                                   class="start-form">*</span></label>
 
@@ -1150,32 +1140,93 @@
                               </select>
 
                             </div>
-                            <div class="col-12 col-lg-4 col-md-6 mb-3">
+                            <div class="col-12 col-lg-2 col-md-6 mb-3">
                               <label class="form-label" for="basic-rate"> نسبه المستشار %<span
                                   class="start-form">*</span></label>
                               <input type="text" class="form-control" id="basic-rate" placeholder="نسبه المستشار %">
                             </div>
-                            <div class="col-12 col-lg-4 col-md-6 mb-3">
-                              <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal"
+                            <div class="col-12 col-lg-6 col-md-12 mb-3">
+                              <button type="button" class="btn btn-primary w-100 mt-4" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal-add">
                                 اضافه مرفقات
                               </button>
                             </div>
 
-                            <div class="form-repeater col-12 col-lg-12">
+                            <div class="form-repeater col-12 col-lg-4">
                               <div data-repeater-list="group-a">
                                 <div data-repeater-item class="col-lg-12">
                                   <div class="row">
-
-
-                                    <div class="mb-3 col-lg-4  col-12">
+                                    
+                                    <div class="mb-3 col-lg-8  col-12">
                                       <label class="form-label" for="form-repeater-1-1"> الصفة<span
                                           class="start-form">*</span></label>
                                       <input type="text" id="form-repeater-1-1" class="form-control" />
                                     </div>
 
-                                    <div class="mb-3 col-lg-12 col-xl-4 col-12 d-flex align-items-center mb-0">
-                                      <button class="btn btn-label-danger mt-4" data-repeater-delete>
+                                    <div class="mb-3 col-lg-4  col-12 d-flex align-items-center mb-0">
+                                      <button class="btn btn-label-danger mt-4" type="button" data-repeater-delete>
+                                        <i class="ti ti-x ti-xs me-1"></i>
+                                        <span class="align-middle">Delete</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <hr />
+
+                                </div>
+                                <div class="mb-3">
+                                  <button class="btn btn-primary"  data-repeater-create type="button">
+                                    <i class="ti ti-plus me-1"></i>
+                                    <span class="align-middle">Add New</span>
+                                  </button>
+                                </div>
+                              </div>
+
+
+                            </div>
+                            <div class="form-repeater col-12 col-lg-4">
+                              <div data-repeater-list="group-a">
+                                <div data-repeater-item class="col-lg-12">
+                                  <div class="row">
+                                    <div class="col-12 col-lg-8 col-md-6 mb-3">
+                                      <label class="form-label" for="basic-Mobile"> رقم الجوال<span
+                                          class="start-form">*</span></label>
+                                      <input type="text" class="form-control" id="basic-Mobile" placeholder=" رقم الجوال ">
+                                    </div>
+                                    
+
+                                    <div class="mb-3 col-lg-4  col-12 d-flex align-items-center mb-0">
+                                      <button class="btn btn-label-danger mt-4"  type="button" data-repeater-delete>
+                                        <i class="ti ti-x ti-xs me-1"></i>
+                                        <span class="align-middle">Delete</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <hr />
+
+                                </div>
+                                <div class="mb-3">
+                                  <button class="btn btn-primary" data-repeater-create type="button">
+                                    <i class="ti ti-plus me-1"></i>
+                                    <span class="align-middle">Add New</span>
+                                  </button>
+                                </div>
+                              </div>
+
+
+                            </div>
+                            <div class="form-repeater col-12 col-lg-4">
+                              <div data-repeater-list="group-a">
+                                <div data-repeater-item class="col-lg-12">
+                                  <div class="row">
+                                    <div class="col-12 col-lg-8 col-md-6 mb-3">
+                                      <label class="form-label" for="basic-Mobile">  البريد الاكترونى<span
+                                          class="start-form">*</span></label>
+                                      <input type="text" class="form-control" id="basic-Mobile" placeholder=" البريد الاكترونى  ">
+                                    </div>
+                                    
+
+                                    <div class="mb-3 col-lg-4  col-12 d-flex align-items-center mb-0">
+                                      <button class="btn btn-label-danger mt-4" type="button" data-repeater-delete>
                                         <i class="ti ti-x ti-xs me-1"></i>
                                         <span class="align-middle">Delete</span>
                                       </button>
