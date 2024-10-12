@@ -30,9 +30,9 @@ function optionCheck() {
 
        // set CSS classes to show/hide help div
        if (selectOptions.options[i].selected) {
-           helpDiv.className = "helpText helpTextShow";
+           helpDiv.className = "helpText helpTextShow  col-md-6";
        } else {
-           helpDiv.className = "helpText";
+           helpDiv.className = "helpText col-md-6";
        }
    }
 }
