@@ -57,36 +57,123 @@
   <script src="./assets/vendor/js/template-customizer.js"></script>
   <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
   <script src="./assets/js/config.js"></script>
-  <link href="https://ZulNs.github.io/libs/calendar.css" rel="stylesheet"/>
-
+ 
   <style>
-   #cal-1, #cal-2 {
-  margin-left: 12px;
-  margin-top: 10px;
-}
-.icon-button {
-  width: 30px;
-}
-input {
-  width: 243px;
-  margin-bottom: 8px;
-}
-.icon-button {
-      cursor: pointer;
-      background-color: #f0f0f0;
-      border: none;
-      padding: 5px;
-      border-radius: 4px;
-      font-size: 16px;
+    .date-picker-container {
+        position: relative;
+        width: 300px;
+        margin: 20px;
+        font-family: 'Traditional Arabic', Arial, sans-serif;
     }
-    #cal-2 .calendar-container {
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      padding: 10px;
-      margin-top: 5px;
-      display: none; /* إخفاء التقويم افتراضيًا */
+
+    .date-input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        cursor: pointer;
+        text-align: right;
+        font-family: 'Traditional Arabic', Arial, sans-serif;
+    }
+
+    .calendar {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 300px;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        z-index: 1000;
+        margin-top: 5px;
+        direction: rtl;
+    }
+
+    .calendar.active {
+        display: block;
+    }
+
+    .calendar-header {
+        background-color: rgb(var(--theme-color)) !important;;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .calendar-header button {
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        padding: 5px 10px;
+    }
+
+    .weekdays {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        background-color: #f1f1f1;
+        padding: 5px 0;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .days {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 2px;
+        padding: 5px;
+    }
+
+    .day {
+        padding: 8px;
+        text-align: center;
+        cursor: pointer;
+        border: 1px solid transparent;
+        font-size: 14px;
+        font-family: 'Traditional Arabic', Arial, sans-serif;
+    }
+
+    .day:hover {
+        background-color: #86868678;
+        border: 1px solid #ddd;
+    }
+#current-month{
+  color: #fff;
+}
+    .today {
+        background-color: rgb(var(--theme-color)) !important;;
+        color: white;
+    }
+
+    .selected {
+        background-color: #2196F3;
+        color: white;
+    }
+
+    .other-month {
+        color: #ccc;
+    }
+
+    .gregorian-date {
+        font-size: 0.8em;
+        color: #666;
+        direction: ltr;
+        font-family: Arial, sans-serif;
+    }
+
+    #current-month {
+        font-size: 16px;
+        margin: 0;
+        font-family: 'Traditional Arabic', Arial, sans-serif;
     }
 </style>
+
 <body>
   <!-- Layout wrapper -->
   <div class="layout-wrapper layout-navbar-full layout-horizontal layout-without-menu">
@@ -1046,14 +1133,31 @@ input {
                 <strong class="py-md-3 px-md-3 text-title-hadeer text-tilte-b"><span class="text-muted fw-medium"> اجنده
                     الأعمال اليومية </span> </strong>
                    
-                      <div class="container mt-4">
+                      <div class="mt-4">
                         <label for="hijri-date" class="form-label">التاريخ الهجري</label>
-                        <div id="cal-2">
-                          <input id="date-2" type="text" placeholder="اختر التاريخ" readonly />
-                          <button class="icon-button" onclick="showCal2();">&#x25a6;</button>
-                        </div>
+                     
+                           <div class="date-picker-container">
+                            <input type="text" class="date-input" readonly placeholder="Select Date">
+                            <div class="calendar">
+                                <div class="calendar-header">
+                                    <button onclick="previousMonth()">&lt;</button>
+                                    <h2 id="current-month" style="margin: 0; font-size: 16px;"></h2>
+                                    <button onclick="nextMonth()">&gt;</button>
+                                </div>
+                                <div class="weekdays">
+                                    <div>Su</div>
+                                    <div>Mo</div>
+                                    <div>Tu</div>
+                                    <div>We</div>
+                                    <div>Th</div>
+                                    <div>Fr</div>
+                                    <div>Sa</div>
+                                </div>
+                                <div class="days" id="calendar-days"></div>
+                            </div>
+                          </div> 
                       </div>
-                    
+                  
                     <ul class="nav nav-tabs pt-4" id="myTab" role="tablist">
                       <li class="nav-item" role="presentation">
                         <button class="nav-link active" id="gregorian-tab" data-bs-toggle="tab" data-bs-target="#gregorian-tab-pane"
@@ -1286,9 +1390,16 @@ input {
                         </div>
                       </div>
                       <!-- Hijri Calendar Tab -->
+                      
+                      <!-- تاب التقويم الهجري -->
                       <div class="tab-pane fade" id="hijri-tab-pane" role="tabpanel" aria-labelledby="hijri-tab" tabindex="0">
-                        <div id="hijri-calendar"></div>
+                        <div class="card app-calendar-wrapper">
+                        
+                        </div>
                       </div>
+                   
+
+                   
                     </div>
 
                 <!-- FullCalendar Offcanvas -->
@@ -1488,9 +1599,7 @@ input {
   <script src="./assets/js/main.js"></script>
 
   <!-- Page JS -->
-  <script src="https://ZulNs.github.io/libs/calendar.js"></script>
-<script src="https://ZulNs.github.io/libs/hijri-date.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/your-hijri-calendar-library.js"></script>
+
   <script src="./assets/js/ui-navbar.js"></script>
   <!-- Page JS -->
   <script src="./assets/js/charts-apex.js"></script>
@@ -1502,34 +1611,155 @@ input {
   <script src="./assets/js/forms-extras.js"></script>
   <script src="./assets/js/app-calendar-events.js"></script>
   <script src="./assets/js/app-calendar.js"></script>
+  <!-- FullCalendar Scripts -->
 
-
-<script>
-  // إنشاء التقويم
-  var cal2 = new Calendar(true, 0, false, true), // تقويم هجري
-      date2 = document.getElementById('date-2'),
-      cal2Element = cal2.getElement(),
-      cal2Mode = cal2.isHijriMode();
-
-  // إضافة التقويم إلى الصفحة مع إخفائه افتراضيًا
-  cal2Element.style.display = 'none'; // إخفاء التقويم عند التحميل
-  document.getElementById('cal-2').appendChild(cal2Element);
-
-  // دالة لإظهار/إخفاء التقويم عند النقر على الزر
-  function showCal2() {
-    if (cal2Element.style.display === 'none') {
-      cal2Element.style.display = 'block'; // عرض التقويم
-    } else {
-      cal2Element.style.display = 'none'; // إخفاء التقويم
+ <script>
+    // Define HijriDate class
+    class HijriDate {
+        constructor(year, month, day) {
+            this.year = year;
+            this.month = month;
+            this.day = day;
+        }
+  
+        static hijriMonths = [
+            "Muharram", "Safar", "Rabi' al-Awwal", "Rabi' al-Thani",
+            "Jumada al-Ula", "Jumada al-Thaniya", "Rajab", "Sha'ban",
+            "Ramadan", "Shawwal", "Dhu al-Qi'dah", "Dhu al-Hijjah"
+        ];
+  
+        static fromGregorian(date) {
+            const jd = this.gregorianToJulian(date);
+            return this.julianToHijri(jd);
+        }
+  
+        static gregorianToJulian(date) {
+            const month = date.getMonth() + 1;
+            const year = date.getFullYear();
+            const day = date.getDate();
+  
+            return Math.floor((367 * year) - Math.floor((7 * (year + Math.floor((month + 9) / 12))) / 4) +
+                Math.floor((275 * month) / 9) + day + 1721013.5);
+        }
+  
+        static julianToHijri(jd) {
+            const l = Math.floor(jd) - 1948440 + 10632;
+            const n = Math.floor((l - 1) / 10631);
+            const l1 = l - 10631 * n + 354;
+            const j = Math.floor((10985 - l1) / 5316) * Math.floor((50 * l1) / 17719) +
+                Math.floor(l1 / 5670) * Math.floor((43 * l1) / 15238);
+            const l2 = l1 - Math.floor((30 - j) / 15) * Math.floor((17719 * j) / 50) -
+                Math.floor(j / 16) * Math.floor((15238 * j) / 43) + 29;
+            const month = Math.floor((24 * l2) / 709);
+            const day = l2 - Math.floor((709 * month) / 24);
+            const year = 30 * n + j - 30;
+  
+            return new HijriDate(year, month, day);
+        }
+  
+        toString() {
+            return `${this.day} ${HijriDate.hijriMonths[this.month - 1]} ${this.year}`;
+        }
     }
-  }
+  
+    // Initialize variables
+    let hijriCurrentDate = new Date();
+    let hijriDisplayDate = HijriDate.fromGregorian(hijriCurrentDate);
+    let hijriSelectedDate = null;
+  
+    const dateInput = document.querySelector('.date-input');
+    const calendar = document.querySelector('.calendar');
+  
+    dateInput.addEventListener('click', () => {
+        calendar.classList.toggle('active');
+    });
+  
+    document.addEventListener('click', (e) => {
+        if (!calendar.contains(e.target) && !dateInput.contains(e.target)) {
+            calendar.classList.remove('active');
+        }
+    });
+  
+   // ... existing code ...
 
-  // تحديث حقل النص بالتاريخ المختار
-  cal2.callback = function() {
-    date2.value = cal2.getDate().getDateString(); // تحديث التاريخ في الحقل
-    cal2Element.style.display = 'none'; // إخفاء التقويم بعد الاختيار
-  };
-</script>
+   function updateHijriCalendar() {
+    const monthHeader = document.getElementById('current-month');
+    monthHeader.textContent = `${HijriDate.hijriMonths[hijriDisplayDate.month - 1]} ${hijriDisplayDate.year}`;
+
+    const daysContainer = document.getElementById('calendar-days');
+    daysContainer.innerHTML = '';
+
+    const firstDay = new Date(hijriCurrentDate.getFullYear(), hijriCurrentDate.getMonth(), 1);
+    const startingDay = firstDay.getDay();
+    const daysInMonth = new Date(hijriCurrentDate.getFullYear(), hijriCurrentDate.getMonth() + 1, 0).getDate();
+
+    // Add empty cells for days before start of month
+    for (let i = 0; i < startingDay; i++) {
+        const dayElement = document.createElement('div');
+        dayElement.className = 'day other-month';
+        daysContainer.appendChild(dayElement);
+    }
+
+    // Add days of the month
+    for (let i = 1; i <= daysInMonth; i++) {
+        const dayElement = document.createElement('div');
+        dayElement.className = 'day';
+        
+        // Get Hijri date for this day
+        const dateObj = new Date(hijriCurrentDate.getFullYear(), hijriCurrentDate.getMonth(), i);
+        const hijriDate = HijriDate.fromGregorian(dateObj);
+        
+        // Show only Hijri date
+        dayElement.textContent = hijriDate.day;
+
+        if (hijriSelectedDate && 
+            hijriSelectedDate.getDate() === i && 
+            hijriSelectedDate.getMonth() === hijriCurrentDate.getMonth() && 
+            hijriSelectedDate.getFullYear() === hijriCurrentDate.getFullYear()) {
+            dayElement.classList.add('selected');
+        }
+
+        if (i === new Date().getDate() && 
+            hijriCurrentDate.getMonth() === new Date().getMonth() && 
+            hijriCurrentDate.getFullYear() === new Date().getFullYear()) {
+            dayElement.classList.add('today');
+        }
+
+        dayElement.addEventListener('click', () => {
+            hijriSelectedDate = new Date(hijriCurrentDate.getFullYear(), hijriCurrentDate.getMonth(), i);
+            const selectedHijriDate = HijriDate.fromGregorian(hijriSelectedDate);
+            dateInput.value = selectedHijriDate.toString();
+            calendar.classList.remove('active');
+            updateHijriCalendar();
+        });
+
+        daysContainer.appendChild(dayElement);
+    }
+}
+
+// ... rest of the code ...
+  
+    function previousHijriMonth() {
+        hijriCurrentDate.setMonth(hijriCurrentDate.getMonth() - 1);
+        hijriDisplayDate = HijriDate.fromGregorian(hijriCurrentDate);
+        updateHijriCalendar();
+    }
+  
+    function nextHijriMonth() {
+        hijriCurrentDate.setMonth(hijriCurrentDate.getMonth() + 1);
+        hijriDisplayDate = HijriDate.fromGregorian(hijriCurrentDate);
+        updateHijriCalendar();
+    }
+  
+    // Initial calendar render
+    updateHijriCalendar();
+  
+    // Update the onclick handlers in your HTML
+    document.querySelector('.calendar-header button:first-child').onclick = previousHijriMonth;
+    document.querySelector('.calendar-header button:last-child').onclick = nextHijriMonth;
+  </script> -->
+
+
 
 
 
