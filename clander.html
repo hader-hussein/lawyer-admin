@@ -1,0 +1,793 @@
+ <!-- <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset='utf-8' />
+  <title>التقويم الهجري</title>
+  
+ 
+  <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
+  
+  <style>
+    body {
+      margin: 40px;
+      font-family: 'Traditional Arabic', Arial, sans-serif;
+    }
+
+    #calendar {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .fc-toolbar-title {
+      font-size: 1.5em !important;
+      font-weight: 500;
+    }
+
+    .fc-button {
+      background: #696cff !important;
+      border: none !important;
+      padding: 8px 16px !important;
+    }
+
+    .fc-button-active {
+      background: #5f62e6 !important;
+    }
+
+    .fc-day-today {
+      background: #f8f7ff !important;
+    }
+
+    .fc-event {
+      border-radius: 4px;
+      padding: 2px 4px;
+      margin-bottom: 2px;
+      font-size: 0.85em;
+    }
+
+    .fc-more-indicator {
+      font-size: 0.85em;
+      color: #6c757d;
+      padding: 2px 4px;
+    }
+
+   
+    .fc-direction-rtl {
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <div id='calendar'></div>
+
+
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/moment@2.29.1/min/moment.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/moment-hijri@2.1.2/moment-hijri.min.js'></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const calendarEl = document.getElementById('calendar');
+      
+    
+      const locale = {
+        code: 'ar-sa',
+        week: {
+          dow: 0, 
+          doy: 6  
+        },
+        direction: 'rtl',
+        buttonText: {
+          prev: 'السابق',
+          next: 'التالي',
+          today: 'اليوم',
+          month: 'شهر',
+          week: 'أسبوع',
+          day: 'يوم',
+          list: 'قائمة'
+        },
+        weekText: 'أسبوع',
+        allDayText: 'اليوم كله',
+        moreLinkText: 'أخرى',
+        noEventsText: 'لا توجد أحداث'
+      };
+
+  
+      const hijriMonths = [
+        'محرم',
+        'صفر',
+        'ربيع الأول',
+        'ربيع الثاني',
+        'جمادى الأولى',
+        'جمادى الآخرة',
+        'رجب',
+        'شعبان',
+        'رمضان',
+        'شوال',
+        'ذو القعدة',
+        'ذو الحجة'
+      ];
+
+      const calendar = new FullCalendar.Calendar(calendarEl, {
+        locale: locale,
+        initialView: 'dayGridMonth',
+        direction: 'rtl',
+        headerToolbar: {
+          right: 'prev,next today',
+          center: 'title',
+          left: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+        },
+        titleFormat: function(date) {
+  
+          const hijriDate = moment(date.date).format('iYYYY/iM/iD');
+          const hijriParts = hijriDate.split('/');
+          const monthIndex = parseInt(hijriParts[1]) - 1;
+          return hijriMonths[monthIndex] + ' ' + hijriParts[0] + ' هـ';
+        },
+        dayCellContent: function(info) {
+      
+          const hijriDate = moment(info.date).format('iD');
+          return hijriDate;
+        },
+        events: [
+          {
+            title: 'مراجعة التصميم',
+            start: '2024-12-02T17:47:00',
+            backgroundColor: '#e1e2ff',
+            textColor: '#696cff',
+            borderColor: '#e1e2ff'
+          },
+          {
+            title: 'اجتماع شهري',
+            start: '2024-12-05',
+            backgroundColor: '#e1e2ff',
+            textColor: '#696cff',
+            borderColor: '#e1e2ff'
+          },
+          {
+            title: 'عشاء العمل',
+            start: '2024-12-18',
+            backgroundColor: '#fff2e2',
+            textColor: '#ffab00',
+            borderColor: '#fff2e2'
+          },
+          {
+            title: 'موعد طبيب',
+            start: '2024-12-20',
+            backgroundColor: '#ffe7e3',
+            textColor: '#ff3e1d',
+            borderColor: '#ffe7e3'
+          },
+          {
+            title: 'اجتماع مع العميل',
+            start: '2024-12-20',
+            backgroundColor: '#e1e2ff',
+            textColor: '#696cff',
+            borderColor: '#e1e2ff'
+          },
+          {
+            title: 'رحلة عائلية',
+            start: '2024-12-23',
+            backgroundColor: '#e8fadf',
+            textColor: '#71dd37',
+            borderColor: '#e8fadf'
+          }
+        ],
+        eventDidMount: function(info) {
+          const date = info.event.start;
+          const events = calendar.getEvents().filter(e => 
+            e.start.toDateString() === date.toDateString()
+          );
+          
+          if (events.length > 3 && info.event === events[2]) {
+            const extraCount = events.length - 2;
+            const moreEl = document.createElement('div');
+            moreEl.innerHTML = `+${extraCount} أخرى`;
+            moreEl.classList.add('fc-more-indicator');
+            info.el.after(moreEl);
+          }
+        }
+      });
+
+      calendar.render();
+    });
+  </script>
+</body>
+</html>  -->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التقويم الهجري</title>
+    
+    <!-- FullCalendar CSS -->
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet'>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f9;
+            direction: rtl;
+        }
+
+        /* Calendar Container */
+        .calendar-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Sidebar Styles */
+        .calendar-sidebar {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .sidebar-section {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .sidebar-section:last-child {
+            border-bottom: none;
+        }
+        .fc table {
+ 
+    font-size: unset;
+}
+        /* Mini Calendar */
+        #mini-calendar {
+            font-size: 0.65em !important;
+        }
+
+        #mini-calendar .fc-toolbar-title {
+            font-size: 1em;
+        }
+
+        #mini-calendar .fc-button {
+            padding: 0.2em 0.4em;
+            font-size: 0.9em;
+        }
+
+        /* Filter Styles */
+        .filter-title {
+            color: #566a7f;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+
+        .filter-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .filter-option {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .filter-option input[type="checkbox"] {
+            display: none;
+        }
+
+        .checkmark {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            margin-left: 10px;
+            position: relative;
+        }
+
+        .filter-option input:checked + .checkmark::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        /* Filter Colors */
+        .checkmark.personal {
+            background-color: #ff3e1d;
+            border-color: #ff3e1d;
+        }
+
+        .checkmark.business {
+            background-color: #696cff;
+            border-color: #696cff;
+        }
+
+        .checkmark.family {
+            background-color: #ffab00;
+            border-color: #ffab00;
+        }
+
+        .checkmark.holiday {
+            background-color: #71dd37;
+            border-color: #71dd37;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: white;
+            width: 90%;
+            max-width: 500px;
+            margin: 50px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-header {
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .form-group {
+            padding: 15px 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #566a7f;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            width: auto;
+        }
+
+        .modal-footer {
+            padding: 15px 20px;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background-color: #696cff;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-secondary {
+            background-color: #eee;
+            color: #333;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: #5f62e6;
+        }
+
+        .btn-secondary:hover {
+            background-color: #ddd;
+        }
+       #mini-calendar .fc table .fc-col-header-cell-cushion {
+    
+    font-size: 0.75em !important;
+}
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .calendar-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .calendar-sidebar {
+                order: 2;
+            }
+        }
+        .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
+     min-height: 0em; 
+}
+    </style>
+</head>
+<body>
+    <div class="calendar-container">
+        <div class="calendar-sidebar">
+            <div class="sidebar-section">
+                <button id="add-event" class="btn-primary w-100">
+                    <i class="fas fa-plus"></i>
+                    إضافة حدث
+                </button>
+            </div>
+            <div class="sidebar-section">
+                <div id="mini-calendar"></div>
+            </div>
+            <div class="sidebar-section">
+                <h5 class="filter-title">تصفية الأحداث</h5>
+                <div class="filter-options">
+                    <label class="filter-option">
+                        <input type="checkbox" checked data-filter="all">
+                        <span class="checkmark"></span>
+                        عرض الكل
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" checked data-filter="personal">
+                        <span class="checkmark personal"></span>
+                        شخصي
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" checked data-filter="business">
+                        <span class="checkmark business"></span>
+                        عمل
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" checked data-filter="family">
+                        <span class="checkmark family"></span>
+                        عائلي
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" checked data-filter="holiday">
+                        <span class="checkmark holiday"></span>
+                        عطلة
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="main-calendar">
+            <div id="calendar"></div>
+        </div>
+    </div>
+
+    <!-- Modal for Adding Events -->
+    <div class="modal" id="event-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>إضافة حدث جديد</h5>
+                <button type="button" class="close-btn">&times;</button>
+            </div>
+            <form id="event-form">
+                <div class="form-group">
+                    <label for="eventTitle">عنوان الحدث</label>
+                    <input type="text" id="eventTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventType">نوع الحدث</label>
+                    <select id="eventType" required>
+                        <option value="business">عمل</option>
+                        <option value="personal">شخصي</option>
+                        <option value="family">عائلي</option>
+                        <option value="holiday">عطلة</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="eventStart">تاريخ البداية</label>
+                    <input type="datetime-local" id="eventStart" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventEnd">تاريخ النهاية</label>
+                    <input type="datetime-local" id="eventEnd">
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="allDay">
+                        <span>طوال اليوم</span>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="eventDescription">الوصف</label>
+                    <textarea id="eventDescription" rows="3"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn-primary">حفظ</button>
+                    <button type="button" class="btn-secondary" id="cancelBtn">إلغاء</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/moment@2.29.1/min/moment.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/moment-hijri@2.1.2/moment-hijri.min.js'></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          // تعريف الأشهر الهجرية
+          const hijriMonths = [
+              'محرم', 'صفر', 'ربيع الأول', 'ربيع الثاني',
+              'جمادى الأولى', 'جمادى الآخرة', 'رجب', 'شعبان',
+              'رمضان', 'شوال', 'ذو القعدة', 'ذو الحجة'
+          ];
+
+          // تعريف الترجمة العربية
+          const locale = {
+              code: 'ar-sa',
+              week: {
+                  dow: 0,
+                  doy: 6
+              },
+              direction: 'rtl',
+              buttonText: {
+                  prev: 'السابق',
+                  next: 'التالي',
+                  today: 'اليوم',
+                  month: 'شهر',
+                  week: 'أسبوع',
+                  day: 'يوم',
+                  list: 'قائمة'
+              },
+              weekText: 'أسبوع',
+              allDayText: 'اليوم كله',
+              moreLinkText: 'أخرى',
+              noEventsText: 'لا توجد أحداث'
+          };
+
+          // إعداد التقويم المصغر
+          const miniCalendarEl = document.getElementById('mini-calendar');
+          const miniCalendar = new FullCalendar.Calendar(miniCalendarEl, {
+              locale: locale,
+              initialView: 'dayGridMonth',
+              headerToolbar: {
+                  left: 'prev,next',
+                  center: 'title',
+                  right: ''
+              },
+              direction: 'rtl',
+              height: 'auto',
+              selectable: true,
+              select: function(info) {
+                  mainCalendar.gotoDate(info.start);
+              },
+              titleFormat: function(date) {
+                  const hijriDate = moment(date.date).format('iYYYY/iM');
+                  const hijriParts = hijriDate.split('/');
+                  const monthIndex = parseInt(hijriParts[1]) - 1;
+                  return hijriMonths[monthIndex] + ' ' + hijriParts[0];
+              },
+              dayCellContent: function(info) {
+                  return moment(info.date).format('iD');
+              }
+          });
+
+          // إعداد التقويم الرئيسي
+          const mainCalendarEl = document.getElementById('calendar');
+          const mainCalendar = new FullCalendar.Calendar(mainCalendarEl, {
+              locale: locale,
+              initialView: 'dayGridMonth',
+              direction: 'rtl',
+              headerToolbar: {
+                  right: 'prev,next today',
+                  center: 'title',
+                  left: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+              },
+              selectable: true,
+              editable: true,
+              dayMaxEvents: true,
+              titleFormat: function(date) {
+                  const hijriDate = moment(date.date).format('iYYYY/iM/iD');
+                  const hijriParts = hijriDate.split('/');
+                  const monthIndex = parseInt(hijriParts[1]) - 1;
+                  return hijriMonths[monthIndex] + ' ' + hijriParts[0] + ' هـ';
+              },
+              dayCellContent: function(info) {
+                  return moment(info.date).format('iD');
+              },
+              select: function(info) {
+                  document.getElementById('eventStart').value = formatDateTime(info.start);
+                  document.getElementById('eventEnd').value = formatDateTime(info.end);
+                  modal.style.display = 'block';
+              },
+              eventClick: function(info) {
+                  // يمكنك إضافة منطق لتحرير الأحداث الموجودة هنا
+                  alert('تم النقر على الحدث: ' + info.event.title);
+              },
+              events: [
+                  {
+                      title: 'مراجعة التصميم',
+                      start: '2024-12-02T17:47:00',
+                      backgroundColor: '#e1e2ff',
+                      textColor: '#696cff',
+                      borderColor: '#e1e2ff',
+                      extendedProps: {
+                          type: 'business'
+                      }
+                  },
+                  {
+                      title: 'موعد عائلي',
+                      start: '2024-12-05',
+                      backgroundColor: '#fff2e2',
+                      textColor: '#ffab00',
+                      borderColor: '#fff2e2',
+                      extendedProps: {
+                          type: 'family'
+                      }
+                  }
+              ]
+          });
+
+          // تعريف المتغيرات للنافذة المنبثقة
+          const modal = document.getElementById('event-modal');
+          const closeBtn = document.querySelector('.close-btn');
+          const cancelBtn = document.getElementById('cancelBtn');
+          const eventForm = document.getElementById('event-form');
+          const allDayCheckbox = document.getElementById('allDay');
+          const addEventBtn = document.getElementById('add-event');
+
+          // دوال مساعدة
+          function formatDateTime(date) {
+              return new Date(date).toISOString().slice(0, 16);
+          }
+
+          function getEventColor(eventType) {
+              const colors = {
+                  business: { bg: '#e1e2ff', text: '#696cff' },
+                  personal: { bg: '#ffe7e3', text: '#ff3e1d' },
+                  family: { bg: '#fff2e2', text: '#ffab00' },
+                  holiday: { bg: '#e8fadf', text: '#71dd37' }
+              };
+              return colors[eventType] || colors.business;
+          }
+
+          // معالجة الفلترات
+          const filterCheckboxes = document.querySelectorAll('.filter-option input');
+          filterCheckboxes.forEach(checkbox => {
+              checkbox.addEventListener('change', function() {
+                  const filterType = this.dataset.filter;
+                  if (filterType === 'all') {
+                      const checked = this.checked;
+                      filterCheckboxes.forEach(cb => {
+                          cb.checked = checked;
+                      });
+                  } else {
+                      const allCheckbox = document.querySelector('[data-filter="all"]');
+                      const otherCheckboxes = Array.from(filterCheckboxes).filter(cb => cb.dataset.filter !== 'all');
+                      const allChecked = otherCheckboxes.every(cb => cb.checked);
+                      allCheckbox.checked = allChecked;
+                  }
+                  updateEvents();
+              });
+          });
+
+          function updateEvents() {
+              const activeFilters = Array.from(filterCheckboxes)
+                  .filter(cb => cb.checked && cb.dataset.filter !== 'all')
+                  .map(cb => cb.dataset.filter);
+
+              const events = mainCalendar.getEvents();
+              events.forEach(event => {
+                  if (activeFilters.includes(event.extendedProps.type)) {
+                      event.setProp('display', 'auto');
+                  } else {
+                      event.setProp('display', 'none');
+                  }
+              });
+          }
+
+          // معالجة النافذة المنبثقة
+          addEventBtn.onclick = function() {
+              modal.style.display = 'block';
+          }
+
+          closeBtn.onclick = function() {
+              modal.style.display = 'none';
+              eventForm.reset();
+          }
+
+          cancelBtn.onclick = function() {
+              modal.style.display = 'none';
+              eventForm.reset();
+          }
+
+          window.onclick = function(event) {
+              if (event.target == modal) {
+                  modal.style.display = 'none';
+                  eventForm.reset();
+              }
+          }
+
+          // معالجة تقديم النموذج
+          eventForm.onsubmit = function(e) {
+              e.preventDefault();
+              
+              const eventType = document.getElementById('eventType').value;
+              const colors = getEventColor(eventType);
+              
+              const newEvent = {
+                  title: document.getElementById('eventTitle').value,
+                  start: document.getElementById('eventStart').value,
+                  end: document.getElementById('eventEnd').value,
+                  allDay: allDayCheckbox.checked,
+                  backgroundColor: colors.bg,
+                  textColor: colors.text,
+                  borderColor: colors.bg,
+                  extendedProps: {
+                      type: eventType,
+                      description: document.getElementById('eventDescription').value
+                  }
+              };
+              
+              mainCalendar.addEvent(newEvent);
+              modal.style.display = 'none';
+              eventForm.reset();
+          };
+
+          // معالجة checkbox طوال اليوم
+          allDayCheckbox.onchange = function() {
+              const endInput = document.getElementById('eventEnd');
+              if (this.checked) {
+                  endInput.disabled = true;
+              } else {
+                  endInput.disabled = false;
+              }
+          };
+
+          // عرض التقويمين
+          miniCalendar.render();
+          mainCalendar.render();
+      });
+  </script>
+</body>
+</html>
